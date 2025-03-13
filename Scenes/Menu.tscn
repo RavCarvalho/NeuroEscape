@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck268fp1u1q3d"]
+
+[ext_resource type="Texture2D" uid="uid://dllk1fkji2pa1" path="res://Assets/resolution_img.jpeg" id="1_pt182"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="ResolutionImg" type="Sprite2D" parent="."]
+position = Vector2(642, 360)
+scale = Vector2(1.004, 1)
+texture = ExtResource("1_pt182")
