@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hy7f7mq32db"
-path="res://.godot/imported/borda (2).png-edc6894b085810a7da66e831ffedaeaa.ctex"
+uid="uid://bj1lbwrbjlm5q"
+path="res://.godot/imported/frames (3).png-177ba86e8aec3678b94fb1799f955e75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cutscenes/borda (2).png"
-dest_files=["res://.godot/imported/borda (2).png-edc6894b085810a7da66e831ffedaeaa.ctex"]
+source_file="res://Assets/Cutscenes/frames (3).png"
+dest_files=["res://.godot/imported/frames (3).png-177ba86e8aec3678b94fb1799f955e75.ctex"]
 
 [params]
 
