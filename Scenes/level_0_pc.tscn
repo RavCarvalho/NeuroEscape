@@ -1,3 +1,95 @@
-[gd_scene format=3 uid="uid://b7j04i1ihos1m"]
+[gd_scene load_steps=11 format=3 uid="uid://b7j04i1ihos1m"]
+
+[ext_resource type="Texture2D" uid="uid://yp5qvinat3gi" path="res://Assets/Level0/office_level0.png" id="1_2o3d6"]
+[ext_resource type="Script" path="res://Scripts/level_0_pc.gd" id="1_6the2"]
+[ext_resource type="Texture2D" uid="uid://dr8g3hfxq1kr2" path="res://Assets/Level0/email (2).png" id="2_q2fec"]
+[ext_resource type="Texture2D" uid="uid://dxa8tbr0gr10h" path="res://Assets/Level0/email (1).png" id="3_a253n"]
+[ext_resource type="Texture2D" uid="uid://bgusebc6aeqtj" path="res://Assets/Level0/email(3).png" id="4_3igwf"]
+[ext_resource type="Texture2D" uid="uid://cqmuq0tql6sn2" path="res://Assets/Level0/mensage_box.png" id="6_t58bo"]
+[ext_resource type="Theme" uid="uid://dly4egno4kj66" path="res://Themes/label_padrao.tres" id="7_c2fcj"]
+
+[sub_resource type="Gradient" id="Gradient_am5h5"]
+offsets = PackedFloat32Array(0, 0.994444)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 0.662745, 0.792157)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dkok3"]
+gradient = SubResource("Gradient_am5h5")
+fill_to = Vector2(0, 0.811966)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47xtf"]
+radius = 69.4622
 
 [node name="Level0_PC" type="Node2D"]
+script = ExtResource("1_6the2")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+texture = ExtResource("1_2o3d6")
+
+[node name="EmailButton" type="TextureButton" parent="."]
+offset_left = 448.0
+offset_top = 186.0
+offset_right = 563.0
+offset_bottom = 257.0
+texture_normal = ExtResource("2_q2fec")
+texture_pressed = ExtResource("3_a253n")
+texture_hover = ExtResource("4_3igwf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="messaege" type="Node2D" parent="."]
+visible = false
+
+[node name="MensageBox" type="Sprite2D" parent="messaege"]
+position = Vector2(626, 358)
+texture = ExtResource("6_t58bo")
+
+[node name="label" type="Label" parent="messaege"]
+offset_left = 512.0
+offset_top = 170.0
+offset_right = 713.0
+offset_bottom = 196.0
+theme = ExtResource("7_c2fcj")
+text = "Bem-vindo à corporação
+        NeuroCorp
+Em breve iniciaremos o
+ protocolo. Aguarde as 
+    próximas ordens."
+
+[node name="light" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 1, 1, 0.356863)
+texture = SubResource("GradientTexture2D_dkok3")
+polygon = PackedVector2Array(256, 363, 201, 572, 399, 567, 303, 348)
+
+[node name="InteractiveAreas" type="Node2D" parent="."]
+
+[node name="RegioLight" type="Area2D" parent="InteractiveAreas"]
+
+[node name="collision" type="CollisionPolygon2D" parent="InteractiveAreas/RegioLight"]
+polygon = PackedVector2Array(169, 423, 187, 483, 133, 512, 134, 528, 168, 547, 278, 544, 331, 520, 303, 491, 227, 475, 202, 416, 238, 351, 250, 379, 293, 374, 313, 362, 308, 338, 294, 295, 268, 288, 240, 291, 221, 316, 211, 338, 201, 366, 190, 387, 177, 403)
+
+[node name="RegionClock" type="Area2D" parent="InteractiveAreas"]
+
+[node name="collision" type="CollisionShape2D" parent="InteractiveAreas/RegionClock"]
+position = Vector2(177, 149)
+shape = SubResource("CircleShape2D_47xtf")
+
+[node name="RegioPlant" type="Area2D" parent="InteractiveAreas"]
+
+[node name="collision" type="CollisionPolygon2D" parent="InteractiveAreas/RegioPlant"]
+polygon = PackedVector2Array(926, 239, 921, 263, 926, 276, 959, 267, 979, 254, 984, 260, 967, 287, 940, 333, 935, 388, 953, 408, 969, 410, 982, 369, 996, 338, 998, 433, 955, 444, 940, 536, 954, 569, 972, 580, 1066, 573, 1075, 548, 1073, 457, 1068, 438, 1023, 429, 1025, 320, 1039, 342, 1049, 390, 1084, 398, 1083, 362, 1081, 301, 1043, 276, 1030, 272, 1042, 243, 1069, 236, 1087, 255, 1097, 323, 1127, 333, 1160, 328, 1133, 253, 1114, 216, 1083, 198, 1096, 176, 1102, 156, 1073, 154, 1052, 167, 1049, 150, 1051, 116, 1035, 111, 1011, 130, 1006, 163, 1005, 193, 1002, 214, 979, 214, 947, 218)
+
+[node name="PlayerText" type="RichTextLabel" parent="."]
+offset_left = 14.0
+offset_top = 623.0
+offset_right = 1254.0
+offset_bottom = 714.0
+theme = ExtResource("7_c2fcj")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]Aqui serão as frases do jogador"
+
+[connection signal="button_up" from="EmailButton" to="." method="_on_email_button_button_up"]
+[connection signal="input_event" from="InteractiveAreas/RegioLight" to="." method="_on_regio_light_input_event"]
+[connection signal="mouse_entered" from="InteractiveAreas/RegioLight" to="." method="_on_regio_light_mouse_entered"]
