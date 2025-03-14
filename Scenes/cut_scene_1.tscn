@@ -239,27 +239,30 @@ position = Vector2(654, 360)
 texture = ExtResource("6_s2fuk")
 
 [node name="label" type="RichTextLabel" parent="ItensAdd"]
-offset_left = 1047.0
-offset_top = 50.0
-offset_right = 1148.0
-offset_bottom = 214.0
+offset_left = 1026.0
+offset_top = 49.0
+offset_right = 1127.0
+offset_bottom = 184.0
 theme = ExtResource("7_y8wi5")
 bbcode_enabled = true
-text = "[wave]..."
+text = "[wave][center]..."
 scroll_active = false
 
 [node name="jornal" type="RichTextLabel" parent="ItensAdd"]
-offset_left = 594.0
-offset_top = 68.0
-offset_right = 812.0
-offset_bottom = 269.0
+offset_left = 558.0
+offset_top = 63.0
+offset_right = 776.0
+offset_bottom = 264.0
 theme = ExtResource("7_y8wi5")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
-text = "NEUROCORP
-
-
-contratando"
+bbcode_enabled = true
+text = "[center]NEUROCORP
+está
+contratando
+......................... ...
+........  ..  ...  .......
+.......  ....... ..... ....."
 
 [node name="Frame" type="AnimatedSprite2D" parent="."]
 position = Vector2(662, 150)
