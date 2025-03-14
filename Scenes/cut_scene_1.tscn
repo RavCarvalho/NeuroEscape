@@ -1,11 +1,166 @@
-[gd_scene load_steps=4 format=3 uid="uid://eehbpx03apjn"]
+[gd_scene load_steps=18 format=3 uid="uid://eehbpx03apjn"]
+
+[ext_resource type="Texture2D" uid="uid://ccg61dldmefyu" path="res://Assets/Cutscenes/QuadroBack.png" id="1_bq40l"]
+[ext_resource type="Texture2D" uid="uid://dwsi73eme6417" path="res://Assets/Cutscenes/ItenHistory (1).png" id="2_ke0ew"]
+[ext_resource type="Texture2D" uid="uid://c7o5tpiflo7if" path="res://Assets/Cutscenes/ItenHistory (2).png" id="3_y4k4q"]
+[ext_resource type="Texture2D" uid="uid://biqwrckuhd4b1" path="res://Assets/Cutscenes/ItenHistory (3).png" id="4_f7uik"]
+[ext_resource type="Texture2D" uid="uid://hetjjmpw0lgp" path="res://Assets/Cutscenes/ItenHistory(4).png" id="5_tuhqs"]
+[ext_resource type="Texture2D" uid="uid://ctfq0a7qwria3" path="res://Assets/Cutscenes/ItenHistory(5).png" id="6_s2fuk"]
+[ext_resource type="Texture2D" uid="uid://dxlh7p3gdore7" path="res://Assets/Cutscenes/frames (1).png" id="7_ge6a8"]
+[ext_resource type="Theme" uid="uid://dvy6nms1e2bce" path="res://Themes/cut_scene_1.tres" id="7_y8wi5"]
+[ext_resource type="Texture2D" uid="uid://iryi52ernlhk" path="res://Assets/Cutscenes/frames (2).png" id="8_fin4q"]
+[ext_resource type="Texture2D" uid="uid://bj1lbwrbjlm5q" path="res://Assets/Cutscenes/frames (3).png" id="9_6niuq"]
 
 [sub_resource type="Animation" id="Animation_tja5i"]
 resource_name = "Cena1"
 length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItensAdd/ItenHistory(5):self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.36555, 5.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItensAdd/ItenHistory(2):self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6.23333, 9.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItensAdd/ItenHistory(4):self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(9.9, 12.6304),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItensAdd/ItenHistory(3):self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(13.1811, 16.1923),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ItensAdd/ItenHistory(1):self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(16.873, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ItensAdd/label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(9.8, 12.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_o0nvf"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItensAdd/ItenHistory(5):self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItensAdd/ItenHistory(2):self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItensAdd/ItenHistory(4):self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItensAdd/ItenHistory(3):self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ItensAdd/ItenHistory(1):self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ItensAdd/label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_svf3p"]
 _data = {
@@ -13,18 +168,103 @@ _data = {
 "RESET": SubResource("Animation_o0nvf")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3olki"]
+atlas = ExtResource("7_ge6a8")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4t1v"]
+atlas = ExtResource("8_fin4q")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_detga"]
+atlas = ExtResource("9_6niuq")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g47dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3olki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4t1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_detga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="CutScene1" type="Node2D"]
 
 [node name="Secene" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_svf3p")
 }
+autoplay = "Cena1"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 27.0
-offset_top = 20.0
-offset_right = 1264.0
-offset_bottom = 701.0
-color = Color(1, 1, 0.972549, 1)
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 1302.0
+offset_bottom = 724.0
+color = Color(0.920995, 0.920995, 0.920995, 1)
 
 [node name="ItensAdd" type="Node2D" parent="."]
+
+[node name="QuadroBack" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(652, 361)
+texture = ExtResource("1_bq40l")
+
+[node name="ItenHistory(1)" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(654, 360)
+texture = ExtResource("2_ke0ew")
+
+[node name="ItenHistory(2)" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(654, 360)
+texture = ExtResource("3_y4k4q")
+
+[node name="ItenHistory(3)" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(654, 360)
+texture = ExtResource("4_f7uik")
+
+[node name="ItenHistory(4)" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(654, 360)
+texture = ExtResource("5_tuhqs")
+
+[node name="ItenHistory(5)" type="Sprite2D" parent="ItensAdd"]
+position = Vector2(654, 360)
+texture = ExtResource("6_s2fuk")
+
+[node name="label" type="RichTextLabel" parent="ItensAdd"]
+offset_left = 1047.0
+offset_top = 50.0
+offset_right = 1148.0
+offset_bottom = 214.0
+theme = ExtResource("7_y8wi5")
+bbcode_enabled = true
+text = "[wave]..."
+scroll_active = false
+
+[node name="jornal" type="RichTextLabel" parent="ItensAdd"]
+offset_left = 594.0
+offset_top = 68.0
+offset_right = 812.0
+offset_bottom = 269.0
+theme = ExtResource("7_y8wi5")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "NEUROCORP
+
+
+contratando"
+
+[node name="Frame" type="AnimatedSprite2D" parent="."]
+position = Vector2(662, 150)
+scale = Vector2(0.46, 0.46)
+sprite_frames = SubResource("SpriteFrames_g47dd")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0784994
