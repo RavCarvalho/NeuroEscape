@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgusebc6aeqtj" path="res://Assets/Level0/email(3).png" id="4_3igwf"]
 [ext_resource type="Texture2D" uid="uid://cqmuq0tql6sn2" path="res://Assets/Level0/mensage_box.png" id="6_t58bo"]
 [ext_resource type="Theme" uid="uid://dly4egno4kj66" path="res://Themes/label_padrao.tres" id="7_c2fcj"]
-[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/menu/logo.png" id="8_0fml7"]
+[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="8_0fml7"]
 [ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="8_sdrd3"]
 
 [sub_resource type="Gradient" id="Gradient_am5h5"]

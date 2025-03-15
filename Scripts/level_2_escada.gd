@@ -30,3 +30,11 @@ func _on_setaesquerda_button_up() -> void:
 	$"porta escada".visible = false # Replace with function body.
 	$elevador.visible = true
 	
+
+
+func _on_papel_curiosidade_button_up() -> void:
+	$curiosidade.visible = true
+
+
+func _on_texture_button_button_up() -> void:
+	$curiosidade.visible = false # Replace with function body.
