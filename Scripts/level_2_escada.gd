@@ -20,15 +20,18 @@ func _on_voltar_elevador_button_up() -> void:
 
 
 func _on_setadireita_button_up() -> void:
-	$"porta escada".visible = true # Replace with function body.
-	$elevador.visible = false
+	if $aviso.visible == false:
+		$"porta escada".visible = true # Replace with function body.
+		$elevador.visible = false
 
 
 
 
 func _on_setaesquerda_button_up() -> void:
-	$"porta escada".visible = false # Replace with function body.
-	$elevador.visible = true
+	if $curiosidade.visible == false:
+		$"porta escada".visible = false # Replace with function body.
+		$elevador.visible = true
+	
 	
 
 
@@ -38,3 +41,21 @@ func _on_papel_curiosidade_button_up() -> void:
 
 func _on_texture_button_button_up() -> void:
 	$curiosidade.visible = false # Replace with function body.
+
+
+func _on_bau_button_up() -> void:
+	$"porta escada".visible = false
+	$senha.visible = true
+
+
+func _on_fecharsenha_button_up() -> void:
+	$"porta escada".visible = true
+	$senha.visible = false
+
+
+func _on_cadeado_button_up() -> void:
+	$"zoom da porta".visible = true
+
+
+func _on_fechar_zoom_da_porta_button_up() -> void:
+	$"zoom da porta".visible = false
