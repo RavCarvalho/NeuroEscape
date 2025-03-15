@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlywxut30u3jo"]
+
+[ext_resource type="Texture2D" uid="uid://by4r38dp0g51a" path="res://Assets/level2/escadaria.png" id="1_qf651"]
+[ext_resource type="Texture2D" uid="uid://dst4fsf1d464n" path="res://Assets/level2/planta.png" id="2_r8pw8"]
+[ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="3_1826g"]
+[ext_resource type="Texture2D" uid="uid://bu0fgg0djrgoa" path="res://Assets/level2/para cima.png" id="4_dhyvn"]
+[ext_resource type="Texture2D" uid="uid://bkg1mpy41ouvb" path="res://Assets/level2/para baixo.png" id="5_yiicb"]
+
+[node name="Escadaria" type="Node2D"]
+
+[node name="Escadaria" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+texture = ExtResource("1_qf651")
+
+[node name="Planta" type="Sprite2D" parent="."]
+position = Vector2(633, 542)
+scale = Vector2(0.276562, 0.251562)
+texture = ExtResource("2_r8pw8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 794.0
+offset_top = 34.0
+offset_right = 914.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_1826g")
+theme_override_font_sizes/font_size = 45
+text = "Saída"
+
+[node name="paracima" type="TextureButton" parent="."]
+offset_left = 334.0
+offset_top = 96.0
+offset_right = 512.0
+offset_bottom = 272.0
+texture_normal = ExtResource("4_dhyvn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="parabaixo" type="TextureButton" parent="."]
+offset_left = 746.0
+offset_top = 104.0
+offset_right = 914.0
+offset_bottom = 270.0
+texture_normal = ExtResource("5_yiicb")
+ignore_texture_size = true
+stretch_mode = 0
