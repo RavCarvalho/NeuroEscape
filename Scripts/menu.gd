@@ -17,3 +17,7 @@ func _on_button_button_up() -> void:
 
 func _on_sair_button_up() -> void:
 	get_tree().quit()  # Fecha o aplicativo
+
+
+func _on_aceitar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/cut_scene_1.tscn")

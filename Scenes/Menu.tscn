@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ck268fp1u1q3d"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_lqjeu"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_lqjeu"]
 [ext_resource type="Texture2D" uid="uid://cpk3n6hl4e5ge" path="res://Assets/menu/1000215879.jpg" id="1_ohthj"]
 [ext_resource type="Texture2D" uid="uid://dr8g3hfxq1kr2" path="res://Assets/Level0/email (2).png" id="2_pqde5"]
 [ext_resource type="Texture2D" uid="uid://dxa8tbr0gr10h" path="res://Assets/Level0/email (1).png" id="3_7yyxo"]
@@ -139,4 +139,5 @@ theme_override_font_sizes/font_size = 60
 text = "NeuroCorp"
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="email/aceitar" to="." method="_on_aceitar_pressed"]
 [connection signal="button_up" from="email/sair" to="." method="_on_sair_button_up"]
