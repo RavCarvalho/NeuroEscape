@@ -14,16 +14,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(timer_pass.time_left)
-	if timer_pass.time_left == 3:
-		print("faltam 3")
-		$AnimLight.play("ligtht_")
+	pass
 
 
 func _on_email_button_button_up() -> void:
 	if $messaege.visible == false:
 		$messaege.visible = true
 		timer_pass.start(8)
+		$AnimLight.play("ligtht_")
 	else: $messaege.visible =false
 
 

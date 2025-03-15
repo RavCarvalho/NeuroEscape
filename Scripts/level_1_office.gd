@@ -20,11 +20,17 @@ func _on_right_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: 
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			$Drawer_R.visible = true
-			print("apertei aqui ó")
-			
 
 
 func _on_to_open_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton  and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			pass
+		if event.button_index == MOUSE_BUTTON_LEFT and $Drawer_R/drawer_open.visible == false:
+			$Drawer_R/drawer_open.visible = true
+		else: $Drawer_R/Files.visible = true
+		if event.button_index == MOUSE_BUTTON_LEFT and $Drawer_R/Files.visible == true:
+			$Drawer_R/Files/fileOpen.visible =  true
+			$Drawer_R/Files/label.text = "Arq. Confidencial
+
+[center]A Fase 3 foi um sucesso parcial. Os impulsos nervosos responderam ao estímulo, mas a consciência... [i]fragmentou-se. [/i]Precisamos recalibrar a frequência antes da próxima rodada.
+
+[b]Aviso: este documento deve ser destruído após a leitura"
