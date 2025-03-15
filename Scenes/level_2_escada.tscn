@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://nivylymkj8by"]
+[gd_scene load_steps=17 format=3 uid="uid://nivylymkj8by"]
 
 [ext_resource type="Script" path="res://Scripts/level_2_escada.gd" id="1_meh1w"]
 [ext_resource type="Texture2D" uid="uid://xn0jdmfkfdd8" path="res://Assets/level2/elevador.png" id="2_pfo2s"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://j51gei8c62d6" path="res://Assets/level2/folha com 3.png" id="7_m1d11"]
 [ext_resource type="Texture2D" uid="uid://cv75bji1k3fv8" path="res://Assets/level2/folha com 2.png" id="8_34768"]
 [ext_resource type="Texture2D" uid="uid://bwpd87a5f7053" path="res://Assets/level2/bau.png" id="9_5l7gt"]
+[ext_resource type="Texture2D" uid="uid://byb5d6tavjmh1" path="res://Assets/level2/papelcuriosidade.png" id="10_2f7y0"]
 [ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="11_7tpbn"]
-[ext_resource type="Texture2D" uid="uid://2ytt1ahmy2gu" path="res://Assets/fechar email.png" id="12_kg3fk"]
+[ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="11_hogrm"]
 [ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="13_m3c72"]
+[ext_resource type="Texture2D" uid="uid://bdcvamq8uoce7" path="res://Assets/level2/papel aberto.png" id="14_g6snl"]
+[ext_resource type="Texture2D" uid="uid://blbknlybrdqt0" path="res://Assets/level2/experimento.png" id="15_6ceo5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iq81"]
 size = Vector2(194, 278)
@@ -20,6 +23,7 @@ size = Vector2(194, 278)
 script = ExtResource("1_meh1w")
 
 [node name="elevador" type="Node2D" parent="."]
+visible = false
 
 [node name="Elevador" type="Sprite2D" parent="elevador"]
 position = Vector2(642, 364)
@@ -64,26 +68,20 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="porta escada" type="Node2D" parent="."]
-visible = false
 
 [node name="PortaEscada" type="Sprite2D" parent="porta escada"]
 position = Vector2(642, 364)
 texture = ExtResource("6_7al28")
 
 [node name="FolhaCom3" type="Sprite2D" parent="porta escada"]
-position = Vector2(399, 530)
+position = Vector2(417, 526)
 scale = Vector2(0.217969, 0.226172)
 texture = ExtResource("7_m1d11")
 
 [node name="FolhaCom2" type="Sprite2D" parent="porta escada"]
-position = Vector2(967, 496)
+position = Vector2(923, 491)
 scale = Vector2(0.247656, 0.252734)
 texture = ExtResource("8_34768")
-
-[node name="Bau" type="Sprite2D" parent="porta escada"]
-position = Vector2(1118, 637)
-scale = Vector2(0.495098, 0.409366)
-texture = ExtResource("9_5l7gt")
 
 [node name="setaesquerda" type="TextureButton" parent="porta escada"]
 offset_left = 11.0
@@ -95,10 +93,32 @@ ignore_texture_size = true
 stretch_mode = 0
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="porta escada"]
+[node name="Papel curiosidade" type="TextureButton" parent="porta escada"]
+offset_left = 320.0
+offset_top = 614.0
+offset_right = 374.0
+offset_bottom = 656.0
+texture_normal = ExtResource("10_2f7y0")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="porta escada/Area2D"]
-polygon = PackedVector2Array(1047, 588, 1028, 675, 1028, 625, 1205, 629, 1207, 682, 1105, 693, 1029, 672, 1182, 598, 1123, 577, 1066, 575)
+[node name="Bau" type="TextureButton" parent="porta escada"]
+offset_left = 966.0
+offset_top = 511.0
+offset_right = 1170.0
+offset_bottom = 679.0
+texture_normal = ExtResource("9_5l7gt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="cadeado" type="TextureButton" parent="porta escada"]
+offset_left = 505.0
+offset_top = 371.0
+offset_right = 584.0
+offset_bottom = 431.0
+texture_normal = ExtResource("11_hogrm")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="aviso" type="Node2D" parent="."]
 visible = false
@@ -122,11 +142,10 @@ text = "Lembrete: Cuide bem
 ps: NeuroCorp"
 
 [node name="voltar elevador" type="TextureButton" parent="aviso"]
-offset_left = 800.0
-offset_top = 111.0
-offset_right = 877.0
-offset_bottom = 183.0
-texture_normal = ExtResource("12_kg3fk")
+offset_left = 956.0
+offset_top = 275.0
+offset_right = 1022.0
+offset_bottom = 367.0
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -135,7 +154,48 @@ position = Vector2(806, 406)
 scale = Vector2(0.134078, 0.165771)
 texture = ExtResource("13_m3c72")
 
+[node name="curiosidade" type="Node2D" parent="."]
+visible = false
+
+[node name="PapelAberto" type="Sprite2D" parent="curiosidade"]
+position = Vector2(647, 400)
+scale = Vector2(1.56915, 1.62838)
+texture = ExtResource("14_g6snl")
+
+[node name="TextureButton" type="TextureButton" parent="curiosidade"]
+offset_left = 324.0
+offset_top = 610.0
+offset_right = 364.0
+offset_bottom = 650.0
+
+[node name="Experimento" type="Sprite2D" parent="curiosidade"]
+position = Vector2(590, 552.594)
+scale = Vector2(0.163574, 0.163428)
+texture = ExtResource("15_6ceo5")
+
+[node name="Label" type="Label" parent="curiosidade"]
+offset_left = 415.0
+offset_top = 181.0
+offset_right = 852.0
+offset_bottom = 477.0
+rotation = -0.156892
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_7tpbn")
+theme_override_font_sizes/font_size = 32
+text = "\"Resultado do protocolo passado: 
+Foi verificada a inconsistência dos 
+resultados dos dados obtidos pela 
+biópsia frontal da região pineal. 
+Devido a isso, é importante 
+alterar a região de estudo para o 
+córtex pré-frontal\""
+
+[node name="senha" type="Node2D" parent="."]
+visible = false
+
 [connection signal="button_up" from="elevador/prancheta" to="." method="_on_prancheta_button_up"]
 [connection signal="button_up" from="elevador/Setadireita" to="." method="_on_setadireita_button_up"]
 [connection signal="button_up" from="porta escada/setaesquerda" to="." method="_on_setaesquerda_button_up"]
+[connection signal="button_up" from="porta escada/Papel curiosidade" to="." method="_on_papel_curiosidade_button_up"]
 [connection signal="button_up" from="aviso/voltar elevador" to="." method="_on_voltar_elevador_button_up"]
+[connection signal="button_up" from="curiosidade/TextureButton" to="." method="_on_texture_button_button_up"]
