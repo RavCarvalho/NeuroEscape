@@ -59,6 +59,7 @@ position = Vector2(640, 360)
 texture = ExtResource("3_jj47q")
 
 [node name="drawer_open" type="Sprite2D" parent="Drawer_R"]
+visible = false
 position = Vector2(640, 360)
 texture = ExtResource("4_ci5dg")
 
@@ -77,7 +78,6 @@ scale = Vector2(1.23247, 1.45274)
 texture = ExtResource("6_8c5y5")
 
 [node name="label" type="RichTextLabel" parent="Drawer_R/Files"]
-visible = false
 offset_left = 321.0
 offset_top = 194.0
 offset_right = 537.0
@@ -88,11 +88,6 @@ theme_override_fonts/normal_font = ExtResource("7_gpsc1")
 theme_override_fonts/italics_font = ExtResource("8_c6tbs")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "Arq. Confidencial
-
-[center]A Fase 3 foi um sucesso parcial. Os impulsos nervosos responderam ao estímulo, mas a consciência... [i]fragmentou-se. [/i]Precisamos recalibrar a frequência antes da próxima rodada.
-
-[b]Aviso: este documento deve ser destruído após a leitura"
 shortcut_keys_enabled = false
 
 [node name="to_open" type="Area2D" parent="Drawer_R"]
@@ -130,7 +125,7 @@ polygon = PackedVector2Array(250, 286, 249, 325, 296, 325, 295, 287)
 [node name="estante" type="Area2D" parent="InteractiveAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/estante"]
-polygon = PackedVector2Array(234, 416, 236, 88, 376, 146, 415, 135, 83, 5, 2, 1, -1, 465)
+polygon = PackedVector2Array(234, 416, 236, 88, 376, 146, 415, 135, 331, 96, 334, 49, 200, 11, 194, 39, 82, -3, 2, 1, -1, 465)
 
 [node name="window" type="Area2D" parent="InteractiveAreas"]
 

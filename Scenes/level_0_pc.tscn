@@ -11,23 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="8_0fml7"]
 [ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="8_sdrd3"]
 
-[sub_resource type="Animation" id="Animation_xpbt5"]
-resource_name = "ligtht_"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Back:material:shader_parameter/active")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.1, 0.233333, 0.333333, 0.433333, 0.566667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_w8ons"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_xpbt5"]
+resource_name = "ligtht_"
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,10 +24,10 @@ tracks/0/path = NodePath("Back:material:shader_parameter/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.0333333, 6.9, 7, 7.1, 7.2, 7.33333, 7.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true, false, true, false, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kexua"]
@@ -50,7 +39,7 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6nui4"]
 resource_local_to_scene = true
 shader = ExtResource("2_x8wh6")
-shader_parameter/active = true
+shader_parameter/active = false
 
 [sub_resource type="Gradient" id="Gradient_am5h5"]
 offsets = PackedFloat32Array(0, 0.994444)
