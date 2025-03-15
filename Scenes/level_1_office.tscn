@@ -1,33 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbinxo2kovma1"]
+[gd_scene load_steps=14 format=3 uid="uid://cbinxo2kovma1"]
 
+[ext_resource type="Script" path="res://Scripts/level_1_office.gd" id="1_ekuqs"]
+[ext_resource type="Texture2D" uid="uid://csrewajvh3ni7" path="res://Assets/level1/office_level1.png" id="1_msbmh"]
 [ext_resource type="Shader" path="res://Themes/hit_flash.gdshader" id="1_uunvn"]
-[ext_resource type="Texture2D" uid="uid://dllk1fkji2pa1" path="res://Assets/resolution_img.jpeg" id="2_o7wv0"]
+[ext_resource type="Texture2D" uid="uid://boliirqq3dik7" path="res://Assets/level1/drawe_closed.png" id="3_jj47q"]
+[ext_resource type="Texture2D" uid="uid://d2kldvc3joi5n" path="res://Assets/level1/drawer_open.png" id="4_ci5dg"]
+[ext_resource type="Texture2D" uid="uid://db7ajgc8eolm3" path="res://Assets/level1/file_closed.png" id="5_7h3wp"]
+[ext_resource type="Texture2D" uid="uid://bnr46fb643ilq" path="res://Assets/level1/file_open.png" id="6_8c5y5"]
+[ext_resource type="FontFile" uid="uid://p4qsrcsc6153" path="res://Assets/Fontes/machine/JMH Typewriter-Bold.otf" id="7_gpsc1"]
+[ext_resource type="FontFile" uid="uid://s168630nkooq" path="res://Assets/Fontes/machine_macabro_bold/Mom«t___.ttf" id="8_c6tbs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
+shader = ExtResource("1_uunvn")
+shader_parameter/active = false
 
 [sub_resource type="Animation" id="Animation_dqxqv"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ResolutionImg:material:shader_parameter/active")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_56gyg"]
 resource_name = "higth_flash"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ResolutionImg:material:shader_parameter/active")
+tracks/0/path = NodePath("OfficeLevel1:material:shader_parameter/active")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.433333, 0.533333, 0.666667, 0.766667),
+"times": PackedFloat32Array(0.0666667, 0.333333, 0.433333, 0.566667, 0.666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false]
@@ -39,18 +38,109 @@ _data = {
 "higth_flash": SubResource("Animation_56gyg")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4uom"]
-shader = ExtResource("1_uunvn")
-shader_parameter/active = true
-
 [node name="Level1_Office" type="Node2D"]
+script = ExtResource("1_ekuqs")
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="OfficeLevel1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ynurn")
+position = Vector2(640, 360)
+texture = ExtResource("1_msbmh")
+
+[node name="anim_ligth" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bvljc")
 }
 
-[node name="ResolutionImg" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_i4uom")
-position = Vector2(641, 360)
-texture = ExtResource("2_o7wv0")
+[node name="Drawer_R" type="Node2D" parent="."]
+visible = false
+
+[node name="drawer_closed" type="Sprite2D" parent="Drawer_R"]
+position = Vector2(640, 360)
+texture = ExtResource("3_jj47q")
+
+[node name="drawer_open" type="Sprite2D" parent="Drawer_R"]
+position = Vector2(640, 360)
+texture = ExtResource("4_ci5dg")
+
+[node name="Files" type="Node2D" parent="Drawer_R"]
+visible = false
+
+[node name="fileClosed" type="Sprite2D" parent="Drawer_R/Files"]
+position = Vector2(629, 343)
+scale = Vector2(1.41377, 1.35167)
+texture = ExtResource("5_7h3wp")
+
+[node name="fileOpen" type="Sprite2D" parent="Drawer_R/Files"]
+visible = false
+position = Vector2(616, 315)
+scale = Vector2(1.23247, 1.45274)
+texture = ExtResource("6_8c5y5")
+
+[node name="label" type="RichTextLabel" parent="Drawer_R/Files"]
+visible = false
+offset_left = 321.0
+offset_top = 194.0
+offset_right = 537.0
+offset_bottom = 569.0
+rotation = -0.145101
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_gpsc1")
+theme_override_fonts/italics_font = ExtResource("8_c6tbs")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Arq. Confidencial
+
+[center]A Fase 3 foi um sucesso parcial. Os impulsos nervosos responderam ao estímulo, mas a consciência... [i]fragmentou-se. [/i]Precisamos recalibrar a frequência antes da próxima rodada.
+
+[b]Aviso: este documento deve ser destruído após a leitura"
+shortcut_keys_enabled = false
+
+[node name="to_open" type="Area2D" parent="Drawer_R"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drawer_R/to_open"]
+polygon = PackedVector2Array(359, 262, 408, 436, 845, 437, 911, 266)
+
+[node name="lockeds" type="Area2D" parent="Drawer_R"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drawer_R/lockeds"]
+polygon = PackedVector2Array(401, 442, 461, 673, 740, 674, 838, 444)
+
+[node name="InteractiveAreas" type="Node2D" parent="."]
+
+[node name="right_drawer" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/right_drawer"]
+polygon = PackedVector2Array(965, 550, 962, 718, 1260, 721, 1261, 564)
+
+[node name="left_drawer" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/left_drawer"]
+polygon = PackedVector2Array(0, 494, 161, 509, 219, 516, 261, 716, 160, 722, -1, 722)
+
+[node name="door" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/door"]
+polygon = PackedVector2Array(308, 419, 308, 151, 434, 185, 438, 423)
+
+[node name="door_tranca" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/door_tranca"]
+polygon = PackedVector2Array(250, 286, 249, 325, 296, 325, 295, 287)
+
+[node name="estante" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/estante"]
+polygon = PackedVector2Array(234, 416, 236, 88, 376, 146, 415, 135, 83, 5, 2, 1, -1, 465)
+
+[node name="window" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/window"]
+polygon = PackedVector2Array(462, 275, 465, 81, 1184, 37, 1184, 353, 675, 356, 679, 266)
+
+[node name="coffee" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/coffee"]
+polygon = PackedVector2Array(942, 453, 940, 506, 951, 510, 971, 510, 988, 507, 993, 503, 995, 451, 983, 445, 964, 444, 949, 447)
+
+[connection signal="input_event" from="Drawer_R/to_open" to="." method="_on_to_open_input_event"]
+[connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]

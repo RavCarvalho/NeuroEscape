@@ -2,6 +2,7 @@ extends Node2D
 @onready var email_button = get_node("EmailButton")
 @onready var player_text = get_node("PlayerText")
 @onready var timer_node = get_node("TimertoText")
+@onready var timer_pass = get_node("TimerToChange")
 
 #@TODO tornar timertotext global
 var frases : Array = ["[center]Como o tempo voa!", "[center]Trouxe de casa. Ela não parece bem aqui."]
@@ -13,12 +14,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print(timer_pass.time_left)
+	if timer_pass.time_left == 3:
+		print("faltam 3")
+		$AnimLight.play("ligtht_")
 
 
 func _on_email_button_button_up() -> void:
 	if $messaege.visible == false:
 		$messaege.visible = true
+		timer_pass.start(8)
 	else: $messaege.visible =false
 
 
@@ -48,3 +53,8 @@ func interactive_with_text(event, id, time):
 
 func _on_timerto_text_timeout() -> void:
 	player_text.text = " "
+
+
+func _on_timer_to_change_timeout() -> void:
+	get_tree().change_scene_to_file("res://Scenes/level_1_office.tscn")
+	#@TODO mudar para cena 2 inves de level1
