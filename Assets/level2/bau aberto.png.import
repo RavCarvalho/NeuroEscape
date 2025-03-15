@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j3m2atclah1u"
-path="res://.godot/imported/logo.png-84885a47958f00882099bc786b93a9be.ctex"
+uid="uid://e4fq0ikbwxq8"
+path="res://.godot/imported/bau aberto.png-d97a7dc2469f5666462454f45f06cf1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/logo.png"
-dest_files=["res://.godot/imported/logo.png-84885a47958f00882099bc786b93a9be.ctex"]
+source_file="res://Assets/level2/bau aberto.png"
+dest_files=["res://.godot/imported/bau aberto.png-d97a7dc2469f5666462454f45f06cf1c.ctex"]
 
 [params]
 

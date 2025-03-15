@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://ck268fp1u1q3d"]
+[gd_scene load_steps=15 format=3 uid="uid://ck268fp1u1q3d"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_lqjeu"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_lqjeu"]
 [ext_resource type="Texture2D" uid="uid://cpk3n6hl4e5ge" path="res://Assets/menu/1000215879.jpg" id="1_ohthj"]
 [ext_resource type="Texture2D" uid="uid://dr8g3hfxq1kr2" path="res://Assets/Level0/email (2).png" id="2_pqde5"]
 [ext_resource type="Texture2D" uid="uid://dxa8tbr0gr10h" path="res://Assets/Level0/email (1).png" id="3_7yyxo"]
+[ext_resource type="Texture2D" uid="uid://d1h437vhrfhwy" path="res://Assets/menu/tutorial.png" id="5_6urww"]
 [ext_resource type="Texture2D" uid="uid://ddoa5eyh2h2no" path="res://Assets/menu/mensagem.png" id="5_kmfp2"]
-[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/menu/logo.png" id="6_fy67g"]
+[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="6_fy67g"]
 [ext_resource type="Texture2D" uid="uid://ykkv5rxt1cvo" path="res://Assets/menu/butao.png" id="7_k2x78"]
 [ext_resource type="Texture2D" uid="uid://c5fpo0vsr8pfs" path="res://Assets/menu/butaoescuro.png" id="8_juno0"]
 [ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="8_s20ko"]
 [ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="9_fnmni"]
+[ext_resource type="Texture2D" uid="uid://2ytt1ahmy2gu" path="res://Assets/fechar email.png" id="12_4tbut"]
+[ext_resource type="Texture2D" uid="uid://dxt6afjfq7c3d" path="res://Assets/menu/folha tutorial.png" id="13_n5yq2"]
 
 [sub_resource type="Theme" id="Theme_dv1r0"]
 
@@ -36,6 +39,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_fnmni")
 theme_override_font_sizes/font_size = 60
 text = "NeuroCorp"
+
+[node name="tutorial" type="TextureButton" parent="."]
+offset_left = 1153.0
+offset_top = 21.0
+offset_right = 1238.0
+offset_bottom = 95.0
+texture_normal = ExtResource("5_6urww")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button" type="TextureButton" parent="."]
 offset_left = 383.0
@@ -138,5 +150,52 @@ theme_override_fonts/font = ExtResource("9_fnmni")
 theme_override_font_sizes/font_size = 60
 text = "NeuroCorp"
 
+[node name="fecharEmail" type="TextureButton" parent="email"]
+offset_left = 973.0
+offset_top = 48.0
+offset_right = 1036.0
+offset_bottom = 105.0
+texture_normal = ExtResource("12_4tbut")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="tutorial2" type="Node2D" parent="."]
+visible = false
+
+[node name="FolhaTutorial" type="Sprite2D" parent="tutorial2"]
+position = Vector2(645, 365)
+scale = Vector2(1.24141, 1.10347)
+texture = ExtResource("13_n5yq2")
+
+[node name="fechartutorial" type="TextureButton" parent="tutorial2"]
+offset_left = 1166.0
+offset_top = 17.0
+offset_right = 1234.0
+offset_bottom = 79.0
+texture_normal = ExtResource("12_4tbut")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="tutorial2"]
+offset_left = 139.0
+offset_top = 95.0
+offset_right = 1241.0
+offset_bottom = 552.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_s20ko")
+theme_override_font_sizes/font_size = 80
+text = "Para iniciar o jogo você deve aceitar
+a proposta de emprego e interagir 
+com o ambiente para desvendar os 
+mistérios da  empresa NeuroCorp."
+
+[node name="Logo" type="Sprite2D" parent="tutorial2"]
+position = Vector2(655, 590)
+scale = Vector2(0.357193, 0.321237)
+texture = ExtResource("6_fy67g")
+
+[connection signal="button_up" from="tutorial" to="." method="_on_tutorial_button_up"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="email/sair" to="." method="_on_sair_button_up"]
+[connection signal="button_up" from="email/fecharEmail" to="." method="_on_fechar_email_button_up"]
+[connection signal="button_up" from="tutorial2/fechartutorial" to="." method="_on_fechartutorial_button_up"]
