@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="1_v6262"]
 
 [resource]
+default_font = ExtResource("1_v6262")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 23
 Label/fonts/font = ExtResource("1_v6262")

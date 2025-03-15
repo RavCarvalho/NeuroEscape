@@ -196,6 +196,7 @@ texture = ExtResource("6_fy67g")
 
 [connection signal="button_up" from="tutorial" to="." method="_on_tutorial_button_up"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="email/aceitar" to="." method="_on_aceitar_pressed"]
 [connection signal="button_up" from="email/sair" to="." method="_on_sair_button_up"]
 [connection signal="button_up" from="email/fecharEmail" to="." method="_on_fechar_email_button_up"]
 [connection signal="button_up" from="tutorial2/fechartutorial" to="." method="_on_fechartutorial_button_up"]

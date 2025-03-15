@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7j04i1ihos1m"]
+[gd_scene load_steps=13 format=3 uid="uid://b7j04i1ihos1m"]
 
 [ext_resource type="Texture2D" uid="uid://yp5qvinat3gi" path="res://Assets/Level0/office_level0.png" id="1_2o3d6"]
 [ext_resource type="Script" path="res://Scripts/level_0_pc.gd" id="1_6the2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bgusebc6aeqtj" path="res://Assets/Level0/email(3).png" id="4_3igwf"]
 [ext_resource type="Texture2D" uid="uid://cqmuq0tql6sn2" path="res://Assets/Level0/mensage_box.png" id="6_t58bo"]
 [ext_resource type="Theme" uid="uid://dly4egno4kj66" path="res://Themes/label_padrao.tres" id="7_c2fcj"]
+[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/menu/logo.png" id="8_0fml7"]
+[ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="8_sdrd3"]
 
 [sub_resource type="Gradient" id="Gradient_am5h5"]
 offsets = PackedFloat32Array(0, 0.994444)
@@ -56,6 +58,11 @@ Em breve iniciaremos o
  protocolo. Aguarde as 
     próximas ordens."
 
+[node name="Logo" type="Sprite2D" parent="messaege"]
+position = Vector2(691, 148)
+scale = Vector2(0.074595, 0.0787464)
+texture = ExtResource("8_0fml7")
+
 [node name="light" type="Polygon2D" parent="."]
 visible = false
 color = Color(1, 1, 1, 0.356863)
@@ -81,15 +88,20 @@ shape = SubResource("CircleShape2D_47xtf")
 polygon = PackedVector2Array(926, 239, 921, 263, 926, 276, 959, 267, 979, 254, 984, 260, 967, 287, 940, 333, 935, 388, 953, 408, 969, 410, 982, 369, 996, 338, 998, 433, 955, 444, 940, 536, 954, 569, 972, 580, 1066, 573, 1075, 548, 1073, 457, 1068, 438, 1023, 429, 1025, 320, 1039, 342, 1049, 390, 1084, 398, 1083, 362, 1081, 301, 1043, 276, 1030, 272, 1042, 243, 1069, 236, 1087, 255, 1097, 323, 1127, 333, 1160, 328, 1133, 253, 1114, 216, 1083, 198, 1096, 176, 1102, 156, 1073, 154, 1052, 167, 1049, 150, 1051, 116, 1035, 111, 1011, 130, 1006, 163, 1005, 193, 1002, 214, 979, 214, 947, 218)
 
 [node name="PlayerText" type="RichTextLabel" parent="."]
-offset_left = 14.0
-offset_top = 623.0
-offset_right = 1254.0
-offset_bottom = 714.0
-theme = ExtResource("7_c2fcj")
+offset_left = 13.0
+offset_top = 631.0
+offset_right = 1253.0
+offset_bottom = 722.0
+theme_override_fonts/normal_font = ExtResource("8_sdrd3")
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "[center]Aqui serão as frases do jogador"
 
+[node name="TimertoText" type="Timer" parent="."]
+
 [connection signal="button_up" from="EmailButton" to="." method="_on_email_button_button_up"]
 [connection signal="input_event" from="InteractiveAreas/RegioLight" to="." method="_on_regio_light_input_event"]
 [connection signal="mouse_entered" from="InteractiveAreas/RegioLight" to="." method="_on_regio_light_mouse_entered"]
+[connection signal="input_event" from="InteractiveAreas/RegionClock" to="." method="_on_region_clock_input_event"]
+[connection signal="input_event" from="InteractiveAreas/RegioPlant" to="." method="_on_regio_plant_input_event"]
+[connection signal="timeout" from="TimertoText" to="." method="_on_timerto_text_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://eehbpx03apjn"]
+[gd_scene load_steps=19 format=3 uid="uid://eehbpx03apjn"]
 
 [ext_resource type="Texture2D" uid="uid://ccg61dldmefyu" path="res://Assets/Cutscenes/QuadroBack.png" id="1_bq40l"]
+[ext_resource type="Script" path="res://Scripts/cut_scene_1.gd" id="1_j56t5"]
 [ext_resource type="Texture2D" uid="uid://dwsi73eme6417" path="res://Assets/Cutscenes/ItenHistory (1).png" id="2_ke0ew"]
 [ext_resource type="Texture2D" uid="uid://c7o5tpiflo7if" path="res://Assets/Cutscenes/ItenHistory (2).png" id="3_y4k4q"]
 [ext_resource type="Texture2D" uid="uid://biqwrckuhd4b1" path="res://Assets/Cutscenes/ItenHistory (3).png" id="4_f7uik"]
@@ -21,7 +22,7 @@ tracks/0/path = NodePath("ItensAdd/ItenHistory(5):self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.36555, 5.43333),
+"times": PackedFloat32Array(2.36555, 5.53333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -33,7 +34,7 @@ tracks/1/path = NodePath("ItensAdd/ItenHistory(2):self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(6.23333, 9.23333),
+"times": PackedFloat32Array(6.1, 9.23333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -198,6 +199,7 @@ animations = [{
 }]
 
 [node name="CutScene1" type="Node2D"]
+script = ExtResource("1_j56t5")
 
 [node name="Secene" type="AnimationPlayer" parent="."]
 libraries = {
@@ -271,3 +273,5 @@ sprite_frames = SubResource("SpriteFrames_g47dd")
 autoplay = "default"
 frame = 2
 frame_progress = 0.0784994
+
+[connection signal="animation_finished" from="Secene" to="." method="_on_secene_animation_finished"]
