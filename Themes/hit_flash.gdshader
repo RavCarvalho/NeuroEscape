@@ -4,7 +4,7 @@ uniform bool active = false;
 
 void fragment() {
 	vec4 previous_color = texture(TEXTURE, UV);
-	vec4 black_color = vec4(0.0, 0.0, 0.0, previous_color.a);
+	vec4 black_color = vec4(0.0, 0.0, 0.0, 0.5);
 	vec4 new_color = previous_color;
 	if (active == true)
 	{
