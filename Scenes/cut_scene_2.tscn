@@ -1,0 +1,203 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5mv4vovatenl"]
+
+[ext_resource type="Texture2D" uid="uid://t3qsmrxy6xc6" path="res://Assets/Cutscenes/frame_cut2 (2).png" id="1_r384c"]
+[ext_resource type="Script" path="res://Scripts/cut_scene_2.gd" id="1_t8ksd"]
+[ext_resource type="Texture2D" uid="uid://qb2mvk7qqoq7" path="res://Assets/Cutscenes/frame_cut2 (1).png" id="2_6lat2"]
+[ext_resource type="Texture2D" uid="uid://dapw25vcxodbx" path="res://Assets/Cutscenes/frame_cut2 (3).png" id="3_20j17"]
+[ext_resource type="Texture2D" uid="uid://c1btg6kopxu0j" path="res://Assets/Cutscenes/frame_cut2 (4).png" id="4_hk1ue"]
+[ext_resource type="Texture2D" uid="uid://cky4epa0cyolm" path="res://Assets/Cutscenes/frame_cut2 (5).png" id="5_aqdwt"]
+
+[sub_resource type="Animation" id="Animation_0hc2t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Itens_add/FrameCut2(2):self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Itens_add/FrameCut2(5):self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Itens_add/FrameCut2(4):self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Itens_add/FrameCut2(1):self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Itens_add/FrameCut2(3):self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e1k2j"]
+resource_name = "scene"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Itens_add/FrameCut2(2):self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 2.3, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Itens_add/FrameCut2(5):self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.16667, 5.66667, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Itens_add/FrameCut2(4):self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6.6, 9.16667, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Itens_add/FrameCut2(1):position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(13.3667, 14.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2000, 360), Vector2(640, 360)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Itens_add/FrameCut2(1):self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(13.4333, 14.9667, 22, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Itens_add/FrameCut2(3):position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(16.7, 17.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 360), Vector2(640, 360)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Itens_add/FrameCut2(3):self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(16.6667, 18.6667, 22, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vieh5"]
+_data = {
+"RESET": SubResource("Animation_0hc2t"),
+"scene": SubResource("Animation_e1k2j")
+}
+
+[node name="cut_scene2" type="Node2D"]
+script = ExtResource("1_t8ksd")
+
+[node name="Color_back" type="ColorRect" parent="."]
+offset_right = 1283.0
+offset_bottom = 713.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vieh5")
+}
+autoplay = "scene"
+
+[node name="Itens_add" type="Node2D" parent="."]
+
+[node name="FrameCut2(2)" type="Sprite2D" parent="Itens_add"]
+position = Vector2(640, 360)
+texture = ExtResource("1_r384c")
+
+[node name="FrameCut2(1)" type="Sprite2D" parent="Itens_add"]
+position = Vector2(2000, 360)
+texture = ExtResource("2_6lat2")
+
+[node name="FrameCut2(3)" type="Sprite2D" parent="Itens_add"]
+position = Vector2(1280, 360)
+texture = ExtResource("3_20j17")
+
+[node name="FrameCut2(4)" type="Sprite2D" parent="Itens_add"]
+position = Vector2(650, 360)
+texture = ExtResource("4_hk1ue")
+
+[node name="FrameCut2(5)" type="Sprite2D" parent="Itens_add"]
+position = Vector2(640, 360)
+texture = ExtResource("5_aqdwt")
+
+[connection signal="animation_finished" from="Scene" to="." method="_on_scene_animation_finished"]

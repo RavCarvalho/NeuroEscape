@@ -8,13 +8,14 @@ extends Node2D
 var frases : Array = ["[center]Como o tempo voa!", "[center]Trouxe de casa. Ela não parece bem aqui."]
 
 func _ready() -> void:
-	player_text.text = " "
+	player_text.text = ""
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	player_text.visible = player_text.text != ""
+
 
 
 func _on_email_button_button_up() -> void:
@@ -50,9 +51,9 @@ func interactive_with_text(event, id, time):
 
 
 func _on_timerto_text_timeout() -> void:
-	player_text.text = " "
+	player_text.text = ""
 
 
 func _on_timer_to_change_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_1_office.tscn")
+	get_tree().change_scene_to_file("res://Scenes/cut_scene_2.tscn")
 	#@TODO mudar para cena 2 inves de level1

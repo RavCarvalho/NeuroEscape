@@ -212,7 +212,7 @@ offset_left = 8.0
 offset_top = -3.0
 offset_right = 1302.0
 offset_bottom = 724.0
-color = Color(0.920995, 0.920995, 0.920995, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="ItensAdd" type="Node2D" parent="."]
 

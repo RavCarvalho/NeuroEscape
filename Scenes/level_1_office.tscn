@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbinxo2kovma1"]
+[gd_scene load_steps=15 format=3 uid="uid://cbinxo2kovma1"]
 
 [ext_resource type="Script" path="res://Scripts/level_1_office.gd" id="1_ekuqs"]
 [ext_resource type="Texture2D" uid="uid://csrewajvh3ni7" path="res://Assets/level1/office_level1.png" id="1_msbmh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bnr46fb643ilq" path="res://Assets/level1/file_open.png" id="6_8c5y5"]
 [ext_resource type="FontFile" uid="uid://p4qsrcsc6153" path="res://Assets/Fontes/machine/JMH Typewriter-Bold.otf" id="7_gpsc1"]
 [ext_resource type="FontFile" uid="uid://s168630nkooq" path="res://Assets/Fontes/machine_macabro_bold/Mom«t___.ttf" id="8_c6tbs"]
+[ext_resource type="Theme" uid="uid://dm14ee3gun48n" path="res://Themes/padrao_fala.tres" id="10_hyp4e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
 shader = ExtResource("1_uunvn")
@@ -137,5 +138,22 @@ polygon = PackedVector2Array(462, 275, 465, 81, 1184, 37, 1184, 353, 675, 356, 6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/coffee"]
 polygon = PackedVector2Array(942, 453, 940, 506, 951, 510, 971, 510, 988, 507, 993, 503, 995, 451, 983, 445, 964, 444, 949, 447)
 
+[node name="TimerText" type="Timer" parent="."]
+
+[node name="PlayerText" type="RichTextLabel" parent="."]
+offset_left = 16.0
+offset_top = 611.0
+offset_right = 1252.0
+offset_bottom = 711.0
+theme = ExtResource("10_hyp4e")
+bbcode_enabled = true
+text = "[center]Frase do Jogador"
+
 [connection signal="input_event" from="Drawer_R/to_open" to="." method="_on_to_open_input_event"]
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
+[connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
+[connection signal="input_event" from="InteractiveAreas/door" to="." method="_on_door_input_event"]
+[connection signal="input_event" from="InteractiveAreas/estante" to="." method="_on_estante_input_event"]
+[connection signal="input_event" from="InteractiveAreas/window" to="." method="_on_window_input_event"]
+[connection signal="input_event" from="InteractiveAreas/coffee" to="." method="_on_coffee_input_event"]
+[connection signal="timeout" from="TimerText" to="." method="_on_timer_text_timeout"]
