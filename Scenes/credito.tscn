@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk3b5t5t5mllg"]
+
+[ext_resource type="Texture2D" uid="uid://cqgthb6tph5e" path="res://Assets/tela final/tela branca.jpg" id="1_8ox2s"]
+[ext_resource type="Script" path="res://Scripts/credito.gd" id="1_aeny0"]
+[ext_resource type="Texture2D" uid="uid://dxt6afjfq7c3d" path="res://Assets/menu/folha tutorial.png" id="2_ujhcq"]
+[ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="3_ria4j"]
+[ext_resource type="Texture2D" uid="uid://bmaseimqeciml" path="res://Assets/tela final/1000086543.png" id="5_gjb0l"]
+[ext_resource type="Texture2D" uid="uid://bjr4o17ipvdra" path="res://Assets/tela final/equipe.png" id="6_n0ydq"]
+
+[node name="Credito" type="Node2D"]
+script = ExtResource("1_aeny0")
+
+[node name="TelaBranca" type="Sprite2D" parent="."]
+position = Vector2(639.5, 360)
+scale = Vector2(4.25667, 3.61)
+texture = ExtResource("1_8ox2s")
+
+[node name="FolhaTutorial" type="Sprite2D" parent="."]
+position = Vector2(629, 372)
+scale = Vector2(1.20625, 1.09583)
+texture = ExtResource("2_ujhcq")
+
+[node name="obrigada" type="Label" parent="."]
+offset_left = 84.0
+offset_top = 122.0
+offset_right = 1207.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ria4j")
+theme_override_font_sizes/font_size = 148
+text = "Obrigado por jogar!"
+
+[node name="S_K_A_R_" type="Label" parent="."]
+offset_left = 377.0
+offset_top = 304.0
+offset_right = 903.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ria4j")
+theme_override_font_sizes/font_size = 200
+text = "S.K.A.R."
+
+[node name="bolinha" type="Sprite2D" parent="."]
+position = Vector2(330, 395)
+scale = Vector2(0.47027, 0.54375)
+texture = ExtResource("5_gjb0l")
+
+[node name="1000086543" type="Sprite2D" parent="."]
+position = Vector2(972, 394)
+scale = Vector2(0.47027, 0.525)
+texture = ExtResource("5_gjb0l")
+
+[node name="Equipe" type="Sprite2D" parent="."]
+position = Vector2(609.25, 586.25)
+scale = Vector2(0.855405, 0.820313)
+texture = ExtResource("6_n0ydq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

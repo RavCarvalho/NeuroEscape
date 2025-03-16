@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://1sn1kuago4ma"]
+
+[ext_resource type="Script" path="res://Scripts/tela_final.gd" id="1_r77yq"]
+[ext_resource type="Texture2D" uid="uid://cqgthb6tph5e" path="res://Assets/tela final/tela branca.jpg" id="2_cqqm2"]
+[ext_resource type="Texture2D" uid="uid://ddoa5eyh2h2no" path="res://Assets/menu/mensagem.png" id="3_d8d3o"]
+[ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="4_t4ik8"]
+[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="5_4ad5m"]
+[ext_resource type="Texture2D" uid="uid://ykkv5rxt1cvo" path="res://Assets/menu/butao.png" id="6_n2tbl"]
+[ext_resource type="Texture2D" uid="uid://c5fpo0vsr8pfs" path="res://Assets/menu/butaoescuro.png" id="7_fd8a5"]
+
+[node name="TelaFinal" type="Node2D"]
+script = ExtResource("1_r77yq")
+
+[node name="TelaBranca" type="Sprite2D" parent="."]
+position = Vector2(643, 358)
+scale = Vector2(4.28, 3.595)
+texture = ExtResource("2_cqqm2")
+
+[node name="Mensagem" type="Sprite2D" parent="."]
+position = Vector2(670, 371)
+texture = ExtResource("3_d8d3o")
+
+[node name="NeuroCorp" type="Label" parent="."]
+offset_left = 236.0
+offset_top = 56.0
+offset_right = 453.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t4ik8")
+theme_override_font_sizes/font_size = 55
+text = "NeuroCorp"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(524, 76)
+scale = Vector2(0.118715, 0.111111)
+texture = ExtResource("5_4ad5m")
+
+[node name="jogar novamente" type="Label" parent="."]
+offset_left = 249.0
+offset_top = 207.0
+offset_right = 991.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t4ik8")
+theme_override_font_sizes/font_size = 109
+text = "Jogar Novamente?"
+
+[node name="sim" type="TextureButton" parent="."]
+offset_left = 263.0
+offset_top = 415.0
+offset_right = 560.0
+offset_bottom = 512.0
+texture_normal = ExtResource("6_n2tbl")
+texture_hover = ExtResource("7_fd8a5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="sim"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 11.0
+offset_right = 219.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t4ik8")
+theme_override_font_sizes/font_size = 90
+text = "Sim"
+
+[node name="não" type="TextureButton" parent="."]
+offset_left = 663.0
+offset_top = 411.0
+offset_right = 960.0
+offset_bottom = 508.0
+texture_normal = ExtResource("6_n2tbl")
+texture_hover = ExtResource("7_fd8a5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="não"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 13.0
+offset_right = 210.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t4ik8")
+theme_override_font_sizes/font_size = 90
+text = "Não"
+
+[connection signal="button_up" from="sim" to="." method="_on_sim_button_up"]
+[connection signal="button_up" from="não" to="." method="_on_não_button_up"]
