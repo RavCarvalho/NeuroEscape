@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/base/Global.gd"
 
+inventario="*res://Scripts/inventário.gd"
+Save="*res://Scripts/Save.gd"
+
+
 [display]
 
 window/size/viewport_width=1280
