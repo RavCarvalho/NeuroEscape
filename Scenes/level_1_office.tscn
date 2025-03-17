@@ -1,14 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbinxo2kovma1"]
+[gd_scene load_steps=9 format=3 uid="uid://cbinxo2kovma1"]
 
 [ext_resource type="Script" path="res://Scripts/level_1_office.gd" id="1_ekuqs"]
 [ext_resource type="Texture2D" uid="uid://csrewajvh3ni7" path="res://Assets/level1/office_level1.png" id="1_msbmh"]
 [ext_resource type="Shader" path="res://Themes/hit_flash.gdshader" id="1_uunvn"]
-[ext_resource type="Texture2D" uid="uid://boliirqq3dik7" path="res://Assets/level1/drawe_closed.png" id="3_jj47q"]
-[ext_resource type="Texture2D" uid="uid://d2kldvc3joi5n" path="res://Assets/level1/drawer_open.png" id="4_ci5dg"]
-[ext_resource type="Texture2D" uid="uid://db7ajgc8eolm3" path="res://Assets/level1/file_closed.png" id="5_7h3wp"]
-[ext_resource type="Texture2D" uid="uid://bnr46fb643ilq" path="res://Assets/level1/file_open.png" id="6_8c5y5"]
-[ext_resource type="FontFile" uid="uid://p4qsrcsc6153" path="res://Assets/Fontes/machine/JMH Typewriter-Bold.otf" id="7_gpsc1"]
-[ext_resource type="FontFile" uid="uid://s168630nkooq" path="res://Assets/Fontes/machine_macabro_bold/Mom«t___.ttf" id="8_c6tbs"]
 [ext_resource type="Theme" uid="uid://dm14ee3gun48n" path="res://Themes/padrao_fala.tres" id="10_hyp4e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
@@ -51,55 +45,6 @@ texture = ExtResource("1_msbmh")
 libraries = {
 "": SubResource("AnimationLibrary_bvljc")
 }
-
-[node name="Drawer_R" type="Node2D" parent="."]
-visible = false
-
-[node name="drawer_closed" type="Sprite2D" parent="Drawer_R"]
-position = Vector2(640, 360)
-texture = ExtResource("3_jj47q")
-
-[node name="drawer_open" type="Sprite2D" parent="Drawer_R"]
-visible = false
-position = Vector2(640, 360)
-texture = ExtResource("4_ci5dg")
-
-[node name="Files" type="Node2D" parent="Drawer_R"]
-visible = false
-
-[node name="fileClosed" type="Sprite2D" parent="Drawer_R/Files"]
-position = Vector2(629, 343)
-scale = Vector2(1.41377, 1.35167)
-texture = ExtResource("5_7h3wp")
-
-[node name="fileOpen" type="Sprite2D" parent="Drawer_R/Files"]
-visible = false
-position = Vector2(616, 315)
-scale = Vector2(1.23247, 1.45274)
-texture = ExtResource("6_8c5y5")
-
-[node name="label" type="RichTextLabel" parent="Drawer_R/Files"]
-offset_left = 321.0
-offset_top = 194.0
-offset_right = 537.0
-offset_bottom = 569.0
-rotation = -0.145101
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_gpsc1")
-theme_override_fonts/italics_font = ExtResource("8_c6tbs")
-theme_override_font_sizes/normal_font_size = 17
-bbcode_enabled = true
-shortcut_keys_enabled = false
-
-[node name="to_open" type="Area2D" parent="Drawer_R"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drawer_R/to_open"]
-polygon = PackedVector2Array(359, 262, 408, 436, 845, 437, 911, 266)
-
-[node name="lockeds" type="Area2D" parent="Drawer_R"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drawer_R/lockeds"]
-polygon = PackedVector2Array(401, 442, 461, 673, 740, 674, 838, 444)
 
 [node name="InteractiveAreas" type="Node2D" parent="."]
 
@@ -149,10 +94,10 @@ theme = ExtResource("10_hyp4e")
 bbcode_enabled = true
 text = "[center]Frase do Jogador"
 
-[connection signal="input_event" from="Drawer_R/to_open" to="." method="_on_to_open_input_event"]
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/door" to="." method="_on_door_input_event"]
+[connection signal="input_event" from="InteractiveAreas/door_tranca" to="." method="_on_door_tranca_input_event"]
 [connection signal="input_event" from="InteractiveAreas/estante" to="." method="_on_estante_input_event"]
 [connection signal="input_event" from="InteractiveAreas/window" to="." method="_on_window_input_event"]
 [connection signal="input_event" from="InteractiveAreas/coffee" to="." method="_on_coffee_input_event"]
