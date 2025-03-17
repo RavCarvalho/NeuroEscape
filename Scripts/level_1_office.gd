@@ -7,50 +7,29 @@ var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso co
 #@TODO colocar gaveta em outra cena
 @onready var timer_txt = get_node("TimerText")
 @onready var player_text = get_node("PlayerText")
-
 func _ready() -> void:
 	player_text.text = frases[interactve_with.empty]
 
 
 func _process(delta: float) -> void:
+#	Para esconder quadro de texto
 	player_text.visible = player_text.text != ""
 	#ajust_text_size()
 
-
+#Isso era pra ajustar o tamanho da fonte dentro do quadro de texto, não está funcionando ainda
 func ajust_text_size():
 	pass
 	#player_text.normal_font_size = 45
 	#while player_text.get_minimum_size().y > 100 and player_text.normal_font_size > 20:
 		#player_text.normal_font_size -= 1
 
+#Colocar texto em certa duração de acordo com o iten interagido
 func interactive_iten_text(event, id, time):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
 			timer_txt.start(time)
 
-
-
-func _on_right_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	var zoom_drawer = get_node("Drawer_R").visible
-	if event is InputEventMouseButton  and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			$Drawer_R.visible = true
-
-
-func _on_to_open_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton  and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT and $Drawer_R/drawer_open.visible == false:
-			$Drawer_R/drawer_open.visible = true
-		else: $Drawer_R/Files.visible = true
-		#Mudar isso aq tudo, tta uma bosta
-		if event.button_index == MOUSE_BUTTON_LEFT and $Drawer_R/Files.visible == true:
-			$Drawer_R/Files/fileOpen.visible =  true
-			$Drawer_R/Files/label.text = "Arq. Confidencial
-
-[center]A Fase 3 foi um sucesso parcial. Os impulsos nervosos responderam ao estímulo, mas a consciência... [i]fragmentou-se. [/i]Precisamos recalibrar a frequência antes da próxima rodada.
-
-[b]Aviso: este documento deve ser destruído após a leitura"
 
 
 func _on_left_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -75,3 +54,15 @@ func _on_window_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 
 func _on_coffee_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	interactive_iten_text(event, interactve_with.coffee, 3)
+
+#Muda para gaveta em zoom
+func _on_right_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			get_tree().change_scene_to_file("res://Scenes/base/drawer_level_1.tscn")
+
+#Muda prar imagem da tranca para colocar a senha
+func _on_door_tranca_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			get_tree().change_scene_to_file("res://Scenes/base/tranca_level_1.tscn")
