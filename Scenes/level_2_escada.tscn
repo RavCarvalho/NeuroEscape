@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nivylymkj8by"]
+[gd_scene load_steps=22 format=3 uid="uid://nivylymkj8by"]
 
 [ext_resource type="Script" path="res://Scripts/level_2_escada.gd" id="1_meh1w"]
 [ext_resource type="Texture2D" uid="uid://xn0jdmfkfdd8" path="res://Assets/level2/elevador.png" id="2_pfo2s"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://duimc46e7g4g" path="res://Assets/level2/senha bau.png" id="16_m42ob"]
 [ext_resource type="Texture2D" uid="uid://2ytt1ahmy2gu" path="res://Assets/fechar email.png" id="17_7cg81"]
 [ext_resource type="Texture2D" uid="uid://cun8cpajs8la0" path="res://Assets/level2/zoom porta escada.png" id="18_gw0a4"]
+[ext_resource type="Theme" uid="uid://dm14ee3gun48n" path="res://Themes/padrao_fala.tres" id="19_5u07n"]
+[ext_resource type="FontFile" uid="uid://i3i6iacv2cyb" path="res://Assets/Fontes/escrita_starlita/Starlita.otf" id="19_y11ng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iq81"]
 size = Vector2(194, 278)
@@ -25,47 +27,40 @@ size = Vector2(194, 278)
 [node name="Level2Escada" type="Node2D"]
 script = ExtResource("1_meh1w")
 
-[node name="elevador" type="Node2D" parent="."]
+[node name="BackScenario" type="Node2D" parent="."]
 
-[node name="Elevador" type="Sprite2D" parent="elevador"]
+[node name="BackElevator" type="Sprite2D" parent="BackScenario"]
 position = Vector2(642, 364)
 texture = ExtResource("2_pfo2s")
 
-[node name="Planta" type="Sprite2D" parent="elevador"]
+[node name="Planta" type="Sprite2D" parent="BackScenario"]
 position = Vector2(351, 516)
 scale = Vector2(0.155078, 0.152539)
 texture = ExtResource("3_g0jwb")
 
-[node name="prancheta" type="TextureButton" parent="elevador"]
+[node name="InteractveAreas" type="Node2D" parent="."]
+
+[node name="regiaoelevador" type="Area2D" parent="InteractveAreas"]
+position = Vector2(672, 389)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractveAreas/regiaoelevador"]
+position = Vector2(-8, -5)
+shape = SubResource("RectangleShape2D_4iq81")
+
+[node name="portas" type="Area2D" parent="InteractveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractveAreas/portas"]
+polygon = PackedVector2Array(1086, 209, 1167, 175, 1175, 450, 1110, 460, 1110, 580, 1090, 591)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InteractveAreas/portas"]
+polygon = PackedVector2Array(159, 185, 242, 218, 253, 601, 215, 647, 212, 455, 155, 448)
+
+[node name="prancheta" type="TextureButton" parent="InteractveAreas"]
 offset_left = 950.0
 offset_top = 269.0
 offset_right = 1032.0
 offset_bottom = 366.0
 texture_normal = ExtResource("4_sk5kg")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="regiaoelevador" type="Area2D" parent="elevador"]
-position = Vector2(672, 389)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="elevador/regiaoelevador"]
-position = Vector2(-8, -5)
-shape = SubResource("RectangleShape2D_4iq81")
-
-[node name="portas" type="Area2D" parent="elevador"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="elevador/portas"]
-polygon = PackedVector2Array(1086, 209, 1167, 175, 1175, 450, 1110, 460, 1110, 580, 1090, 591)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="elevador/portas"]
-polygon = PackedVector2Array(159, 185, 242, 218, 253, 601, 215, 647, 212, 455, 155, 448)
-
-[node name="Setadireita" type="TextureButton" parent="elevador"]
-offset_left = 1152.0
-offset_top = 608.0
-offset_right = 1275.0
-offset_bottom = 729.0
-texture_normal = ExtResource("5_jv0xp")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -130,19 +125,6 @@ visible = false
 position = Vector2(662, 341)
 scale = Vector2(0.561914, 0.513477)
 texture = ExtResource("4_sk5kg")
-
-[node name="Label" type="Label" parent="aviso"]
-offset_left = 479.0
-offset_top = 201.0
-offset_right = 840.0
-offset_bottom = 549.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_7tpbn")
-theme_override_font_sizes/font_size = 50
-text = "Lembrete: Cuide bem
- das plantas!
-
-ps: NeuroCorp"
 
 [node name="voltar elevador" type="TextureButton" parent="aviso"]
 offset_left = 956.0
@@ -233,8 +215,44 @@ texture_normal = ExtResource("17_7cg81")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="button_up" from="elevador/prancheta" to="." method="_on_prancheta_button_up"]
-[connection signal="button_up" from="elevador/Setadireita" to="." method="_on_setadireita_button_up"]
+[node name="Setadireita" type="TextureButton" parent="."]
+offset_left = 1152.0
+offset_top = 608.0
+offset_right = 1275.0
+offset_bottom = 729.0
+texture_normal = ExtResource("5_jv0xp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimerTxt" type="Timer" parent="."]
+
+[node name="Prancheta" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+
+[node name="info-prancheta" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 199.0
+offset_right = 832.0
+offset_bottom = 547.0
+rotation = -0.0396164
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_y11ng")
+theme_override_font_sizes/font_size = 60
+text = "ereffeefefefe"
+
+[node name="PlayerText" type="RichTextLabel" parent="."]
+offset_left = 16.0
+offset_top = 630.0
+offset_right = 1269.0
+offset_bottom = 715.0
+theme = ExtResource("19_5u07n")
+bbcode_enabled = true
+text = "[center]frase player"
+
+[connection signal="input_event" from="InteractveAreas/regiaoelevador" to="." method="_on_regiaoelevador_input_event"]
+[connection signal="input_event" from="InteractveAreas/portas" to="." method="_on_portas_input_event"]
+[connection signal="pressed" from="InteractveAreas/prancheta" to="." method="_on_prancheta_pressed"]
 [connection signal="button_up" from="porta escada/setaesquerda" to="." method="_on_setaesquerda_button_up"]
 [connection signal="button_up" from="porta escada/Papel curiosidade" to="." method="_on_papel_curiosidade_button_up"]
 [connection signal="button_up" from="porta escada/Bau" to="." method="_on_bau_button_up"]
@@ -243,3 +261,5 @@ stretch_mode = 0
 [connection signal="button_up" from="curiosidade/TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="senha/fecharsenha" to="." method="_on_fecharsenha_button_up"]
 [connection signal="button_up" from="zoom da porta/fechar zoom da porta" to="." method="_on_fechar_zoom_da_porta_button_up"]
+[connection signal="button_up" from="Setadireita" to="." method="_on_setadireita_button_up"]
+[connection signal="timeout" from="TimerTxt" to="." method="_on_timer_txt_timeout"]
