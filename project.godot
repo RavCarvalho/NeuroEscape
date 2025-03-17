@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+inventario="*res://Scripts/inventário.gd"
+Save="*res://Scripts/Save.gd"
+
 [display]
 
 window/size/viewport_width=1280
