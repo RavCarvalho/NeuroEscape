@@ -41,7 +41,15 @@ func _on_timer_text_timeout() -> void:
 
 
 func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	interactive_iten_text(event, interactve_with.door, 3)
+	#Sair se sennha estiver  correta
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if Global.senha_correta == false:
+				player_text.text = frases[interactve_with.door]
+				timer_txt.start(3)
+			else: 
+				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
+				Global.senha_correta = false
 
 
 func _on_estante_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

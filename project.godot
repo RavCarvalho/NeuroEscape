@@ -17,8 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://Scripts/base/Global.gd"
+
 inventario="*res://Scripts/inventário.gd"
 Save="*res://Scripts/Save.gd"
+
 
 [display]
 

@@ -2,11 +2,13 @@ extends Node2D
 
 var senha_tranca = "1972"
 #@TODO: quando pegar o commit colocar var senha correta = true/false pra saber se passa pra proxima cena
-var senha_correta = false
 @onready var text_node : TextEdit = get_node("TextEdit")
 @onready var player_text : RichTextLabel = get_node("textPlayer")
-var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era só isso?!"]
+var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era  isso?!"]
 enum estado{errado, correto}
+var txt_filtrado = ""
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -14,10 +16,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	player_text.visible = player_text.text != ""
 	
+	
 	if Input.is_action_just_pressed("entrar") : 
 		if senha_tranca == text_node.text:
 			estado_tranca(estado.correto, 3)
-			senha_correta = true #isso vai sair mna, é teste -> barulho de tranca abrindo colocar
+			Global.senha_correta = true # é teste -> barulho de tranca abrindo colocar
 		else: estado_tranca(estado.errado, 2)
 		text_node.text = ""
 
@@ -33,6 +36,7 @@ func _on_text_edit_lines_edited_from(from_line: int, to_line: int) -> void:
 	#for char in text_node.text:
 		#if char.is_valid_int():
 			#text_node.text += char
+	#Limita a 4 caracteres
 	if text_node.text.length() > 4:
 		text_node.text = text_node.text.left(4)
 	#text_node.text = txt_filtrado
@@ -46,6 +50,6 @@ func _on_voltar_button_up() -> void:
 
 func _on_timer_txt_timeout() -> void:
 	player_text.text = ""
-	if senha_correta == true:
+	if Global.senha_correta == true:
 #		@TODO não deixar mais entrar nessa cena se senha (quando for global) estiver correta
 		get_tree().change_scene_to_file("res://Scenes/level_1_office.tscn")
