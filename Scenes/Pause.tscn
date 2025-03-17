@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvo10y2b6jual"]
+
+[ext_resource type="Script" path="res://Scripts/pause.gd" id="1_u8jbn"]
+[ext_resource type="Texture2D" uid="uid://ddoa5eyh2h2no" path="res://Assets/menu/mensagem.png" id="2_15ues"]
+[ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="3_ewnnv"]
+[ext_resource type="Texture2D" uid="uid://ykkv5rxt1cvo" path="res://Assets/menu/butao.png" id="4_qhfq6"]
+[ext_resource type="Texture2D" uid="uid://c5fpo0vsr8pfs" path="res://Assets/menu/butaoescuro.png" id="5_l1on1"]
+
+[node name="Control" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_u8jbn")
+
+[node name="Mensagem" type="Sprite2D" parent="."]
+position = Vector2(657, 352)
+scale = Vector2(0.62793, 0.751736)
+texture = ExtResource("2_15ues")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 427.0
+offset_top = 186.0
+offset_right = 845.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ewnnv")
+theme_override_font_sizes/font_size = 60
+text = "O que deseja fazer?"
+
+[node name="Continuar" type="TextureButton" parent="."]
+offset_left = 458.0
+offset_top = 305.0
+offset_right = 808.0
+offset_bottom = 400.0
+texture_normal = ExtResource("4_qhfq6")
+texture_hover = ExtResource("5_l1on1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Continuar"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 8.0
+offset_right = 289.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ewnnv")
+theme_override_font_sizes/font_size = 65
+text = "Continuar"
+
+[node name="Sair" type="TextureButton" parent="."]
+offset_left = 461.0
+offset_top = 404.0
+offset_right = 809.0
+offset_bottom = 492.0
+texture_normal = ExtResource("4_qhfq6")
+texture_hover = ExtResource("5_l1on1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Sair"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 7.0
+offset_right = 250.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ewnnv")
+theme_override_font_sizes/font_size = 65
+text = "Sair"
+
+[connection signal="button_up" from="Continuar" to="." method="_on_continuar_button_up"]
+[connection signal="button_up" from="Sair" to="." method="_on_sair_button_up"]
