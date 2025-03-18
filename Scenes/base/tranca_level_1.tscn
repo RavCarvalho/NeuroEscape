@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfw08nc8uaa1f" path="res://Assets/level1/tranca.png" id="2_ld60n"]
 [ext_resource type="Theme" uid="uid://bkukbt3r70wyy" path="res://Themes/padrao_digital.tres" id="3_ltwno"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="4_5cy50"]
-[ext_resource type="Theme" uid="uid://dm14ee3gun48n" path="res://Themes/padrao_fala.tres" id="5_0fa0i"]
+[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="5_8ygjr"]
 
 [node name="tranca_level1" type="Node2D"]
 script = ExtResource("1_qu4h4")
@@ -33,15 +33,9 @@ ignore_texture_size = true
 stretch_mode = 0
 flip_h = true
 
-[node name="textPlayer" type="RichTextLabel" parent="."]
-offset_left = 18.0
-offset_top = 613.0
-offset_right = 1260.0
-offset_bottom = 710.0
-theme = ExtResource("5_0fa0i")
-bbcode_enabled = true
-
 [node name="TimerTxt" type="Timer" parent="."]
+
+[node name="PlayerText" parent="." instance=ExtResource("5_8ygjr")]
 
 [connection signal="lines_edited_from" from="TextEdit" to="." method="_on_text_edit_lines_edited_from"]
 [connection signal="button_up" from="voltar" to="." method="_on_voltar_button_up"]

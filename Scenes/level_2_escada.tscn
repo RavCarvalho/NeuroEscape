@@ -1,25 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://nivylymkj8by"]
+[gd_scene load_steps=10 format=3 uid="uid://nivylymkj8by"]
 
 [ext_resource type="Script" path="res://Scripts/level_2_escada.gd" id="1_meh1w"]
 [ext_resource type="Texture2D" uid="uid://xn0jdmfkfdd8" path="res://Assets/level2/elevador.png" id="2_pfo2s"]
 [ext_resource type="Texture2D" uid="uid://dst4fsf1d464n" path="res://Assets/level2/planta.png" id="3_g0jwb"]
 [ext_resource type="Texture2D" uid="uid://clvrgqassoy5v" path="res://Assets/level2/prancheta de aviso.png" id="4_sk5kg"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="5_jv0xp"]
-[ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="6_7al28"]
-[ext_resource type="Texture2D" uid="uid://j51gei8c62d6" path="res://Assets/level2/folha com 3.png" id="7_m1d11"]
 [ext_resource type="Texture2D" uid="uid://cv75bji1k3fv8" path="res://Assets/level2/folha com 2.png" id="8_34768"]
-[ext_resource type="Texture2D" uid="uid://bwpd87a5f7053" path="res://Assets/level2/bau.png" id="9_5l7gt"]
-[ext_resource type="Texture2D" uid="uid://byb5d6tavjmh1" path="res://Assets/level2/papelcuriosidade.png" id="10_2f7y0"]
-[ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="11_7tpbn"]
-[ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="11_hogrm"]
-[ext_resource type="Texture2D" uid="uid://j3m2atclah1u" path="res://Assets/logo.png" id="13_m3c72"]
-[ext_resource type="Texture2D" uid="uid://bdcvamq8uoce7" path="res://Assets/level2/papel aberto.png" id="14_g6snl"]
-[ext_resource type="Texture2D" uid="uid://blbknlybrdqt0" path="res://Assets/level2/experimento.png" id="15_6ceo5"]
-[ext_resource type="Texture2D" uid="uid://duimc46e7g4g" path="res://Assets/level2/senha bau.png" id="16_m42ob"]
-[ext_resource type="Texture2D" uid="uid://2ytt1ahmy2gu" path="res://Assets/fechar email.png" id="17_7cg81"]
-[ext_resource type="Texture2D" uid="uid://cun8cpajs8la0" path="res://Assets/level2/zoom porta escada.png" id="18_gw0a4"]
-[ext_resource type="Theme" uid="uid://dm14ee3gun48n" path="res://Themes/padrao_fala.tres" id="19_5u07n"]
 [ext_resource type="FontFile" uid="uid://i3i6iacv2cyb" path="res://Assets/Fontes/escrita_starlita/Starlita.otf" id="19_y11ng"]
+[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="21_dilex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iq81"]
 size = Vector2(194, 278)
@@ -34,9 +22,14 @@ position = Vector2(642, 364)
 texture = ExtResource("2_pfo2s")
 
 [node name="Planta" type="Sprite2D" parent="BackScenario"]
-position = Vector2(351, 516)
-scale = Vector2(0.155078, 0.152539)
+position = Vector2(1005.88, 511.312)
+scale = Vector2(0.167383, 0.177051)
 texture = ExtResource("3_g0jwb")
+
+[node name="FolhaCom4" type="Sprite2D" parent="BackScenario"]
+position = Vector2(349.9, 492.638)
+scale = Vector2(0.189219, 0.186934)
+texture = ExtResource("8_34768")
 
 [node name="InteractveAreas" type="Node2D" parent="."]
 
@@ -64,157 +57,6 @@ texture_normal = ExtResource("4_sk5kg")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="porta escada" type="Node2D" parent="."]
-visible = false
-
-[node name="PortaEscada" type="Sprite2D" parent="porta escada"]
-position = Vector2(642, 364)
-texture = ExtResource("6_7al28")
-
-[node name="FolhaCom3" type="Sprite2D" parent="porta escada"]
-position = Vector2(417, 526)
-scale = Vector2(0.217969, 0.226172)
-texture = ExtResource("7_m1d11")
-
-[node name="FolhaCom2" type="Sprite2D" parent="porta escada"]
-position = Vector2(923, 491)
-scale = Vector2(0.247656, 0.252734)
-texture = ExtResource("8_34768")
-
-[node name="setaesquerda" type="TextureButton" parent="porta escada"]
-offset_left = 11.0
-offset_top = 611.0
-offset_right = 156.0
-offset_bottom = 726.0
-texture_normal = ExtResource("5_jv0xp")
-ignore_texture_size = true
-stretch_mode = 0
-flip_h = true
-
-[node name="Papel curiosidade" type="TextureButton" parent="porta escada"]
-offset_left = 320.0
-offset_top = 614.0
-offset_right = 374.0
-offset_bottom = 656.0
-texture_normal = ExtResource("10_2f7y0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Bau" type="TextureButton" parent="porta escada"]
-offset_left = 966.0
-offset_top = 511.0
-offset_right = 1170.0
-offset_bottom = 679.0
-texture_normal = ExtResource("9_5l7gt")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="cadeado" type="TextureButton" parent="porta escada"]
-offset_left = 505.0
-offset_top = 371.0
-offset_right = 584.0
-offset_bottom = 431.0
-texture_normal = ExtResource("11_hogrm")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="aviso" type="Node2D" parent="."]
-visible = false
-
-[node name="PranchetaDeAviso" type="Sprite2D" parent="aviso"]
-position = Vector2(662, 341)
-scale = Vector2(0.561914, 0.513477)
-texture = ExtResource("4_sk5kg")
-
-[node name="voltar elevador" type="TextureButton" parent="aviso"]
-offset_left = 956.0
-offset_top = 275.0
-offset_right = 1022.0
-offset_bottom = 367.0
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Logo" type="Sprite2D" parent="aviso"]
-position = Vector2(806, 406)
-scale = Vector2(0.134078, 0.165771)
-texture = ExtResource("13_m3c72")
-
-[node name="curiosidade" type="Node2D" parent="."]
-visible = false
-
-[node name="PapelAberto" type="Sprite2D" parent="curiosidade"]
-position = Vector2(647, 400)
-scale = Vector2(1.56915, 1.62838)
-texture = ExtResource("14_g6snl")
-
-[node name="TextureButton" type="TextureButton" parent="curiosidade"]
-offset_left = 324.0
-offset_top = 610.0
-offset_right = 364.0
-offset_bottom = 650.0
-
-[node name="Experimento" type="Sprite2D" parent="curiosidade"]
-position = Vector2(590, 552.594)
-scale = Vector2(0.163574, 0.163428)
-texture = ExtResource("15_6ceo5")
-
-[node name="Label" type="Label" parent="curiosidade"]
-offset_left = 415.0
-offset_top = 181.0
-offset_right = 852.0
-offset_bottom = 477.0
-rotation = -0.156892
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_7tpbn")
-theme_override_font_sizes/font_size = 32
-text = "\"Resultado do protocolo passado: 
-Foi verificada a inconsistência dos 
-resultados dos dados obtidos pela 
-biópsia frontal da região pineal. 
-Devido a isso, é importante 
-alterar a região de estudo para o 
-córtex pré-frontal\""
-
-[node name="senha" type="Node2D" parent="."]
-visible = false
-
-[node name="SenhaBau" type="Sprite2D" parent="senha"]
-position = Vector2(643, 363)
-texture = ExtResource("16_m42ob")
-
-[node name="fecharsenha" type="TextureButton" parent="senha"]
-offset_left = 1220.0
-offset_top = 33.0
-offset_right = 1272.0
-offset_bottom = 81.0
-texture_normal = ExtResource("17_7cg81")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="zoom da porta" type="Node2D" parent="."]
-visible = false
-position = Vector2(505, 371)
-
-[node name="ZoomPortaEscada" type="Sprite2D" parent="zoom da porta"]
-position = Vector2(136, -6)
-rotation = 0.00122363
-texture = ExtResource("18_gw0a4")
-
-[node name="Cadeado" type="Sprite2D" parent="zoom da porta"]
-position = Vector2(-145, 110)
-scale = Vector2(0.199805, 0.178125)
-texture = ExtResource("11_hogrm")
-
-[node name="fechar zoom da porta" type="TextureButton" parent="zoom da porta"]
-offset_left = 727.0
-offset_top = -360.0
-offset_right = 767.0
-offset_bottom = -320.0
-rotation = 0.0130188
-texture_normal = ExtResource("17_7cg81")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="Setadireita" type="TextureButton" parent="."]
 offset_left = 1152.0
 offset_top = 608.0
@@ -223,8 +65,6 @@ offset_bottom = 729.0
 texture_normal = ExtResource("5_jv0xp")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="TimerTxt" type="Timer" parent="."]
 
 [node name="Prancheta" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -239,27 +79,10 @@ rotation = -0.0396164
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("19_y11ng")
 theme_override_font_sizes/font_size = 60
-text = "ereffeefefefe"
 
-[node name="PlayerText" type="RichTextLabel" parent="."]
-offset_left = 16.0
-offset_top = 630.0
-offset_right = 1269.0
-offset_bottom = 715.0
-theme = ExtResource("19_5u07n")
-bbcode_enabled = true
-text = "[center]frase player"
+[node name="PlayerText" parent="." instance=ExtResource("21_dilex")]
 
 [connection signal="input_event" from="InteractveAreas/regiaoelevador" to="." method="_on_regiaoelevador_input_event"]
 [connection signal="input_event" from="InteractveAreas/portas" to="." method="_on_portas_input_event"]
 [connection signal="pressed" from="InteractveAreas/prancheta" to="." method="_on_prancheta_pressed"]
-[connection signal="button_up" from="porta escada/setaesquerda" to="." method="_on_setaesquerda_button_up"]
-[connection signal="button_up" from="porta escada/Papel curiosidade" to="." method="_on_papel_curiosidade_button_up"]
-[connection signal="button_up" from="porta escada/Bau" to="." method="_on_bau_button_up"]
-[connection signal="button_up" from="porta escada/cadeado" to="." method="_on_cadeado_button_up"]
-[connection signal="button_up" from="aviso/voltar elevador" to="." method="_on_voltar_elevador_button_up"]
-[connection signal="button_up" from="curiosidade/TextureButton" to="." method="_on_texture_button_button_up"]
-[connection signal="button_up" from="senha/fecharsenha" to="." method="_on_fecharsenha_button_up"]
-[connection signal="button_up" from="zoom da porta/fechar zoom da porta" to="." method="_on_fechar_zoom_da_porta_button_up"]
 [connection signal="button_up" from="Setadireita" to="." method="_on_setadireita_button_up"]
-[connection signal="timeout" from="TimerTxt" to="." method="_on_timer_txt_timeout"]

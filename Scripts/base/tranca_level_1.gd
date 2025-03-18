@@ -3,7 +3,7 @@ extends Node2D
 var senha_tranca = "1972"
 #@TODO: quando pegar o commit colocar var senha correta = true/false pra saber se passa pra proxima cena
 @onready var text_node : TextEdit = get_node("TextEdit")
-@onready var player_text : RichTextLabel = get_node("textPlayer")
+@onready var player_text : RichTextLabel = get_node("PlayerText/text")
 var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era  isso?!"]
 enum estado{errado, correto}
 var txt_filtrado = ""
@@ -14,7 +14,7 @@ func _ready() -> void:
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	player_text.visible = player_text.text != ""
+	pass
 	
 	
 	if Input.is_action_just_pressed("entrar") : 

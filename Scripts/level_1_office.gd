@@ -5,15 +5,14 @@ var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso co
 "[center]Alguns livros e troféus da empresa. Eles são bem renomados.", "[center]O clima está agradável lá fora, diferente daqui...",
  "[center]Está vazia. O chefe proibiu café na empresa..."]
 #@TODO colocar gaveta em outra cena
-@onready var timer_txt = get_node("TimerText")
-@onready var player_text = get_node("PlayerText")
+@onready var _timer = get_node("PlayerText/Timer")
+@onready var player_text = get_node("PlayerText/text")
 func _ready() -> void:
 	player_text.text = frases[interactve_with.empty]
 
 
 func _process(delta: float) -> void:
-#	Para esconder quadro de texto
-	player_text.visible = player_text.text != ""
+	pass
 	#ajust_text_size()
 
 #Isso era pra ajustar o tamanho da fonte dentro do quadro de texto, não está funcionando ainda
@@ -28,16 +27,13 @@ func interactive_iten_text(event, id, time):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
-			timer_txt.start(time)
+			_timer.start(time)
 
 
 
 func _on_left_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	interactive_iten_text(event, interactve_with.l_drawer, 2)
 
-
-func _on_timer_text_timeout() -> void:
-	player_text.text = frases[interactve_with.empty]
 
 
 func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -46,7 +42,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if Global.senha_correta == false:
 				player_text.text = frases[interactve_with.door]
-				timer_txt.start(3)
+				_timer.start(3)
 			else: 
 				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
 				Global.senha_correta = false
