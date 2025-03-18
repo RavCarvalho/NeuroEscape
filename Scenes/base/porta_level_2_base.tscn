@@ -52,7 +52,6 @@ position = Vector2(640, 360)
 texture = ExtResource("1_d3pdq")
 
 [node name="FolhaCom2" type="Sprite2D" parent="BackScenario"]
-visible = false
 position = Vector2(891, 493)
 scale = Vector2(0.23125, 0.225)
 texture = ExtResource("2_htehd")
@@ -197,6 +196,13 @@ position = Vector2(331, 516)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("5_bxwk5")
 
+[node name="door" type="Button" parent="AditionalItens/door"]
+offset_left = 323.0
+offset_top = -5.0
+offset_right = 1023.0
+offset_bottom = 724.0
+flat = true
+
 [node name="left" type="TextureButton" parent="."]
 offset_left = 1.0
 offset_top = 638.0
@@ -213,4 +219,5 @@ flip_h = true
 [connection signal="button_down" from="Signals/door" to="." method="_on_door_button_down"]
 [connection signal="button_down" from="Signals/box" to="." method="_on_box_button_down"]
 [connection signal="button_down" from="Signals/paper" to="." method="_on_paper_button_down"]
+[connection signal="pressed" from="AditionalItens/door/door" to="." method="_on_door_pressed"]
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
