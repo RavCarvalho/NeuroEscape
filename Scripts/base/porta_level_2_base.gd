@@ -5,22 +5,24 @@ extends Node2D
 @onready var _timer : Timer = get_node("PlayerText/Timer")
 
 
-var frases : Array = ["[center]Preciso de uma chave para abrir","[center]Me perguntava porque isso estava aqui. Parece que é para emergências.",
+var have_key = false ##Essa é uma  variavel apenas para testes. Tem a funçao de substituir a chave selesionada no inventario
+var count_door_click = 0 ## para fins de testes e simulação também 
+
+var frases : Array = ["","[center]Preciso de uma chave para abrir","[center]Me perguntava porque isso estava aqui. Parece que é para emergências.",
 "[center]Algém deixou cair no início do protocolo. Parece uma página de um documento.", "[center]Tinha uma chave aí.",
 "[center]Parece que abriu!", "[center]A senha não é essa."]
-enum iten {door, box, paper, key, open_box, wrong_pw}
+enum iten {empty, door, box, paper, key, open_box, wrong_pw}
 
 func _ready() -> void:
-	pass 
-
+	Global.send_status_pw.connect(open_box)
 
 func _process(delta: float) -> void:
-	open_box()
+	pass
+	#open_box()
 
 
 func _on_left_pressed() -> void:
 	if img_atual.texture == null:
-		print("vamo q vam0p")
 		get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn")
 	else:
 		back()
@@ -48,8 +50,11 @@ func _on_box_button_down() -> void:
 	#if get_key = true
 
 func _on_door_button_down() -> void:
+	if have_key:
+		$AditionalItens/door/Cadeado.texture = preload("res://Assets/level2/cadeado aberto.png")
+	else:
+		update_palyer_text(iten.door,2)
 	hide_signals()
-	update_palyer_text(iten.door,2)
 	img_atual.texture = preload("res://Assets/level2/zoom porta escada.png")
 	show_add_iten($AditionalItens/door)
 
@@ -74,10 +79,18 @@ func update_palyer_text(id, time):
 	player_text.text = frases[id]
 	_timer.start(time)
 
-
+#@TODO dar um jeito de colocar esses textos obs: apagar print_box_txt
 func open_box():
+	print("SINAL CHEGOOOOOUUU")
 	if Global.senha_correta == true:
 		$BackScenario/Bau.play("open")
-		back()
 		update_palyer_text(iten.open_box, 2)
-	#else: update_palyer_text(iten.wrong_pw, 2)
+		have_key = true ##Refoçando a utilidade dessa variavel pra teste. Aqui simula a atribuição e seleção da chave no iventario
+		back()
+	else: 
+		update_palyer_text(iten.wrong_pw, 2)
+
+
+func _on_door_pressed() -> void:
+	if have_key:
+		get_tree().change_scene_to_file("res://Scenes/base/escadaria_lvl_2_3.tscn")

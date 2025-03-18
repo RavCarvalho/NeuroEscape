@@ -4,6 +4,8 @@ var senha_correta : = false
 var right_box_pw = [2, 5, 3]
 var numb_pw : Array = []
 
+signal send_status_pw
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -18,5 +20,6 @@ func comapare_password():
 		print("certoouuu certooouuuuu")
 	else:
 		senha_correta = false
-		numb_pw.clear()
 		print("Erradoouuu  ")
+	numb_pw.clear()
+	send_status_pw.emit()
