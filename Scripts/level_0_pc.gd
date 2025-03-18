@@ -1,7 +1,7 @@
 extends Node2D
 @onready var email_button = get_node("EmailButton")
-@onready var player_text = get_node("PlayerText")
-@onready var timer_node = get_node("TimertoText")
+@onready var player_text = get_node("PlayerText/text")
+@onready var _timer = get_node("PlayerText/Timer")
 @onready var timer_pass = get_node("TimerToChange")
 
 #@TODO tornar timertotext global
@@ -14,8 +14,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	player_text.visible = player_text.text != ""
-
+	pass
 
 
 func _on_email_button_button_up() -> void:
@@ -46,12 +45,8 @@ func interactive_with_text(event, id, time):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
-			timer_node.start(time)
+			_timer.start(time)
 			
-
-
-func _on_timerto_text_timeout() -> void:
-	player_text.text = ""
 
 
 func _on_timer_to_change_timeout() -> void:

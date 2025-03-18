@@ -1,0 +1,216 @@
+[gd_scene load_steps=18 format=3 uid="uid://cd7epysnp16y2"]
+
+[ext_resource type="Script" path="res://Scripts/base/porta_level_2_base.gd" id="1_1vrm8"]
+[ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="1_d3pdq"]
+[ext_resource type="Texture2D" uid="uid://cv75bji1k3fv8" path="res://Assets/level2/folha com 2.png" id="2_htehd"]
+[ext_resource type="Texture2D" uid="uid://j51gei8c62d6" path="res://Assets/level2/folha com 3.png" id="3_mqrhu"]
+[ext_resource type="Texture2D" uid="uid://bwpd87a5f7053" path="res://Assets/level2/bau.png" id="4_txvr2"]
+[ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="5_bxwk5"]
+[ext_resource type="Texture2D" uid="uid://byb5d6tavjmh1" path="res://Assets/level2/papelcuriosidade.png" id="6_h607m"]
+[ext_resource type="Texture2D" uid="uid://e4fq0ikbwxq8" path="res://Assets/level2/bau aberto.png" id="6_v0ybq"]
+[ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="7_o6j1o"]
+[ext_resource type="FontFile" uid="uid://c17gotxnwxqkr" path="res://Assets/Fontes/machine/JMH Typewriter-Black.otf" id="10_orphu"]
+[ext_resource type="Texture2D" uid="uid://blbknlybrdqt0" path="res://Assets/level2/experimento.png" id="11_a37xw"]
+[ext_resource type="FontFile" uid="uid://c1x7eaoa1y45e" path="res://Assets/Fontes/DS-DIGIB.TTF" id="12_sednm"]
+[ext_resource type="Script" path="res://Scripts/base/butto_pw_behavior.gd" id="13_o6p6e"]
+[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="13_qpbem"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8s7y"]
+atlas = ExtResource("4_txvr2")
+region = Rect2(0, 0, 408, 331)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56kmw"]
+atlas = ExtResource("6_v0ybq")
+region = Rect2(0, 0, 489, 355)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhuhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8s7y")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56kmw")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="porta_level2_base" type="Node2D"]
+script = ExtResource("1_1vrm8")
+
+[node name="BackScenario" type="Node2D" parent="."]
+
+[node name="PortaEscada" type="Sprite2D" parent="BackScenario"]
+position = Vector2(640, 360)
+texture = ExtResource("1_d3pdq")
+
+[node name="FolhaCom2" type="Sprite2D" parent="BackScenario"]
+visible = false
+position = Vector2(891, 493)
+scale = Vector2(0.23125, 0.225)
+texture = ExtResource("2_htehd")
+
+[node name="FolhaCom3" type="Sprite2D" parent="BackScenario"]
+position = Vector2(400.5, 546.5)
+scale = Vector2(0.186719, 0.182031)
+texture = ExtResource("3_mqrhu")
+
+[node name="Bau" type="AnimatedSprite2D" parent="BackScenario"]
+position = Vector2(1059, 588)
+scale = Vector2(0.65, 0.609)
+sprite_frames = SubResource("SpriteFrames_yhuhi")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Cadeado" type="Sprite2D" parent="BackScenario"]
+position = Vector2(533, 437)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_bxwk5")
+
+[node name="Papelcuriosidade" type="Sprite2D" parent="BackScenario"]
+position = Vector2(352, 632)
+scale = Vector2(0.117751, 0.112044)
+texture = ExtResource("6_h607m")
+
+[node name="ImgInstance" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Signals" type="Node2D" parent="."]
+
+[node name="door" type="Button" parent="Signals"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 527.0
+offset_top = 193.0
+offset_right = 768.0
+offset_bottom = 607.0
+
+[node name="box" type="Button" parent="Signals"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 958.0
+offset_top = 495.0
+offset_right = 1197.0
+offset_bottom = 637.0
+rotation = 0.247564
+
+[node name="paper" type="Button" parent="Signals"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 343.0
+offset_top = 617.0
+offset_right = 367.0
+offset_bottom = 640.0
+rotation = 0.296013
+
+[node name="AditionalItens" type="Node2D" parent="."]
+
+[node name="paper" type="Node2D" parent="AditionalItens"]
+visible = false
+
+[node name="info_text" type="RichTextLabel" parent="AditionalItens/paper"]
+offset_left = 507.0
+offset_top = 213.0
+offset_right = 769.0
+offset_bottom = 546.0
+rotation = -0.126925
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_orphu")
+bbcode_enabled = true
+text = "[center]ACESSO RESTRITO[/center]
+[b]Resultado do protocolo passado: [/b]
+Foi verificada a inconsistência dos 
+resultados dos dados obtidos pela 
+biópsia frontal da região pineal. 
+Devido a isso, é importante 
+alterar a região de estudo para o 
+córtex pré-frontal\""
+visible_characters_behavior = 1
+
+[node name="Experimento" type="Sprite2D" parent="AditionalItens/paper"]
+position = Vector2(761, 472)
+rotation = -0.149799
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_a37xw")
+flip_h = true
+
+[node name="box" type="Node2D" parent="AditionalItens"]
+visible = false
+
+[node name="value1" type="Button" parent="AditionalItens/box"]
+offset_left = 374.0
+offset_top = 192.0
+offset_right = 524.0
+offset_bottom = 356.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_fonts/font = ExtResource("12_sednm")
+theme_override_font_sizes/font_size = 150
+action_mode = 0
+text = "0"
+flat = true
+script = ExtResource("13_o6p6e")
+
+[node name="value2" type="Button" parent="AditionalItens/box"]
+offset_left = 576.0
+offset_top = 192.0
+offset_right = 726.0
+offset_bottom = 356.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_fonts/font = ExtResource("12_sednm")
+theme_override_font_sizes/font_size = 150
+text = "0"
+flat = true
+script = ExtResource("13_o6p6e")
+
+[node name="value3" type="Button" parent="AditionalItens/box"]
+offset_left = 770.0
+offset_top = 192.0
+offset_right = 920.0
+offset_bottom = 356.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_fonts/font = ExtResource("12_sednm")
+theme_override_font_sizes/font_size = 150
+text = "0"
+flat = true
+script = ExtResource("13_o6p6e")
+
+[node name="door" type="Node2D" parent="AditionalItens"]
+visible = false
+
+[node name="Cadeado" type="Sprite2D" parent="AditionalItens/door"]
+position = Vector2(331, 516)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("5_bxwk5")
+
+[node name="left" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 638.0
+offset_right = 41.0
+offset_bottom = 678.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_o6j1o")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="PlayerText" parent="." instance=ExtResource("13_qpbem")]
+
+[connection signal="button_down" from="Signals/door" to="." method="_on_door_button_down"]
+[connection signal="button_down" from="Signals/box" to="." method="_on_box_button_down"]
+[connection signal="button_down" from="Signals/paper" to="." method="_on_paper_button_down"]
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
