@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://3qmkws5hxknx"]
+[gd_scene load_steps=2 format=3 uid="uid://c6tb5e3d8fpov"]
 
-[ext_resource type="Script" path="res://Scripts/inventário.gd" id="1_sut5m"]
+[ext_resource type="Texture2D" uid="uid://dvroe0ha510ax" path="res://Assets/inventário/inventario.png" id="2_b46ry"]
 
-[node name="Inventário" type="Node2D"]
-script = ExtResource("1_sut5m")
+[node name="TextureRect" type="TextureRect"]
+texture = ExtResource("2_b46ry")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 532.0
+offset_right = 1250.0
+offset_bottom = 697.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 8
+columns = 8

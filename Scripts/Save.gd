@@ -1,9 +1,15 @@
-class_name SaveManager
 extends Node 
 
 ## Dicionario para guardar as cenas
 var scenesDictio: Dictionary = {
 	"Menu" : preload("res://Scenes/Menu.tscn"),
+	"Level0" : preload("res://Scenes/level_0_pc.tscn"),
+	"Level1" : preload("res://Scenes/level_1_office.tscn"),
+	"Level2" : preload("res://Scenes/level_2_escada.tscn"),
+	"Escadaria" : preload("res://Scenes/Escadaria.tscn"),
+}
+var iventDictio: Dictionary = {
+	
 }
 
 

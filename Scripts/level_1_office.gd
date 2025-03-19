@@ -8,6 +8,8 @@ var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso co
 @onready var timer_txt = get_node("TimerText")
 @onready var player_text = get_node("PlayerText")
 func _ready() -> void:
+	
+	
 	player_text.text = frases[interactve_with.empty]
 
 
@@ -49,6 +51,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 				timer_txt.start(3)
 			else: 
 				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
+				MusicManager.playSFX("portadestrancada")
 				Global.senha_correta = false
 
 

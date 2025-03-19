@@ -8,6 +8,9 @@ extends Node2D
 var frases : Array = ["[center]Como o tempo voa!", "[center]Trouxe de casa. Ela não parece bem aqui."]
 
 func _ready() -> void:
+	#Musica.MusicaCalma()
+	
+	
 	player_text.text = ""
 	pass # Replace with function body.
 
@@ -15,6 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player_text.visible = player_text.text != ""
+	
 
 
 
@@ -28,6 +32,7 @@ func _on_email_button_button_up() -> void:
 
 func _on_regio_light_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		MusicManager.playSFX("efeitoluz")
 		if event.button_index == MOUSE_BUTTON_LEFT and $light.visible == false:  # Verifica se foi o botão esquerdo
 			$light.visible = true
 			print("Clicou dentro da Area2D!")
@@ -55,5 +60,7 @@ func _on_timerto_text_timeout() -> void:
 
 
 func _on_timer_to_change_timeout() -> void:
+	MusicManager.playMusic("suspense")
+	MusicManager.playSFX("estrondo")
 	get_tree().change_scene_to_file("res://Scenes/cut_scene_2.tscn")
 	#@TODO mudar para cena 2 inves de level1

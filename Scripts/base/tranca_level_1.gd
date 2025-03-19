@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("entrar") : 
 		if senha_tranca == text_node.text:
+			MusicManager.playSFX("beep")
 			estado_tranca(estado.correto, 3)
 			Global.senha_correta = true # é teste -> barulho de tranca abrindo colocar
 		else: estado_tranca(estado.errado, 2)
