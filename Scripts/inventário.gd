@@ -1,9 +1,9 @@
-extends Node2D
+extends TextureRect
 var inventory = []
 
 # Adiciona item ao inventário
-func add_item(item_name: String, quantity: int):
-	inventory.append({"name": item_name, "quantity": quantity})
+func add_item(item_name: ):
+	inventory.append({"Cracha": $Cracha, "alfabeto":$Alfabeto, "chave": $Chave })
 
 # Retorna o inventário
 func get_inventory():

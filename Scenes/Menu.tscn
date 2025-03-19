@@ -61,7 +61,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="email" type="Node2D" parent="."]
-visible = false
 
 [node name="Mensagem" type="Sprite2D" parent="email"]
 position = Vector2(660, 376)
@@ -159,6 +158,27 @@ texture_normal = ExtResource("12_4tbut")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="load" type="TextureButton" parent="email"]
+offset_left = 671.0
+offset_top = 587.0
+offset_right = 988.0
+offset_bottom = 665.0
+texture_normal = ExtResource("7_k2x78")
+texture_hover = ExtResource("8_juno0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="email/load"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 299.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_s20ko")
+theme_override_font_sizes/font_size = 40
+text = "Já sou funcionário!"
+
 [node name="tutorial2" type="Node2D" parent="."]
 visible = false
 
@@ -199,4 +219,5 @@ texture = ExtResource("6_fy67g")
 [connection signal="pressed" from="email/aceitar" to="." method="_on_aceitar_pressed"]
 [connection signal="button_up" from="email/sair" to="." method="_on_sair_button_up"]
 [connection signal="button_up" from="email/fecharEmail" to="." method="_on_fechar_email_button_up"]
+[connection signal="button_up" from="email/load" to="." method="_on_load_button_up"]
 [connection signal="button_up" from="tutorial2/fechartutorial" to="." method="_on_fechartutorial_button_up"]

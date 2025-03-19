@@ -22,6 +22,7 @@ func _on_file_button_button_down() -> void:
 	# for i in range assts.leght(): files.node == preload(i); click_count += 1
 	if click_count == 1:
 		$DrawerBack.texture = preload("res://Assets/level1/drawer_open.png")
+		MusicManager.playSFX("gaveta")
 	if click_count == 2:
 		files_node.texture = preload("res://Assets/level1/file_closed.png")
 	if click_count == 3:
