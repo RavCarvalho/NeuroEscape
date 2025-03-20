@@ -17,13 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
- musica
+
 	player_text.visible = player_text.text != ""
 	
 
 
 	pass
-main
 
 
 func _on_email_button_button_up() -> void:

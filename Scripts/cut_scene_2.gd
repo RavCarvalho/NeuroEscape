@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_scene_animation_finished(anim_name: StringName) -> void:
+	
 	get_tree().change_scene_to_file("res://Scenes/level_1_office.tscn")
