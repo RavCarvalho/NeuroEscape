@@ -93,4 +93,4 @@ func open_box():
 
 func _on_door_pressed() -> void:
 	if have_key:
-		get_tree().change_scene_to_file("res://Scenes/base/escadaria_lvl_2_3.tscn")
+		get_tree().change_scene_to_file("res://Scenes/base/Escadaria.tscn")

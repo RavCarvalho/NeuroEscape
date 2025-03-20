@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://exh6wv2i5o3o"]
+
+[ext_resource type="PackedScene" uid="uid://chqw5uhcrd8l1" path="res://Scenes/base/slot.tscn" id="1_i34in"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -130.0
+offset_right = 550.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="ColorRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 12.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.201527, 0.201527, 0.201527, 1)
+
+[node name="Container" type="HBoxContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Slot1" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot2" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot3" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot4" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot5" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot6" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot7" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot8" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot9" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
+
+[node name="Slot10" parent="Inventory/Container" instance=ExtResource("1_i34in")]
+layout_mode = 2
