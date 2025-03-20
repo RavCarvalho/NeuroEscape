@@ -8,6 +8,7 @@
 
 [node name="Control" type="CanvasLayer"]
 process_mode = 3
+visible = false
 script = ExtResource("1_u8jbn")
 
 [node name="Mensagem" type="Sprite2D" parent="."]

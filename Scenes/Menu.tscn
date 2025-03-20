@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ck268fp1u1q3d"]
+[gd_scene load_steps=16 format=3 uid="uid://ck268fp1u1q3d"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_lqjeu"]
 [ext_resource type="Texture2D" uid="uid://cpk3n6hl4e5ge" path="res://Assets/menu/1000215879.jpg" id="1_ohthj"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="9_fnmni"]
 [ext_resource type="Texture2D" uid="uid://2ytt1ahmy2gu" path="res://Assets/fechar email.png" id="12_4tbut"]
 [ext_resource type="Texture2D" uid="uid://dxt6afjfq7c3d" path="res://Assets/menu/folha tutorial.png" id="13_n5yq2"]
+[ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="14_cphho"]
 
 [sub_resource type="Theme" id="Theme_dv1r0"]
 
@@ -213,6 +214,8 @@ mistérios da  empresa NeuroCorp."
 position = Vector2(655, 590)
 scale = Vector2(0.357193, 0.321237)
 texture = ExtResource("6_fy67g")
+
+[node name="Control" parent="." instance=ExtResource("14_cphho")]
 
 [connection signal="button_up" from="tutorial" to="." method="_on_tutorial_button_up"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

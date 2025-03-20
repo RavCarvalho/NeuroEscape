@@ -46,6 +46,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 				player_text.text = frases[interactve_with.door]
 				_timer.start(3)
 			else: 
+				Save.save_game()
 				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
 				MusicManager.playSFX("portadestrancada")
 				Global.senha_correta = false
@@ -72,4 +73,5 @@ func _on_right_drawer_input_event(viewport: Node, event: InputEvent, shape_idx: 
 func _on_door_tranca_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			
 			get_tree().change_scene_to_file("res://Scenes/base/tranca_level_1.tscn")
