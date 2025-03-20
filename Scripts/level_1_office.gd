@@ -1,5 +1,5 @@
 extends Node2D
-
+var count_click =0
 enum interactve_with { empty, l_drawer, door, estante, window, coffee}
 var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso com meu crachá. Preciso da senha do administrador para abrir.", 
 "[center]Alguns livros e troféus da empresa. Eles são bem renomados.", "[center]O clima está agradável lá fora, diferente daqui...",
@@ -7,6 +7,8 @@ var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso co
 #@TODO colocar gaveta em outra cena
 @onready var _timer = get_node("PlayerText/Timer")
 @onready var player_text = get_node("PlayerText/text")
+@onready var _back : Sprite2D= get_node("OfficeLevel1")
+var back_sprite : Array = ["res://Assets/level1/office_level1.png", "res://Assets/level1/book_zoom.png","res://Assets/level1/book_w_paper.png" ]
 func _ready() -> void:
 	
 	
@@ -73,3 +75,38 @@ func _on_door_tranca_input_event(viewport: Node, event: InputEvent, shape_idx: i
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			get_tree().change_scene_to_file("res://Scenes/base/tranca_level_1.tscn")
+
+
+
+func _on_book_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			for i in $InteractiveAreas.get_children():
+				i.visible = false
+			_back.texture = preload("res://Assets/level1/book_zoom.png")
+			$ItensBook/book.visible = true #disable colocar
+			#for i in _@TODO fazer um for aqui
+
+
+func _on_book_pressed() -> void:
+	count_click += 1
+	print(count_click)
+	if count_click == 1:
+		_back.texture = preload("res://Assets/level1/book_w_paper.png")
+	if count_click == 2:
+		#@TODO tem erro aq resolver
+		count_click = 0
+		back()
+
+func back():
+	for i in $InteractiveAreas.get_children():
+		i.visible = true
+	_back.texture = preload("res://Assets/level1/office_level1.png")
+	$ItensBook/book.visible = false
+	
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			back()

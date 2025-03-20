@@ -52,6 +52,7 @@ position = Vector2(640, 360)
 texture = ExtResource("1_d3pdq")
 
 [node name="FolhaCom2" type="Sprite2D" parent="BackScenario"]
+visible = false
 position = Vector2(891, 493)
 scale = Vector2(0.23125, 0.225)
 texture = ExtResource("2_htehd")

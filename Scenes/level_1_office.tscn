@@ -71,7 +71,11 @@ polygon = PackedVector2Array(250, 286, 249, 325, 296, 325, 295, 287)
 [node name="estante" type="Area2D" parent="InteractiveAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/estante"]
-polygon = PackedVector2Array(234, 416, 236, 88, 376, 146, 415, 135, 331, 96, 334, 49, 200, 11, 194, 39, 82, -3, 2, 1, -1, 465)
+polygon = PackedVector2Array(236, 195, 236, 88, 376, 146, 415, 135, 331, 96, 334, 49, 200, 11, 194, 39, 82, -3, 2, 1, 2, 169)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InteractiveAreas/estante"]
+position = Vector2(0, 271)
+polygon = PackedVector2Array(237, 148, 236, 88, 231, 30, 88, 28, 2, 28, 4, 199)
 
 [node name="window" type="Area2D" parent="InteractiveAreas"]
 
@@ -83,7 +87,26 @@ polygon = PackedVector2Array(462, 275, 465, 81, 1184, 37, 1184, 353, 675, 356, 6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/coffee"]
 polygon = PackedVector2Array(942, 453, 940, 506, 951, 510, 971, 510, 988, 507, 993, 503, 995, 451, 983, 445, 964, 444, 949, 447)
 
+[node name="book" type="Area2D" parent="InteractiveAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/book"]
+polygon = PackedVector2Array(1, 172, 0, 292, 231, 294, 234, 203)
+
 [node name="PlayerText" parent="." instance=ExtResource("4_wclek")]
+
+[node name="ItensBook" type="Node2D" parent="."]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="ItensBook"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ItensBook/Area2D"]
+polygon = PackedVector2Array(456, 650, 459, 78, 901, 85, 904, 106, 926, 111, 926, 167, 1015, 170, 1009, 460, 931, 458, 925, 693, 935, 711, 1283, 714, 1279, 1, 2, -3, 3, 722, 456, 720)
+
+[node name="book" type="Button" parent="ItensBook"]
+offset_left = 797.0
+offset_top = 222.0
+offset_right = 948.0
+offset_bottom = 435.0
 
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
@@ -92,3 +115,6 @@ polygon = PackedVector2Array(942, 453, 940, 506, 951, 510, 971, 510, 988, 507, 9
 [connection signal="input_event" from="InteractiveAreas/estante" to="." method="_on_estante_input_event"]
 [connection signal="input_event" from="InteractiveAreas/window" to="." method="_on_window_input_event"]
 [connection signal="input_event" from="InteractiveAreas/coffee" to="." method="_on_coffee_input_event"]
+[connection signal="input_event" from="InteractiveAreas/book" to="." method="_on_book_input_event"]
+[connection signal="input_event" from="ItensBook/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="ItensBook/book" to="." method="_on_book_pressed"]

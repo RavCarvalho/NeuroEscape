@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://pbm7ksvnmb7w"]
-
-[ext_resource type="Texture2D" uid="uid://by4r38dp0g51a" path="res://Assets/level2/escadaria.png" id="1_tywcs"]
-
-[node name="escadaria_lvl2_3" type="Node2D"]
-
-[node name="Escadaria" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-texture = ExtResource("1_tywcs")

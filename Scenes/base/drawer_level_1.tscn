@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://eh4txag58acd"]
+[gd_scene load_steps=7 format=3 uid="uid://eh4txag58acd"]
 
 [ext_resource type="Script" path="res://Scripts/base/drawer_level_1.gd" id="1_mjk54"]
 [ext_resource type="Texture2D" uid="uid://boliirqq3dik7" path="res://Assets/level1/drawe_closed.png" id="1_uaqhb"]
 [ext_resource type="FontFile" uid="uid://p4qsrcsc6153" path="res://Assets/Fontes/machine/JMH Typewriter-Bold.otf" id="4_gcoe8"]
 [ext_resource type="Texture2D" uid="uid://bnr46fb643ilq" path="res://Assets/level1/file_open.png" id="5_cvisx"]
 [ext_resource type="FontFile" uid="uid://s168630nkooq" path="res://Assets/Fontes/machine_macabro_bold/Mom«t___.ttf" id="5_i2nvq"]
+[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="6_j5tqb"]
 
 [node name="DrawerLevel1" type="Node2D"]
 script = ExtResource("1_mjk54")
@@ -15,6 +16,10 @@ texture = ExtResource("1_uaqhb")
 
 [node name="files" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
+
+[node name="other_file" type="Sprite2D" parent="."]
+position = Vector2(640, 347)
+scale = Vector2(0.6, 0.6)
 
 [node name="file_button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -33,10 +38,10 @@ texture = ExtResource("5_cvisx")
 visible = false
 
 [node name="txt" type="RichTextLabel" parent="menssage"]
-offset_left = 409.0
-offset_top = 286.0
-offset_right = 583.0
-offset_bottom = 536.0
+offset_left = 416.0
+offset_top = 282.0
+offset_right = 590.0
+offset_bottom = 532.0
 rotation = -0.166185
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_gcoe8")
@@ -53,6 +58,8 @@ O experimento foi um sucesso parcial. Os impulsos nervosos responderam ao estím
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="out_area"]
 polygon = PackedVector2Array(321, 262, 435, 682, 802, 688, 978, 225, 322, 226, 317, -8, 1274, 0, 1277, 717, -4, 714, -10, -4, 315, -10)
+
+[node name="PlayerText" parent="." instance=ExtResource("6_j5tqb")]
 
 [connection signal="button_down" from="file_button" to="." method="_on_file_button_button_down"]
 [connection signal="input_event" from="out_area" to="." method="_on_out_area_input_event"]
