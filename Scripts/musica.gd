@@ -8,7 +8,12 @@ var musicDict : Dictionary = {
 	"gaveta": preload("res://Musica/gaveta.mp3"),
 	"papel": preload("res://Musica/papel.mp3"),
 	"beep" : preload("res://Musica/beep.mp3"),
-	"sirene" : preload("res://Musica/sirene.mp3")
+	"sirene" : preload("res://Musica/sirene.mp3"),
+	"email" : preload("res://Musica/email.mp3"),
+	"planta" : preload("res://Musica/planta.mp3"),
+	"relogioapertado" : preload("res://Musica/relogioapertei.mp3"),
+	"relogiochefão" : preload("res://Musica/relogio chefao.mp3"),
+	"clickbotao" : preload("res://Musica/spacebar-click-keyboard-199448.mp3")
 }
 
 # Node references:

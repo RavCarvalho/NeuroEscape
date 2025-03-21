@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1eixe18u4php"]
+[gd_scene load_steps=12 format=3 uid="uid://c1eixe18u4php"]
 
 [ext_resource type="Texture2D" uid="uid://k8pjwu7h5yqy" path="res://Assets/Cofre/cofre.png" id="1_80t6b"]
 [ext_resource type="Texture2D" uid="uid://pkrf1oldxbql" path="res://Assets/Cofre/digito.png" id="2_mqgfm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://1ih5ynvyvpxf" path="res://Assets/Cofre/caveira.png" id="5_u2hsv"]
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
 [ext_resource type="Texture2D" uid="uid://8sang6xjywal" path="res://Assets/level2/chave.png" id="7_rjp5e"]
+[ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2rn8"]
 atlas = ExtResource("2_mqgfm")
@@ -86,3 +87,5 @@ texture = ExtResource("7_rjp5e")
 position = Vector2(651, 660)
 scale = Vector2(0.491406, 0.354688)
 texture = ExtResource("4_iks7a")
+
+[node name="Control" parent="." instance=ExtResource("8_nh4bn")]
