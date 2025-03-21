@@ -104,10 +104,10 @@ visible = false
 polygon = PackedVector2Array(456, 650, 459, 78, 901, 85, 904, 106, 926, 111, 926, 167, 1015, 170, 1009, 460, 931, 458, 925, 693, 935, 711, 1283, 714, 1279, 1, 2, -3, 3, 722, 456, 720)
 
 [node name="book" type="Button" parent="ItensBook"]
-offset_left = 797.0
+offset_left = 560.0
 offset_top = 222.0
 offset_right = 948.0
-offset_bottom = 435.0
+offset_bottom = 668.0
 
 [node name="Control" parent="." instance=ExtResource("5_0cwk1")]
 

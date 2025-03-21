@@ -5,10 +5,15 @@ var scenesDictio: Dictionary = {
 	"Menu" : preload("res://Scenes/Menu.tscn"),
 	"Level0_PC" : preload("res://Scenes/level_0_pc.tscn"),
 	"Level1_Office" : preload("res://Scenes/level_1_office.tscn"),
+
+	"Level2Eescada" : preload("res://Scenes/level_2_escada.tscn"),
+	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
+
 	"Level2Escada" : preload("res://Scenes/level_2_escada.tscn"),
 	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
 	"porta_level2_base" : preload("res://Scenes/base/porta_level_2_base.tscn"),
 	
+
 }
 
 
