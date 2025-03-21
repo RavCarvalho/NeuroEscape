@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd7epysnp16y2"]
+[gd_scene load_steps=20 format=3 uid="uid://cd7epysnp16y2"]
 
 [ext_resource type="Script" path="res://Scripts/base/porta_level_2_base.gd" id="1_1vrm8"]
 [ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="1_d3pdq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="13_qpbem"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="15_58473"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="15_unngu"]
+[ext_resource type="Texture2D" uid="uid://cwvcdjal7pa5q" path="res://Assets/palavracript/L.png" id="16_aj2vy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8s7y"]
 atlas = ExtResource("4_txvr2")
@@ -53,7 +54,7 @@ position = Vector2(640, 360)
 texture = ExtResource("1_d3pdq")
 
 [node name="FolhaCom3" type="Sprite2D" parent="BackScenario"]
-position = Vector2(400.5, 546.5)
+position = Vector2(401, 551)
 scale = Vector2(0.186719, 0.182031)
 texture = ExtResource("3_mqrhu")
 
@@ -219,6 +220,10 @@ offset_left = 640.0
 offset_top = 720.0
 offset_right = 640.0
 offset_bottom = 723.0
+[node name="L" type="Sprite2D" parent="."]
+position = Vector2(399, 623)
+scale = Vector2(0.0349609, 0.0317383)
+texture = ExtResource("16_aj2vy")
 
 [connection signal="button_down" from="Signals/door" to="." method="_on_door_button_down"]
 [connection signal="button_down" from="Signals/box" to="." method="_on_box_button_down"]

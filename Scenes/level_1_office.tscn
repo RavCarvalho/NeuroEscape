@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="4_wclek"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="5_0cwk1"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_wpt7m"]
+[ext_resource type="Texture2D" uid="uid://cqj06dpnyl3pv" path="res://Assets/palavracript/N.png" id="6_jm7w2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
 shader = ExtResource("1_uunvn")
@@ -122,6 +123,11 @@ offset_right = 640.0
 offset_bottom = 723.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="N" type="Sprite2D" parent="."]
+position = Vector2(414, 107)
+scale = Vector2(0.0875, 0.0914062)
+texture = ExtResource("6_jm7w2")
 
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
