@@ -83,12 +83,15 @@ func _on_door_tranca_input_event(viewport: Node, event: InputEvent, shape_idx: i
 func _on_book_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			for i in $InteractiveAreas.get_children():
-				i.visible = false
+			$ItensBook.visible = true #disable colocar
+			print("pertei jaaaaaaaa")
+			hide_areas()
 			_back.texture = preload("res://Assets/level1/book_zoom.png")
-			$ItensBook/book.visible = true #disable colocar
 			#for i in _@TODO fazer um for aqui
 
+func hide_areas():
+	for i in $InteractiveAreas.get_children():
+		i.visible = false
 
 func _on_book_pressed() -> void:
 	count_click += 1
@@ -96,7 +99,6 @@ func _on_book_pressed() -> void:
 	if count_click == 1:
 		_back.texture = preload("res://Assets/level1/book_w_paper.png")
 	if count_click == 2:
-		#@TODO tem erro aq resolver
 		count_click = 0
 		back()
 
@@ -104,7 +106,8 @@ func back():
 	for i in $InteractiveAreas.get_children():
 		i.visible = true
 	_back.texture = preload("res://Assets/level1/office_level1.png")
-	$ItensBook/book.visible = false
+	$ItensBook.visible = false
+	
 	
 
 

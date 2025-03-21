@@ -6,7 +6,7 @@ var scenesDictio: Dictionary = {
 	"Level0_PC" : preload("res://Scenes/level_0_pc.tscn"),
 	"Level1_Office" : preload("res://Scenes/level_1_office.tscn"),
 	"Level2Eescada" : preload("res://Scenes/level_2_escada.tscn"),
-	"Escadaria" : preload("res://Scenes/Escadaria.tscn"),
+	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
 }
 
 
