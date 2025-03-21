@@ -10,7 +10,7 @@ var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso co
 @onready var _back : Sprite2D= get_node("OfficeLevel1")
 var back_sprite : Array = ["res://Assets/level1/office_level1.png", "res://Assets/level1/book_zoom.png","res://Assets/level1/book_w_paper.png" ]
 func _ready() -> void:
-	
+	Save.save_game()
 	
 	player_text.text = frases[interactve_with.empty]
 
@@ -48,7 +48,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 				player_text.text = frases[interactve_with.door]
 				_timer.start(3)
 			else: 
-				Save.save_game()
+				
 				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
 				MusicManager.playSFX("portadestrancada")
 				Global.senha_correta = false
