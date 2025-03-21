@@ -45,26 +45,26 @@ func _on_regio_light_input_event(viewport: Node, event: InputEvent, shape_idx: i
 
 
 func _on_region_clock_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	MusicManager.playSFX("relogioapertado")
-	interactive_with_text(event, 0, 2)
+	
+	interactive_with_text(event, 0, 2, "relogioapertado")
 
 
 func _on_regio_plant_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	MusicManager.playSFX("planta")
-	interactive_with_text(event, 1, 4)
 
-func interactive_with_text(event, id, time):
+	interactive_with_text(event, 1, 4, "planta")
+
+func interactive_with_text(event, id, time, music):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
 			_timer.start(time)
+			MusicManager.playSFX(music)
 			
 
 
 func _on_timer_to_change_timeout() -> void:
 	Save.save_game()
 	MusicManager.playMusic("suspense")
-	MusicManager.playSFX("estrondo")
 	MusicManager.playSFX("estrondo")
 	get_tree().change_scene_to_file("res://Scenes/cut_scene_2.tscn")
 	#@TODO mudar para cena 2 inves de level1

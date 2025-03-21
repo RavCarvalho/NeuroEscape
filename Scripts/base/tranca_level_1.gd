@@ -19,15 +19,17 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("entrar") : 
 		if senha_tranca == text_node.text:
-			MusicManager.playSFX("beep")
-			estado_tranca(estado.correto, 3)
+		
+			estado_tranca(estado.correto, 3, "beep")
 			Global.senha_correta = true # é teste -> barulho de tranca abrindo colocar
-		else: estado_tranca(estado.errado, 2)
+		else: estado_tranca(estado.errado, 2, "error")
+	
 		text_node.text = ""
 
-func estado_tranca(answer, time):
+func estado_tranca(answer, time, music):
 	player_text.text = frases[answer]
 	$TimerTxt.start(time)
+	MusicManager.playSFX(music)
 
 
 

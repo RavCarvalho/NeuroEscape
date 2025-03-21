@@ -91,6 +91,7 @@ func open_box():
 		have_key = true ##Refoçando a utilidade dessa variavel pra teste. Aqui simula a atribuição e seleção da chave no iventario
 		back()
 	else: 
+		MusicManager.playSFX("error")
 		update_palyer_text(iten.wrong_pw, 2)
 
 
