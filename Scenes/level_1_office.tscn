@@ -5,6 +5,7 @@
 [ext_resource type="Shader" path="res://Themes/hit_flash.gdshader" id="1_uunvn"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="4_wclek"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="5_0cwk1"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_wpt7m"]
 [ext_resource type="Texture2D" uid="uid://cqj06dpnyl3pv" path="res://Assets/palavracript/N.png" id="6_jm7w2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
@@ -111,6 +112,17 @@ offset_right = 948.0
 offset_bottom = 668.0
 
 [node name="Control" parent="." instance=ExtResource("5_0cwk1")]
+
+[node name="UI" parent="." instance=ExtResource("6_wpt7m")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 640.0
+offset_top = 720.0
+offset_right = 640.0
+offset_bottom = 723.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="N" type="Sprite2D" parent="."]
 position = Vector2(414, 107)

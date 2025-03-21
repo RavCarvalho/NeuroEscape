@@ -40,6 +40,7 @@ func _on_paper_button_down() -> void:
 func _on_box_button_down() -> void:
 	if Global.senha_correta == true:
 		update_palyer_text(iten.key, 2)
+		Inventory.add_item(load("res://Assets/level2/chave.png"))
 		#@TODO Aqui um item será adicionado ao inventário(a chave):
 		#colocar senha = false somente quando ele passar pela porta.
 		#Global.senha_correta = false

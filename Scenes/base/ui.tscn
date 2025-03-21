@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://exh6wv2i5o3o"]
 
-[ext_resource type="Script" path="res://Scenes/base/ui.gd" id="1_8peha"]
+[ext_resource type="Script" path="res://Scripts/base/ui.gd" id="1_8peha"]
 [ext_resource type="PackedScene" uid="uid://chqw5uhcrd8l1" path="res://Scenes/base/slot.tscn" id="1_i34in"]
 
 [node name="UI" type="Control"]
@@ -8,11 +8,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8peha")
 
 [node name="Inventory" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -77,3 +79,7 @@ layout_mode = 2
 
 [node name="Slot10" parent="Inventory/Container" instance=ExtResource("1_i34in")]
 layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
