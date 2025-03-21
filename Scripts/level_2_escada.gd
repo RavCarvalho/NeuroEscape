@@ -38,6 +38,7 @@ func _on_portas_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 func _on_prancheta_pressed() -> void:
 	click_count+= 1
 	if click_count == 1:
+		MusicManager.playSFX("papel")
 		$Prancheta.texture = preload("res://Assets/level2/prancheta de aviso.png")
 		$"info-prancheta".text = "Lembrete aos funcionários:
 			 Cuidem bem das plantas!
@@ -50,4 +51,6 @@ func _on_prancheta_pressed() -> void:
 
 
 func _on_setadireita_button_up() -> void:
+	MusicManager.playSFX("clickbotao")
+	Save.save_game()
 	get_tree().change_scene_to_file("res://Scenes/base/porta_level_2_base.tscn")

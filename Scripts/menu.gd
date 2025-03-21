@@ -17,29 +17,36 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_up() -> void:
+	MusicManager.playSFX("email")
 	$email.visible = true
 
 
 func _on_sair_button_up() -> void:
+	MusicManager.playSFX("clickbotao")
 	get_tree().quit()  # Fecha o aplicativo
 
 
 func _on_aceitar_pressed() -> void:
+	MusicManager.playSFX("clickbotao")
 	get_tree().change_scene_to_file("res://Scenes/cut_scene_1.tscn")
 
 func _on_fechar_email_button_up() -> void:
+	MusicManager.playSFX("email")
 	$email.visible = false
 
 
 func _on_tutorial_button_up() -> void:
+	MusicManager.playSFX("clickbotao")
 	$tutorial2.visible = true
 
 
 func _on_fechartutorial_button_up() -> void:
+	MusicManager.playSFX("clickbotao")
 	$tutorial2.visible = false
 
 
 func _on_load_button_up() -> void:
+	MusicManager.playSFX("clickbotao")
 	Save.load_game()
 	#Save.load_inventory()
 	

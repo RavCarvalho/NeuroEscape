@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlywxut30u3jo"]
+[gd_scene load_steps=8 format=3 uid="uid://dlywxut30u3jo"]
 
+[ext_resource type="Script" path="res://Scripts/escadaria.gd" id="1_71rtv"]
 [ext_resource type="Texture2D" uid="uid://by4r38dp0g51a" path="res://Assets/level2/escadaria.png" id="1_qf651"]
 [ext_resource type="Texture2D" uid="uid://dst4fsf1d464n" path="res://Assets/level2/planta.png" id="2_r8pw8"]
 [ext_resource type="Texture2D" uid="uid://bu0fgg0djrgoa" path="res://Assets/level2/para cima.png" id="4_dhyvn"]
-[ext_resource type="FontFile" uid="uid://c17gotxnwxqkr" path="res://Assets/Fontes/machine/JMH Typewriter-Black.otf" id="4_q2oqd"]
 [ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="5_a7bpl"]
 [ext_resource type="Texture2D" uid="uid://bkg1mpy41ouvb" path="res://Assets/level2/para baixo.png" id="5_yiicb"]
+[ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="7_bsm75"]
 
 [node name="Escadaria" type="Node2D"]
+script = ExtResource("1_71rtv")
 
 [node name="Back" type="Node2D" parent="."]
 
@@ -36,16 +38,6 @@ position = Vector2(623, 562)
 scale = Vector2(0.221484, 0.209766)
 texture = ExtResource("2_r8pw8")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 786.0
-offset_top = 28.0
-offset_right = 921.0
-offset_bottom = 86.0
-theme_override_fonts/font = ExtResource("4_q2oqd")
-theme_override_font_sizes/font_size = 45
-text = "Saída"
-
 [node name="Signals" type="Node2D" parent="."]
 
 [node name="parabaixo" type="TextureButton" parent="Signals"]
@@ -65,3 +57,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Node2D3" type="Node2D" parent="."]
+
+[node name="Control" parent="." instance=ExtResource("7_bsm75")]
+
+[connection signal="button_up" from="Signals/paracima" to="." method="_on_paracima_button_up"]
