@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/base/porta_level_2_base.gd" id="1_1vrm8"]
 [ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="1_d3pdq"]
-[ext_resource type="Texture2D" uid="uid://cv75bji1k3fv8" path="res://Assets/level2/folha com 2.png" id="2_htehd"]
 [ext_resource type="Texture2D" uid="uid://j51gei8c62d6" path="res://Assets/level2/folha com 3.png" id="3_mqrhu"]
 [ext_resource type="Texture2D" uid="uid://bwpd87a5f7053" path="res://Assets/level2/bau.png" id="4_txvr2"]
 [ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="5_bxwk5"]
@@ -14,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://c1x7eaoa1y45e" path="res://Assets/Fontes/DS-DIGIB.TTF" id="12_sednm"]
 [ext_resource type="Script" path="res://Scripts/base/butto_pw_behavior.gd" id="13_o6p6e"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="13_qpbem"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="15_58473"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="15_unngu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8s7y"]
@@ -51,12 +51,6 @@ script = ExtResource("1_1vrm8")
 [node name="PortaEscada" type="Sprite2D" parent="BackScenario"]
 position = Vector2(640, 360)
 texture = ExtResource("1_d3pdq")
-
-[node name="FolhaCom2" type="Sprite2D" parent="BackScenario"]
-visible = false
-position = Vector2(891, 493)
-scale = Vector2(0.23125, 0.225)
-texture = ExtResource("2_htehd")
 
 [node name="FolhaCom3" type="Sprite2D" parent="BackScenario"]
 position = Vector2(400.5, 546.5)
@@ -219,6 +213,12 @@ flip_h = true
 [node name="PlayerText" parent="." instance=ExtResource("13_qpbem")]
 
 [node name="Control" parent="." instance=ExtResource("15_unngu")]
+
+[node name="UI" parent="." instance=ExtResource("15_58473")]
+offset_left = 640.0
+offset_top = 720.0
+offset_right = 640.0
+offset_bottom = 723.0
 
 [connection signal="button_down" from="Signals/door" to="." method="_on_door_button_down"]
 [connection signal="button_down" from="Signals/box" to="." method="_on_box_button_down"]

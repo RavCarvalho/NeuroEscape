@@ -18,10 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Scripts/base/Global.gd"
-inventario="*res://Scripts/inventário.gd"
 Pause="*res://Scripts/pause.gd"
 Save="*res://Scripts/Save.gd"
 MusicManager="*res://Scenes/musica/musica.tscn"
+Inventory="*res://Scripts/base/Inventory.gd"
 
 [display]
 

@@ -9,8 +9,6 @@ var scenesDictio: Dictionary = {
 	"Level2Eescada" : preload("res://Scenes/level_2_escada.tscn"),
 	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
 
-	"Level2Escada" : preload("res://Scenes/level_2_escada.tscn"),
-	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
 	"porta_level2_base" : preload("res://Scenes/base/porta_level_2_base.tscn"),
 	
 
