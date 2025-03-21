@@ -22,12 +22,14 @@ func _process(delta: float) -> void:
 
 
 func _on_left_pressed() -> void:
+	MusicManager.playSFX("clickbotao")
 	if img_atual.texture == null:
 		get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn")
 	else:
 		back()
 
 func _on_paper_button_down() -> void:
+	MusicManager.playSFX("papel")
 	hide_signals()
 	update_palyer_text(iten.paper,3)
 	img_atual.texture = preload("res://Assets/level2/papel aberto.png")
@@ -83,6 +85,7 @@ func update_palyer_text(id, time):
 func open_box():
 	print("SINAL CHEGOOOOOUUU")
 	if Global.senha_correta == true:
+		MusicManager.playSFX("portadestrancada")
 		$BackScenario/Bau.play("open")
 		update_palyer_text(iten.open_box, 2)
 		have_key = true ##Refoçando a utilidade dessa variavel pra teste. Aqui simula a atribuição e seleção da chave no iventario
@@ -93,4 +96,6 @@ func open_box():
 
 func _on_door_pressed() -> void:
 	if have_key:
+		Save.save_game()
+		MusicManager.playSFX("portadestrancada")
 		get_tree().change_scene_to_file("res://Scenes/base/Escadaria.tscn")

@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 
 
 func _on_email_button_button_up() -> void:
+	MusicManager.playSFX("email")
 	if $messaege.visible == false:
 		$messaege.visible = true
 		timer_pass.start(8)
@@ -44,10 +45,12 @@ func _on_regio_light_input_event(viewport: Node, event: InputEvent, shape_idx: i
 
 
 func _on_region_clock_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	MusicManager.playSFX("relogioapertado")
 	interactive_with_text(event, 0, 2)
 
 
 func _on_regio_plant_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	MusicManager.playSFX("planta")
 	interactive_with_text(event, 1, 4)
 
 func interactive_with_text(event, id, time):
@@ -59,7 +62,9 @@ func interactive_with_text(event, id, time):
 
 
 func _on_timer_to_change_timeout() -> void:
+	Save.save_game()
 	MusicManager.playMusic("suspense")
+	MusicManager.playSFX("estrondo")
 	MusicManager.playSFX("estrondo")
 	get_tree().change_scene_to_file("res://Scenes/cut_scene_2.tscn")
 	#@TODO mudar para cena 2 inves de level1

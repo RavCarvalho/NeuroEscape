@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cd7epysnp16y2"]
+[gd_scene load_steps=19 format=3 uid="uid://cd7epysnp16y2"]
 
 [ext_resource type="Script" path="res://Scripts/base/porta_level_2_base.gd" id="1_1vrm8"]
 [ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="1_d3pdq"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://c1x7eaoa1y45e" path="res://Assets/Fontes/DS-DIGIB.TTF" id="12_sednm"]
 [ext_resource type="Script" path="res://Scripts/base/butto_pw_behavior.gd" id="13_o6p6e"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="13_qpbem"]
+[ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="15_unngu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8s7y"]
 atlas = ExtResource("4_txvr2")
@@ -216,6 +217,8 @@ stretch_mode = 0
 flip_h = true
 
 [node name="PlayerText" parent="." instance=ExtResource("13_qpbem")]
+
+[node name="Control" parent="." instance=ExtResource("15_unngu")]
 
 [connection signal="button_down" from="Signals/door" to="." method="_on_door_button_down"]
 [connection signal="button_down" from="Signals/box" to="." method="_on_box_button_down"]

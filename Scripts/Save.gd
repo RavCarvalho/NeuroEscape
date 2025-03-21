@@ -5,8 +5,10 @@ var scenesDictio: Dictionary = {
 	"Menu" : preload("res://Scenes/Menu.tscn"),
 	"Level0_PC" : preload("res://Scenes/level_0_pc.tscn"),
 	"Level1_Office" : preload("res://Scenes/level_1_office.tscn"),
-	"Level2Eescada" : preload("res://Scenes/level_2_escada.tscn"),
-	"Escadaria" : preload("res://Scenes/Escadaria.tscn"),
+	"Level2Escada" : preload("res://Scenes/level_2_escada.tscn"),
+	"Escadaria" : preload("res://Scenes/base/Escadaria.tscn"),
+	"porta_level2_base" : preload("res://Scenes/base/porta_level_2_base.tscn"),
+	
 }
 
 
@@ -36,6 +38,7 @@ func save_game():
 
 # Função para carregar o jogo
 func load_game():
+	
 	var file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	if file:
 		var json = JSON.new()  # Cria uma instância de JSON
@@ -47,4 +50,6 @@ func load_game():
 
 			# Carregar a cena salva
 			var scene_path = save_data["scene"]
+			if scene_path != "Level0_PC":
+				MusicManager.playMusic("suspense")
 			get_tree().change_scene_to_packed(scenesDictio[scene_path])  # Carrega a cena salva
