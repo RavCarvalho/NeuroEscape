@@ -46,19 +46,20 @@ func _on_regio_light_input_event(viewport: Node, event: InputEvent, shape_idx: i
 
 func _on_region_clock_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	
-	interactive_with_text(event, 0, 2, "relogioapertado")
+	interactive_with_text(event, 0, 2, "relogioapertado","tempovoa")
 
 
 func _on_regio_plant_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
-	interactive_with_text(event, 1, 4, "planta")
+	interactive_with_text(event, 1, 4, "planta","trouxedecasa")
 
-func interactive_with_text(event, id, time, music):
+func interactive_with_text(event, id, time, music, fala):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
 			_timer.start(time)
 			MusicManager.playSFX(music)
+			MusicManager.playSFX(fala)
 			
 
 
