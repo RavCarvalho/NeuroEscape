@@ -16,6 +16,10 @@ var musicDict : Dictionary = {
 	"clickbotao" : preload("res://Musica/spacebar-click-keyboard-199448.mp3"),
 	"protocoloativado": preload("res://Musica/protocoloXativado.mp3"),
 	"error": preload("res://Musica/error.mp3"),
+	"tempovoa": preload("res://Musica/nossa como o tempo voa.mp3"),
+	"trouxedecasa":preload("res://Musica/trouxe-essa-planta.mp3"),
+	"estante": preload("res://Musica/esses-trofeus.mp3"),
+	
 }
 
 # Node references:

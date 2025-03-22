@@ -30,6 +30,8 @@ func ajust_text_size():
 func interactive_iten_text(event, id, time):
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			if id == interactve_with.estante:
+				MusicManager.playSFX("estante")
 			player_text.text = frases[id]
 			_timer.start(time)
 
@@ -56,6 +58,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func _on_estante_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	interactive_iten_text(event, interactve_with.estante, 3)
+	
 
 
 func _on_window_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nivylymkj8by"]
+[gd_scene load_steps=14 format=3 uid="uid://nivylymkj8by"]
 
 [ext_resource type="Script" path="res://Scripts/level_2_escada.gd" id="1_meh1w"]
 [ext_resource type="Texture2D" uid="uid://xn0jdmfkfdd8" path="res://Assets/level2/elevador.png" id="2_pfo2s"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="9_84mcb"]
 [ext_resource type="Texture2D" uid="uid://bjiaohptauf7t" path="res://Assets/palavracript/E.png" id="10_ptt3r"]
 [ext_resource type="Texture2D" uid="uid://clyox1y7q6jg4" path="res://Assets/palavracript/I.png" id="11_vpbt0"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="12_m3tu2"]
 [ext_resource type="FontFile" uid="uid://i3i6iacv2cyb" path="res://Assets/Fontes/escrita_starlita/Starlita.otf" id="19_y11ng"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="21_dilex"]
 
@@ -96,6 +97,12 @@ texture = ExtResource("10_ptt3r")
 position = Vector2(992, 142)
 scale = Vector2(0.0712892, 0.0689453)
 texture = ExtResource("11_vpbt0")
+
+[node name="UI" parent="." instance=ExtResource("12_m3tu2")]
+offset_left = 670.0
+offset_top = 720.0
+offset_right = 670.0
+offset_bottom = 723.0
 
 [connection signal="input_event" from="InteractveAreas/regiaoelevador" to="." method="_on_regiaoelevador_input_event"]
 [connection signal="input_event" from="InteractveAreas/portas" to="." method="_on_portas_input_event"]

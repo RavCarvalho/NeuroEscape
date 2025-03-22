@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbinxo2kovma1"]
+[gd_scene load_steps=12 format=3 uid="uid://cbinxo2kovma1"]
 
 [ext_resource type="Script" path="res://Scripts/level_1_office.gd" id="1_ekuqs"]
 [ext_resource type="Texture2D" uid="uid://csrewajvh3ni7" path="res://Assets/level1/office_level1.png" id="1_msbmh"]
 [ext_resource type="Shader" path="res://Themes/hit_flash.gdshader" id="1_uunvn"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="4_wclek"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="5_0cwk1"]
-[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_wpt7m"]
 [ext_resource type="Texture2D" uid="uid://cqj06dpnyl3pv" path="res://Assets/palavracript/N.png" id="6_jm7w2"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_wpt7m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
 shader = ExtResource("1_uunvn")
