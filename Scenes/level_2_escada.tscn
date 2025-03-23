@@ -49,9 +49,6 @@ shape = SubResource("RectangleShape2D_4iq81")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractveAreas/portas"]
 polygon = PackedVector2Array(1086, 209, 1167, 175, 1175, 450, 1110, 460, 1110, 580, 1090, 591)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InteractveAreas/portas"]
-polygon = PackedVector2Array(159, 185, 242, 218, 253, 601, 215, 647, 212, 455, 155, 448)
-
 [node name="prancheta" type="TextureButton" parent="InteractveAreas"]
 offset_left = 950.0
 offset_top = 269.0
@@ -104,7 +101,13 @@ offset_top = 720.0
 offset_right = 670.0
 offset_bottom = 723.0
 
+[node name="back_door" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="back_door"]
+polygon = PackedVector2Array(159, 185, 242, 218, 253, 601, 215, 647, 212, 455, 155, 448)
+
 [connection signal="input_event" from="InteractveAreas/regiaoelevador" to="." method="_on_regiaoelevador_input_event"]
 [connection signal="input_event" from="InteractveAreas/portas" to="." method="_on_portas_input_event"]
 [connection signal="pressed" from="InteractveAreas/prancheta" to="." method="_on_prancheta_pressed"]
 [connection signal="button_up" from="Setadireita" to="." method="_on_setadireita_button_up"]
+[connection signal="input_event" from="back_door" to="." method="_on_back_door_input_event"]

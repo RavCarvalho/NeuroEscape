@@ -4,8 +4,8 @@ var senha_tranca = "1972"
 #@TODO: quando pegar o commit colocar var senha correta = true/false pra saber se passa pra proxima cena
 @onready var text_node : TextEdit = get_node("TextEdit")
 @onready var player_text : RichTextLabel = get_node("PlayerText/text")
-var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era  isso?!"]
-enum estado{errado, correto}
+var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era  isso?!", "[center]Agora tá fácil!"]
+enum estado{errado, correto, again}
 var txt_filtrado = ""
 
 
@@ -14,14 +14,13 @@ func _ready() -> void:
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
-	
 	if Input.is_action_just_pressed("entrar") : 
 		if senha_tranca == text_node.text:
-		
-			estado_tranca(estado.correto, 3, "beep")
 			Global.senha_correta = true # é teste -> barulho de tranca abrindo colocar
+			if Global.unlocked == false:
+				estado_tranca(estado.correto, 3, "beep")
+			else: estado_tranca(estado.again, 3, "beep")
+			
 		else: estado_tranca(estado.errado, 2, "error")
 	
 		text_node.text = ""
@@ -34,16 +33,10 @@ func estado_tranca(answer, time, music):
 
 
 func _on_text_edit_lines_edited_from(from_line: int, to_line: int) -> void:
-	#text_node.text_changed.disconnect(_on_text_edit_lines_edited_from)
-	#var txt_filtrado = ""
-	#for char in text_node.text:
-		#if char.is_valid_int():
-			#text_node.text += char
-	#Limita a 4 caracteres
+
 	if text_node.text.length() > 4:
 		text_node.text = text_node.text.left(4)
-	#text_node.text = txt_filtrado
-	#text_node.text_changed.connect(_on_text_edit_lines_edited_from)
+
 
 
 func _on_voltar_button_up() -> void:
