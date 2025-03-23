@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dm14ee3gun48n"]
-
-[ext_resource type="FontFile" uid="uid://b3w75txnn4iqb" path="res://Assets/Fontes/String Round.otf" id="1_o4f8s"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dm14ee3gun48n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1f01"]
 bg_color = Color(0, 0, 0, 0.596078)
@@ -13,5 +11,5 @@ expand_margin_bottom = 50.0
 [resource]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/font_sizes/normal_font_size = 45
-RichTextLabel/fonts/normal_font = ExtResource("1_o4f8s")
+RichTextLabel/fonts/normal_font = null
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_i1f01")
