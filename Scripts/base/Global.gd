@@ -3,7 +3,7 @@ extends Node
 var senha_correta : = false
 var right_box_pw = [2, 5, 3]
 var numb_pw : Array = []
-
+var unlocked = false
 signal send_status_pw
 
 func _ready() -> void:

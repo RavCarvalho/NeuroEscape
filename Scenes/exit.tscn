@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvk0q733e3jpw"]
+
+[ext_resource type="Texture2D" uid="uid://cc8naocrxoeog" path="res://Assets/level1/out_door.png" id="1_hwqje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_753v3"]
+size = Vector2(303, 561)
+
+[node name="Exit" type="Node2D"]
+
+[node name="OutDoor" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_hwqje")
+
+[node name="door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(630.5, 402)
+shape = SubResource("RectangleShape2D_753v3")

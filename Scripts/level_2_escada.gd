@@ -57,3 +57,9 @@ func _on_setadireita_button_up() -> void:
 	MusicManager.playSFX("clickbotao")
 	Save.save_game()
 	get_tree().change_scene_to_file("res://Scenes/base/porta_level_2_base.tscn")
+
+
+func _on_back_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton  and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			get_tree().change_scene_to_file("res://Scenes/level_1_office.tscn")
