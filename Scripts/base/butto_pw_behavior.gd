@@ -8,6 +8,7 @@ func _ready() -> void:
 
 
 func _on_pressed():
+	MusicManager.playSFX("digito")
 	## Valor soma 1 até 9 volta a 0 
 	valor = (valor + 1) % 10
 	update_text()
