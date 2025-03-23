@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rnk1te6tvi8d"
+path="res://.godot/imported/touxe de casa.mp3-3484252249dd4e9e5b82bc01945fe7a3.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/touxe de casa.mp3"
+dest_files=["res://.godot/imported/touxe de casa.mp3-3484252249dd4e9e5b82bc01945fe7a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

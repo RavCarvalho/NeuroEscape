@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb8r3iqwohlyi"
+path="res://.godot/imported/Muda4_de_vida_1.mp3-c89097d32de92ef33504f3c716e8cc30.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/Muda4_de_vida_1.mp3"
+dest_files=["res://.godot/imported/Muda4_de_vida_1.mp3-c89097d32de92ef33504f3c716e8cc30.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
