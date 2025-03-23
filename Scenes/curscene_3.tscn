@@ -1,13 +1,66 @@
-[gd_scene load_steps=8 format=3 uid="uid://de3wv1t76gy5v"]
+[gd_scene load_steps=10 format=3 uid="uid://de3wv1t76gy5v"]
 
 [ext_resource type="AudioStream" uid="uid://c6af6jgqdg086" path="res://Musica/falas oficiais/Sala_do_chefe_1.mp3" id="1_bym2v"]
 [ext_resource type="Texture2D" uid="uid://bfrneh5jurkaf" path="res://Assets/Cutscenes/cutframe3.png" id="1_mwadp"]
 [ext_resource type="AudioStream" uid="uid://cajhymwc5buih" path="res://Musica/passos.mp3" id="1_wu3ft"]
 [ext_resource type="Texture2D" uid="uid://cjerx6vq3nddq" path="res://Assets/Cutscenes/cut2frame3.png" id="2_q55r4"]
+[ext_resource type="AudioStream" uid="uid://dlvimsgs3cl30" path="res://Musica/falasChefe/finalmente.mp3" id="3_ahmm1"]
+[ext_resource type="AudioStream" uid="uid://jrlprvuoe8vm" path="res://Musica/falasChefe/buscarcobaias.mp3" id="4_vwse4"]
+
+[sub_resource type="Animation" id="Animation_p6emm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("passos:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("saladochefe:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("finalmente:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pegarcobaia:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xb8wa"]
 resource_name = "cutscene3"
-length = 40.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,7 +68,7 @@ tracks/0/path = NodePath("black_rect/hid_rect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 2.3, 14.6, 17.6, 18.6667, 20.8),
+"times": PackedFloat32Array(0.5, 2.3, 14.6, 20.2667, 22.5667, 26.5333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.109804)]
@@ -27,7 +80,7 @@ tracks/1/path = NodePath("black_rect/hid_rect2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.13333, 5.06667, 14.6, 17.6, 21.2667, 23.1333),
+"times": PackedFloat32Array(3.13333, 5.06667, 14.6, 20.1333, 30.9, 36.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -39,7 +92,7 @@ tracks/2/path = NodePath("black_rect/hid_rect3:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5.73333, 7.8, 14.6, 17.6, 23.6667, 25.6),
+"times": PackedFloat32Array(5.73333, 7.8, 14.6, 20.2333, 33.7333, 37.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -51,7 +104,7 @@ tracks/3/path = NodePath("black_rect/hid_rect4:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(8.4, 10.3667, 14.6, 17.6, 26.2667, 28.1333),
+"times": PackedFloat32Array(8.4, 10.3667, 14.6, 20.3333, 35.7333, 38.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -63,7 +116,7 @@ tracks/4/path = NodePath("black_rect/hid_rect5:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(11.7333, 14.6, 17.6, 29.1333, 30.9333),
+"times": PackedFloat32Array(11.7333, 14.6, 20.3667, 36.9667, 40.7333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -75,7 +128,7 @@ tracks/5/path = NodePath("Cut2Frame3:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(17.8),
+"times": PackedFloat32Array(22.2667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -104,29 +157,26 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_p6emm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("passos:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("finalmente:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(9.43333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("saladochefe:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("pegarcobaia:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(22.7492),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -145,6 +195,12 @@ stream = ExtResource("1_wu3ft")
 
 [node name="saladochefe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_bym2v")
+
+[node name="finalmente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ahmm1")
+
+[node name="pegarcobaia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vwse4")
 
 [node name="Cutframe3" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
