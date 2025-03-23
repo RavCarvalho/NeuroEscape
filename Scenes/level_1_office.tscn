@@ -45,6 +45,11 @@ material = SubResource("ShaderMaterial_ynurn")
 position = Vector2(640, 360)
 texture = ExtResource("1_msbmh")
 
+[node name="N" type="Sprite2D" parent="OfficeLevel1"]
+position = Vector2(-226, -253)
+scale = Vector2(0.0875, 0.0914062)
+texture = ExtResource("6_jm7w2")
+
 [node name="anim_ligth" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bvljc")
@@ -139,6 +144,7 @@ offset_bottom = 405.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_tr7xa")
 bbcode_enabled = true
+
 
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]

@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 #@TODO fazer uma cena de player text global de modo que sobreponha todo o cenário
 func interaction_text(event, id, time):
 	if event is InputEventMouseButton  and event.pressed:
+		if id == item.elevador:
+			MusicManager.playSFX("elevador")
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_text.text = frases[id]
 			_timer.start(time)

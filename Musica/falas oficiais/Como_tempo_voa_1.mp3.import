@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c51s20qfvcsfq"
+path="res://.godot/imported/Como_tempo_voa_1.mp3-ecc452eaae5323557a05b9990515724a.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/Como_tempo_voa_1.mp3"
+dest_files=["res://.godot/imported/Como_tempo_voa_1.mp3-ecc452eaae5323557a05b9990515724a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -10,8 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://c5q23ft3q5oup" path="res://Musica/horas passando.mp3" id="8_mcexv"]
 [ext_resource type="AudioStream" uid="uid://b5go02pec44sl" path="res://Musica/protocoloXativado.mp3" id="9_wourt"]
 [ext_resource type="AudioStream" uid="uid://cqkqgmmgsf48i" path="res://Musica/error.mp3" id="10_d7055"]
-[ext_resource type="AudioStream" uid="uid://bq4t0un6eihy1" path="res://Musica/o-que-está-acontecendo.mp3" id="11_p3rps"]
-[ext_resource type="AudioStream" uid="uid://dslbxeitm0ybe" path="res://Musica/perdi-o-acesso.mp3" id="12_uhvhx"]
+[ext_resource type="AudioStream" uid="uid://2at8dmm5fggs" path="res://Musica/falas oficiais/O_que_est_acontecendo_of_1.mp3" id="11_neikp"]
+[ext_resource type="AudioStream" uid="uid://cxpe2cn3gbwoa" path="res://Musica/falas oficiais/perdi o acesso do meucracha.mp3" id="12_13rmn"]
 
 [sub_resource type="Animation" id="Animation_0hc2t"]
 length = 0.001
@@ -353,6 +353,7 @@ texture = ExtResource("5_aqdwt")
 
 [node name="sirene" type="AudioStreamPlayer" parent="Itens_add"]
 stream = ExtResource("7_nuwkh")
+volume_db = -5.012
 
 [node name="relogio" type="AudioStreamPlayer" parent="Itens_add"]
 stream = ExtResource("8_mcexv")
@@ -364,9 +365,11 @@ stream = ExtResource("9_wourt")
 stream = ExtResource("10_d7055")
 
 [node name="o que esta acontecendo" type="AudioStreamPlayer" parent="Itens_add"]
-stream = ExtResource("11_p3rps")
+stream = ExtResource("11_neikp")
+volume_db = 6.265
 
 [node name="perdi o acesso" type="AudioStreamPlayer" parent="Itens_add"]
-stream = ExtResource("12_uhvhx")
+stream = ExtResource("12_13rmn")
+volume_db = 7.518
 
 [connection signal="animation_finished" from="Scene" to="." method="_on_scene_animation_finished"]

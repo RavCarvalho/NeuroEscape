@@ -16,9 +16,11 @@ var musicDict : Dictionary = {
 	"clickbotao" : preload("res://Musica/spacebar-click-keyboard-199448.mp3"),
 	"protocoloativado": preload("res://Musica/protocoloXativado.mp3"),
 	"error": preload("res://Musica/error.mp3"),
-	"tempovoa": preload("res://Musica/nossa como o tempo voa.mp3"),
-	"trouxedecasa":preload("res://Musica/trouxe-essa-planta.mp3"),
-	"estante": preload("res://Musica/esses-trofeus.mp3"),
+	"tempovoa": preload("res://Musica/falas oficiais/Como_tempo_voa_1.mp3"),
+	"trouxedecasa":preload("res://Musica/falas oficiais/touxe de casa.mp3"),
+	"estante": preload("res://Musica/falas oficiais/Trofus_1.mp3"),
+	"elevador": preload("res://Musica/falas oficiais/Preso_1_1.mp3"),
+	"digito": preload("res://Musica/digitp.mp3")
 	
 }
 
@@ -29,12 +31,16 @@ func playMusic(musicKey: String) -> void:
 	var _music = musicDict.get(musicKey)
 	musicPlayer.stream = _music
 	musicPlayer.play()
+	if musicKey == "calma":
+		musicPlayer.volume_db = -15.0
+	else: musicPlayer.volume_db = -8.
 	
 func playSFX(musicKey: String) -> void:
 	var _audio = AudioStreamPlayer.new()
 	add_child(_audio)
 	var _sound = musicDict.get(musicKey)
 	_audio.stream = _sound
+	_audio.volume_db = 10.0
 	_audio.play()
 	
 	# Conectar o sinal "finished" para destruir o áudio quando terminar

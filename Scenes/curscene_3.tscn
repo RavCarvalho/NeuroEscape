@@ -1,7 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://de3wv1t76gy5v"]
 
 [ext_resource type="Script" path="res://Scripts/curscene_3.gd" id="1_d8ihw"]
+
+[gd_scene load_steps=8 format=3 uid="uid://de3wv1t76gy5v"]
+
+[ext_resource type="AudioStream" uid="uid://c6af6jgqdg086" path="res://Musica/falas oficiais/Sala_do_chefe_1.mp3" id="1_bym2v"]
 [ext_resource type="Texture2D" uid="uid://bfrneh5jurkaf" path="res://Assets/Cutscenes/cutframe3.png" id="1_mwadp"]
+[ext_resource type="AudioStream" uid="uid://cajhymwc5buih" path="res://Musica/passos.mp3" id="1_wu3ft"]
 [ext_resource type="Texture2D" uid="uid://cjerx6vq3nddq" path="res://Assets/Cutscenes/cut2frame3.png" id="2_q55r4"]
 
 [sub_resource type="Animation" id="Animation_xb8wa"]
@@ -79,20 +84,79 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("saladochefe:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.33333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("passos:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.733333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p6emm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("passos:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("saladochefe:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vw3ev"]
 _data = {
+"RESET": SubResource("Animation_p6emm"),
 "cutscene3": SubResource("Animation_xb8wa")
 }
 
 [node name="curscene_3" type="Node2D"]
 script = ExtResource("1_d8ihw")
 
+[node name="passos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_wu3ft")
+
+[node name="saladochefe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bym2v")
+
 [node name="Cutframe3" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("1_mwadp")
 
 [node name="Cut2Frame3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(640, 360)
 texture = ExtResource("2_q55r4")
 
