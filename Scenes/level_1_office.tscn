@@ -44,6 +44,11 @@ material = SubResource("ShaderMaterial_ynurn")
 position = Vector2(640, 360)
 texture = ExtResource("1_msbmh")
 
+[node name="N" type="Sprite2D" parent="OfficeLevel1"]
+position = Vector2(-226, -253)
+scale = Vector2(0.0875, 0.0914062)
+texture = ExtResource("6_jm7w2")
+
 [node name="anim_ligth" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bvljc")
@@ -123,11 +128,6 @@ offset_right = 640.0
 offset_bottom = 723.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="N" type="Sprite2D" parent="."]
-position = Vector2(414, 107)
-scale = Vector2(0.0875, 0.0914062)
-texture = ExtResource("6_jm7w2")
 
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
