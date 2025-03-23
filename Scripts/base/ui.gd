@@ -7,7 +7,10 @@ extends Control
 func _on_iten_added(data: Texture) -> void:
 	show_inventory_for_while()
 	for slot in container.get_children():
-		if slot.sprite == null:  #verifica se o slot está vazio
+	 #verifica se o slot está vazio e se o item já existe no inventário
+		if slot.sprite == data:
+			break
+		if slot.sprite == null and slot.sprite !=  data: 
 			slot.sprite = data
 			break
  

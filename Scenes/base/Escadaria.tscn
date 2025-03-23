@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlywxut30u3jo"]
+[gd_scene load_steps=8 format=3 uid="uid://dlywxut30u3jo"]
 
 [ext_resource type="Script" path="res://Scripts/escadaria.gd" id="1_71rtv"]
 [ext_resource type="Texture2D" uid="uid://by4r38dp0g51a" path="res://Assets/level2/escadaria.png" id="1_qf651"]
 [ext_resource type="Texture2D" uid="uid://dst4fsf1d464n" path="res://Assets/level2/planta.png" id="2_r8pw8"]
 [ext_resource type="Texture2D" uid="uid://bu0fgg0djrgoa" path="res://Assets/level2/para cima.png" id="4_dhyvn"]
-[ext_resource type="Texture2D" uid="uid://ce65rg18ex8gv" path="res://Assets/level2/cadeado.png" id="5_a7bpl"]
 [ext_resource type="Texture2D" uid="uid://bkg1mpy41ouvb" path="res://Assets/level2/para baixo.png" id="5_yiicb"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="7_bsm75"]
 [ext_resource type="Texture2D" uid="uid://bw6m4iqxxeg3a" path="res://Assets/palavracript/A.png" id="8_s2g5d"]
@@ -27,12 +26,6 @@ texture = ExtResource("4_dhyvn")
 position = Vector2(842, 56)
 scale = Vector2(0.160937, 0.15625)
 texture = ExtResource("5_yiicb")
-
-[node name="Cadeado" type="Sprite2D" parent="Back"]
-self_modulate = Color(1, 1, 1, 0.215686)
-position = Vector2(855, 357)
-scale = Vector2(0.2, 0.191)
-texture = ExtResource("5_a7bpl")
 
 [node name="Planta" type="Sprite2D" parent="Back"]
 position = Vector2(623, 562)
@@ -66,4 +59,5 @@ position = Vector2(1070, 619)
 scale = Vector2(0.0914063, 0.0757813)
 texture = ExtResource("8_s2g5d")
 
+[connection signal="pressed" from="Signals/parabaixo" to="." method="_on_parabaixo_pressed"]
 [connection signal="button_up" from="Signals/paracima" to="." method="_on_paracima_button_up"]

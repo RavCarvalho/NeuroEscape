@@ -1,5 +1,5 @@
 extends Node2D
-var count_click =0
+
 enum interactve_with { empty, l_drawer, door, estante, window, coffee}
 var frases : Array = ["", "[center]Estão trancadas", "[center]Perdi o acesso com meu crachá. Preciso da senha do administrador para abrir.", 
 "[center]Alguns livros e troféus da empresa. Eles são bem renomados.", "[center]O clima está agradável lá fora, diferente daqui...",
@@ -50,7 +50,7 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 				player_text.text = frases[interactve_with.door]
 				_timer.start(3)
 			else: 
-				
+				Global.unlocked = true
 				get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn");
 				MusicManager.playSFX("portadestrancada")
 				Global.senha_correta = false
@@ -87,7 +87,6 @@ func _on_book_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			$ItensBook.visible = true #disable colocar
-			print("pertei jaaaaaaaa")
 			hide_areas()
 			_back.texture = preload("res://Assets/level1/book_zoom.png")
 			#for i in _@TODO fazer um for aqui
@@ -97,20 +96,19 @@ func hide_areas():
 		i.visible = false
 
 func _on_book_pressed() -> void:
-	count_click += 1
-	print(count_click)
-	if count_click == 1:
-		_back.texture = preload("res://Assets/level1/book_w_paper.png")
-	if count_click == 2:
-		count_click = 0
-		back()
-
+	_back.texture = preload("res://Assets/level1/book_w_paper.png")
+	$box_text.text = "Estou feliz que as coisas tenham dado certo. Lembro-me que tudo começou no dia na inauguração. Foi, de fato, um dia [b]inesquecível..."
+	#if count_click == 2:
+		#_back.texture = preload("res://Assets/level1/book_zoom.png")
+		#count_click = 0
+		
 func back():
 	for i in $InteractiveAreas.get_children():
 		i.visible = true
 	_back.texture = preload("res://Assets/level1/office_level1.png")
 	$ItensBook.visible = false
-	
+	$box_text.text = ""
+
 	
 
 
