@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://nivylymkj8by"]
+[gd_scene load_steps=15 format=3 uid="uid://nivylymkj8by"]
 
 [ext_resource type="Script" path="res://Scripts/level_2_escada.gd" id="1_meh1w"]
 [ext_resource type="Texture2D" uid="uid://xn0jdmfkfdd8" path="res://Assets/level2/elevador.png" id="2_pfo2s"]
 [ext_resource type="Texture2D" uid="uid://dst4fsf1d464n" path="res://Assets/level2/planta.png" id="3_g0jwb"]
 [ext_resource type="Texture2D" uid="uid://clvrgqassoy5v" path="res://Assets/level2/prancheta de aviso.png" id="4_sk5kg"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="5_jv0xp"]
+[ext_resource type="Texture2D" uid="uid://c8mk56kgwd1wa" path="res://Assets/level2/setacinza.png" id="7_5ajyo"]
 [ext_resource type="Texture2D" uid="uid://cv75bji1k3fv8" path="res://Assets/level2/folha com 2.png" id="8_34768"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="9_84mcb"]
 [ext_resource type="Texture2D" uid="uid://bjiaohptauf7t" path="res://Assets/palavracript/E.png" id="10_ptt3r"]
@@ -64,7 +65,11 @@ offset_top = 608.0
 offset_right = 1275.0
 offset_bottom = 729.0
 texture_normal = ExtResource("5_jv0xp")
+
+texture_hover = ExtResource("7_5ajyo")
+
 texture_pressed = ExtResource("5_jv0xp")
+
 ignore_texture_size = true
 stretch_mode = 0
 

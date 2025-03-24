@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dde0jbvcsn1og"
-path="res://.godot/imported/attecio_clock.png-49350935cb84052d1b016d7c34b5b78d.ctex"
+uid="uid://biqwrckuhd4b1"
+path="res://.godot/imported/ItenHistory (3).png-c3708c8fd1dea19d2a6c80a3ec82c198.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cutscenes/attecio_clock.png"
-dest_files=["res://.godot/imported/attecio_clock.png-49350935cb84052d1b016d7c34b5b78d.ctex"]
+source_file="res://Assets/Fontes/Cutscenes/ItenHistory (3).png"
+dest_files=["res://.godot/imported/ItenHistory (3).png-c3708c8fd1dea19d2a6c80a3ec82c198.ctex"]
 
 [params]
 

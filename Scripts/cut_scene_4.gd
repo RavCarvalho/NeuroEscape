@@ -11,8 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_texture_button_button_up() -> void:
-
-func _on_back_button_up() -> void:
-
-	get_tree().change_scene_to_file("res://Scenes/base/Escadaria.tscn")
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file("res://Scenes/credito.tscn")

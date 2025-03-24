@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://c5mv4vovatenl"]
 
-[ext_resource type="Texture2D" uid="uid://t3qsmrxy6xc6" path="res://Assets/Cutscenes/frame_cut2 (2).png" id="1_r384c"]
 [ext_resource type="Script" path="res://Scripts/cut_scene_2.gd" id="1_t8ksd"]
-[ext_resource type="Texture2D" uid="uid://qb2mvk7qqoq7" path="res://Assets/Cutscenes/frame_cut2 (1).png" id="2_6lat2"]
-[ext_resource type="Texture2D" uid="uid://dapw25vcxodbx" path="res://Assets/Cutscenes/frame_cut2 (3).png" id="3_20j17"]
-[ext_resource type="Texture2D" uid="uid://c1btg6kopxu0j" path="res://Assets/Cutscenes/frame_cut2 (4).png" id="4_hk1ue"]
-[ext_resource type="Texture2D" uid="uid://cky4epa0cyolm" path="res://Assets/Cutscenes/frame_cut2 (5).png" id="5_aqdwt"]
+[ext_resource type="Texture2D" uid="uid://t3qsmrxy6xc6" path="res://Assets/Fontes/Cutscenes/frame_cut2 (2).png" id="2_4c1v5"]
+[ext_resource type="Texture2D" uid="uid://qb2mvk7qqoq7" path="res://Assets/Fontes/Cutscenes/frame_cut2 (1).png" id="3_rv81t"]
+[ext_resource type="Texture2D" uid="uid://dapw25vcxodbx" path="res://Assets/Fontes/Cutscenes/frame_cut2 (3).png" id="4_u1wv2"]
+[ext_resource type="Texture2D" uid="uid://c1btg6kopxu0j" path="res://Assets/Fontes/Cutscenes/frame_cut2 (4).png" id="5_hsq7i"]
+[ext_resource type="Texture2D" uid="uid://cky4epa0cyolm" path="res://Assets/Fontes/Cutscenes/frame_cut2 (5).png" id="6_dkprt"]
 [ext_resource type="AudioStream" uid="uid://cjgqbeo8mulvf" path="res://Musica/sirene.mp3" id="7_nuwkh"]
 [ext_resource type="AudioStream" uid="uid://c5q23ft3q5oup" path="res://Musica/horas passando.mp3" id="8_mcexv"]
 [ext_resource type="AudioStream" uid="uid://b5go02pec44sl" path="res://Musica/protocoloXativado.mp3" id="9_wourt"]
@@ -118,7 +118,7 @@ tracks/8/path = NodePath("Itens_add/error:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.6),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -333,23 +333,23 @@ autoplay = "scene"
 
 [node name="FrameCut2(2)" type="Sprite2D" parent="Itens_add"]
 position = Vector2(640, 360)
-texture = ExtResource("1_r384c")
+texture = ExtResource("2_4c1v5")
 
 [node name="FrameCut2(1)" type="Sprite2D" parent="Itens_add"]
-position = Vector2(640, 360)
-texture = ExtResource("2_6lat2")
+position = Vector2(2000, 360)
+texture = ExtResource("3_rv81t")
 
 [node name="FrameCut2(3)" type="Sprite2D" parent="Itens_add"]
-position = Vector2(640, 360)
-texture = ExtResource("3_20j17")
+position = Vector2(1280, 360)
+texture = ExtResource("4_u1wv2")
 
 [node name="FrameCut2(4)" type="Sprite2D" parent="Itens_add"]
 position = Vector2(650, 360)
-texture = ExtResource("4_hk1ue")
+texture = ExtResource("5_hsq7i")
 
 [node name="FrameCut2(5)" type="Sprite2D" parent="Itens_add"]
 position = Vector2(640, 360)
-texture = ExtResource("5_aqdwt")
+texture = ExtResource("6_dkprt")
 
 [node name="sirene" type="AudioStreamPlayer" parent="Itens_add"]
 stream = ExtResource("7_nuwkh")

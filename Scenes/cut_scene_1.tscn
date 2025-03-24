@@ -1,17 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://eehbpx03apjn"]
+[gd_scene load_steps=17 format=3 uid="uid://eehbpx03apjn"]
 
-[ext_resource type="Texture2D" uid="uid://ccg61dldmefyu" path="res://Assets/Cutscenes/QuadroBack.png" id="1_bq40l"]
 [ext_resource type="Script" path="res://Scripts/cut_scene_1.gd" id="1_j56t5"]
-[ext_resource type="Texture2D" uid="uid://dwsi73eme6417" path="res://Assets/Cutscenes/ItenHistory (1).png" id="2_ke0ew"]
-[ext_resource type="Texture2D" uid="uid://c7o5tpiflo7if" path="res://Assets/Cutscenes/ItenHistory (2).png" id="3_y4k4q"]
-[ext_resource type="Texture2D" uid="uid://biqwrckuhd4b1" path="res://Assets/Cutscenes/ItenHistory (3).png" id="4_f7uik"]
-[ext_resource type="Texture2D" uid="uid://hetjjmpw0lgp" path="res://Assets/Cutscenes/ItenHistory(4).png" id="5_tuhqs"]
-[ext_resource type="Texture2D" uid="uid://ctfq0a7qwria3" path="res://Assets/Cutscenes/ItenHistory(5).png" id="6_s2fuk"]
-[ext_resource type="Texture2D" uid="uid://dxlh7p3gdore7" path="res://Assets/Cutscenes/frames (1).png" id="7_ge6a8"]
+[ext_resource type="Texture2D" uid="uid://ccg61dldmefyu" path="res://Assets/Fontes/Cutscenes/QuadroBack.png" id="2_gut65"]
+[ext_resource type="Texture2D" uid="uid://dwsi73eme6417" path="res://Assets/Fontes/Cutscenes/ItenHistory (1).png" id="3_686kf"]
+[ext_resource type="Texture2D" uid="uid://c7o5tpiflo7if" path="res://Assets/Fontes/Cutscenes/ItenHistory (2).png" id="4_84gjg"]
+[ext_resource type="Texture2D" uid="uid://biqwrckuhd4b1" path="res://Assets/Fontes/Cutscenes/ItenHistory (3).png" id="5_15gj7"]
+[ext_resource type="Texture2D" uid="uid://hetjjmpw0lgp" path="res://Assets/Fontes/Cutscenes/ItenHistory(4).png" id="6_nf6l0"]
+[ext_resource type="Texture2D" uid="uid://ctfq0a7qwria3" path="res://Assets/Fontes/Cutscenes/ItenHistory(5).png" id="7_v0khp"]
 [ext_resource type="Theme" uid="uid://dvy6nms1e2bce" path="res://Themes/cut_scene_1.tres" id="7_y8wi5"]
-[ext_resource type="Texture2D" uid="uid://iryi52ernlhk" path="res://Assets/Cutscenes/frames (2).png" id="8_fin4q"]
 [ext_resource type="AudioStream" uid="uid://bb8r3iqwohlyi" path="res://Musica/falas oficiais/Muda4_de_vida_1.mp3" id="9_2q3br"]
-[ext_resource type="Texture2D" uid="uid://bj1lbwrbjlm5q" path="res://Assets/Cutscenes/frames (3).png" id="9_6niuq"]
 
 [sub_resource type="Animation" id="Animation_tja5i"]
 resource_name = "Cena1"
@@ -195,15 +192,12 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3olki"]
-atlas = ExtResource("7_ge6a8")
 region = Rect2(0, 0, 1280, 720)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4t1v"]
-atlas = ExtResource("8_fin4q")
 region = Rect2(0, 0, 1280, 720)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_detga"]
-atlas = ExtResource("9_6niuq")
 region = Rect2(0, 0, 1280, 720)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g47dd"]
@@ -243,27 +237,27 @@ color = Color(0, 0, 0, 1)
 
 [node name="QuadroBack" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(652, 361)
-texture = ExtResource("1_bq40l")
+texture = ExtResource("2_gut65")
 
 [node name="ItenHistory(1)" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(654, 360)
-texture = ExtResource("2_ke0ew")
+texture = ExtResource("3_686kf")
 
 [node name="ItenHistory(2)" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(654, 360)
-texture = ExtResource("3_y4k4q")
+texture = ExtResource("4_84gjg")
 
 [node name="ItenHistory(3)" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(654, 360)
-texture = ExtResource("4_f7uik")
+texture = ExtResource("5_15gj7")
 
 [node name="ItenHistory(4)" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(654, 360)
-texture = ExtResource("5_tuhqs")
+texture = ExtResource("6_nf6l0")
 
 [node name="ItenHistory(5)" type="Sprite2D" parent="ItensAdd"]
 position = Vector2(654, 360)
-texture = ExtResource("6_s2fuk")
+texture = ExtResource("7_v0khp")
 
 [node name="label" type="RichTextLabel" parent="ItensAdd"]
 offset_left = 1026.0
