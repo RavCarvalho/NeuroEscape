@@ -86,6 +86,7 @@ func _on_door_tranca_input_event(viewport: Node, event: InputEvent, shape_idx: i
 func _on_book_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton  and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			
 			$ItensBook.visible = true #disable colocar
 			hide_areas()
 			_back.texture = preload("res://Assets/level1/book_zoom.png")
@@ -93,9 +94,11 @@ func _on_book_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func hide_areas():
 	for i in $InteractiveAreas.get_children():
+		
 		i.visible = false
 
 func _on_book_pressed() -> void:
+	MusicManager.playSFX("papel")
 	_back.texture = preload("res://Assets/level1/book_w_paper.png")
 	$box_text.text = "Estou feliz que as coisas tenham dado certo. Lembro-me que tudo começou no dia na inauguração. Foi, de fato, um dia [b]inesquecível..."
 	#if count_click == 2:

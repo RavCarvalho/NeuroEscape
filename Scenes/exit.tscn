@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvk0q733e3jpw"]
+[gd_scene load_steps=6 format=3 uid="uid://bvk0q733e3jpw"]
 
 [ext_resource type="Texture2D" uid="uid://cc8naocrxoeog" path="res://Assets/level1/out_door.png" id="1_hwqje"]
+[ext_resource type="Script" path="res://Scripts/exit.gd" id="1_r0faq"]
+[ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="3_7o31k"]
+[ext_resource type="Texture2D" uid="uid://c8mk56kgwd1wa" path="res://Assets/level2/setacinza.png" id="4_nga6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_753v3"]
 size = Vector2(303, 561)
 
 [node name="Exit" type="Node2D"]
+script = ExtResource("1_r0faq")
 
 [node name="OutDoor" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -16,3 +20,16 @@ texture = ExtResource("1_hwqje")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(630.5, 402)
 shape = SubResource("RectangleShape2D_753v3")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 36.0
+offset_top = 608.0
+offset_right = 174.0
+offset_bottom = 710.0
+texture_normal = ExtResource("3_7o31k")
+texture_hover = ExtResource("4_nga6w")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]

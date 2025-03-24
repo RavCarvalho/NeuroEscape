@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hetjjmpw0lgp"
-path="res://.godot/imported/ItenHistory(4).png-e15fa8c468158536b5a5b8d8a0ba6a28.ctex"
+uid="uid://dapw25vcxodbx"
+path="res://.godot/imported/frame_cut2 (3).png-594d8c1a1d8796c3c371b8213c5b35a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cutscenes/ItenHistory(4).png"
-dest_files=["res://.godot/imported/ItenHistory(4).png-e15fa8c468158536b5a5b8d8a0ba6a28.ctex"]
+source_file="res://Assets/Fontes/Cutscenes/frame_cut2 (3).png"
+dest_files=["res://.godot/imported/frame_cut2 (3).png-594d8c1a1d8796c3c371b8213c5b35a8.ctex"]
 
 [params]
 
