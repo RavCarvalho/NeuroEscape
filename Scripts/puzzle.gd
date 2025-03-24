@@ -25,7 +25,7 @@ func find_empty_tile():
 
 func shuffle_tiles():
 	var previous = null
-	for _i in range(1000):
+	for _i in range(10):
 		var neighbors = get_neighbors(empty_tile)
 		var tile = neighbors[randi() % neighbors.size()]
 		swap_tiles(tile, empty_tile)
@@ -48,6 +48,7 @@ func _input(event):
 			swap_tiles(clicked_tile, empty_tile)
 			if tiles_match():
 				print("You win!")
+				Global.puzzleterminado = true
 
 func get_clicked_tile(mouse_pos):
 	for tile in tiles:
