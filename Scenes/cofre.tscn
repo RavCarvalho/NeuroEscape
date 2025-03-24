@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cadd74i7n1ej4" path="res://Assets/Cofre/sombra chave.png" id="4_iks7a"]
 [ext_resource type="Texture2D" uid="uid://1ih5ynvyvpxf" path="res://Assets/Cofre/caveira.png" id="5_u2hsv"]
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
-[ext_resource type="Texture2D" uid="uid://8sang6xjywal" path="res://Assets/level2/chave.png" id="7_rjp5e"]
 [ext_resource type="Texture2D" uid="uid://6ocwj6pcpsy6" path="res://Assets/Cofre/caixaaberta.png" id="8_k6jpr"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
 [ext_resource type="Texture2D" uid="uid://ccdhrvopgs0uv" path="res://Assets/Cofre/caixafechada.png" id="10_l11te"]
+[ext_resource type="Texture2D" uid="uid://cibg2qlyadv40" path="res://Assets/Cofre/chave cofre.png" id="10_xefaq"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="11_p6p04"]
 [ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="11_r5x5c"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="12_n4m5q"]
@@ -126,6 +126,7 @@ theme = ExtResource("3_ephs3")
 flat = true
 
 [node name="TextEdit" type="TextEdit" parent="Cofre"]
+visible = false
 offset_left = -100.0
 offset_top = -85.0
 offset_right = 232.0
@@ -134,7 +135,6 @@ theme = ExtResource("3_ephs3")
 theme_override_font_sizes/font_size = 120
 
 [node name="cofre aberto" type="Node2D" parent="."]
-visible = false
 
 [node name="CofreAberto" type="Sprite2D" parent="cofre aberto"]
 position = Vector2(640, 356)
@@ -170,21 +170,28 @@ scale = Vector2(0.335547, 0.308984)
 texture = ExtResource("8_k6jpr")
 
 [node name="PointLight2D" type="PointLight2D" parent="cofre aberto/caixaaberta"]
-position = Vector2(675, 275)
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(697, 319)
 scale = Vector2(1.59, 1.40167)
+color = Color(1, 1, 1, 0.305882)
 energy = 1.25
 texture = ExtResource("6_eb8h5")
 
 [node name="Chave" type="Sprite2D" parent="cofre aberto/caixaaberta"]
 position = Vector2(662, 406)
 scale = Vector2(0.255859, 0.258984)
-texture = ExtResource("7_rjp5e")
+texture = ExtResource("10_xefaq")
 
 [node name="irescadaria" type="TextureButton" parent="cofre aberto/caixaaberta"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 961.0
+offset_top = 468.0
+offset_right = 1231.0
+offset_bottom = 694.0
 texture_normal = ExtResource("11_p6p04")
 texture_hover = ExtResource("12_qsdrv")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="caixafechada" type="Node2D" parent="cofre aberto"]
 
@@ -216,7 +223,7 @@ offset_bottom = 498.0
 visible = false
 
 [connection signal="lines_edited_from" from="Cofre/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
-[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
 [connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
 [connection signal="button_up" from="cofre aberto/caixafechada/TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="pressed" from="safe-area" to="." method="_on_safearea_pressed"]

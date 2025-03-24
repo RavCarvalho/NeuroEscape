@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcq14ohedk5m0"
+path="res://.godot/imported/Maluco_(1).mp3-9895c41e006b532a4a0184e3ba720783.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/Maluco_(1).mp3"
+dest_files=["res://.godot/imported/Maluco_(1).mp3-9895c41e006b532a4a0184e3ba720783.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

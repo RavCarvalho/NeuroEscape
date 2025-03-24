@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c733y0bj3l8al"
+path="res://.godot/imported/Chefe_aliengena_1.mp3-ce153781025b92a8524709303471b5f4.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/Chefe_aliengena_1.mp3"
+dest_files=["res://.godot/imported/Chefe_aliengena_1.mp3-ce153781025b92a8524709303471b5f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

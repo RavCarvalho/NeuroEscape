@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dybbj4qdrhrn"]
+[gd_scene load_steps=14 format=3 uid="uid://dybbj4qdrhrn"]
 
 [ext_resource type="Texture2D" uid="uid://bfrneh5jurkaf" path="res://Assets/Fontes/Cutscenes/cutframe3.png" id="1_lt5pj"]
 [ext_resource type="Texture2D" uid="uid://cjerx6vq3nddq" path="res://Assets/Fontes/Cutscenes/cut2frame3.png" id="2_sau4a"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://c6af6jgqdg086" path="res://Musica/falas oficiais/Sala_do_chefe_1.mp3" id="4_htlfq"]
 [ext_resource type="AudioStream" uid="uid://dlvimsgs3cl30" path="res://Musica/falasChefe/finalmente.mp3" id="5_csify"]
 [ext_resource type="AudioStream" uid="uid://jrlprvuoe8vm" path="res://Musica/falasChefe/buscarcobaias.mp3" id="6_r1c5h"]
+[ext_resource type="AudioStream" uid="uid://bcq14ohedk5m0" path="res://Musica/falas oficiais/Maluco_(1).mp3" id="7_hti3t"]
+[ext_resource type="AudioStream" uid="uid://bn1075qs0gd4o" path="res://Musica/close-door-sound-247450.mp3" id="8_uj5to"]
+[ext_resource type="AudioStream" uid="uid://drtr10liibpgr" path="res://Musica/falas oficiais/Cofre_1.m4a (1).mp3" id="9_ffqs4"]
+[ext_resource type="AudioStream" uid="uid://cs4d67wu2nkgk" path="res://Musica/falas oficiais/Chefe_chegue_1_1.mp3" id="10_7ngb5"]
 
 [sub_resource type="Animation" id="Animation_xsokm"]
 length = 0.001
@@ -141,10 +145,58 @@ tracks/10/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("chefemaluco:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("porta:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("cofre:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("cofre2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_etvee"]
 resource_name = "cutscene3"
-length = 45.0
+length = 42.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -200,7 +252,7 @@ tracks/4/path = NodePath("visibilidade/ColorRect3:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.16667, 8.6, 20.1445, 29.6667, 33.2333),
+"times": PackedFloat32Array(5.16667, 8.6, 20.1445, 32.0667, 33.4667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -212,7 +264,7 @@ tracks/5/path = NodePath("visibilidade/ColorRect4:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8.7, 14.4, 20.1445, 30.8333, 34.2),
+"times": PackedFloat32Array(8.7, 14.4, 20.1445, 32.9, 33.9333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -224,7 +276,7 @@ tracks/6/path = NodePath("visibilidade/ColorRect5:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(11.1667, 15.4333, 20.1445, 31.4667, 35.1333),
+"times": PackedFloat32Array(11.1667, 15.4333, 20.1445, 37.5, 41.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -273,6 +325,54 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(20.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("chefemaluco:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(28.9667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("porta:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(32.4333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("cofre:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(33.4333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("cofre2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(37.4333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -350,3 +450,15 @@ volume_db = 6.265
 [node name="cobaias" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_r1c5h")
 volume_db = 5.012
+
+[node name="chefemaluco" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hti3t")
+
+[node name="porta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_uj5to")
+
+[node name="cofre" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ffqs4")
+
+[node name="cofre2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7ngb5")

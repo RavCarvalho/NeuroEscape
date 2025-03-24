@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 		if safe_pw == text_node.text:
 			update_txt("[center]Abriu!!", 2)
 			Global.senha_correta = true
+			MusicManager.playSFX("chefealien")
 			
 		else:
 			update_txt("[center]Senha incorreta.", 2)
@@ -44,7 +45,7 @@ func _on_texture_button_button_up() -> void:
 	
 	
 func abrircaixa() -> void:
-	print("recebi sinaal")
+	#print("recebi sinaal")
 	$Puzzle.visible = false
 	$"cofre aberto/caixafechada".visible = false
 	$"cofre aberto/caixaaberta".visible = true
