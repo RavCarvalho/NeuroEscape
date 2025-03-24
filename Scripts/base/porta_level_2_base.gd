@@ -101,3 +101,4 @@ func _on_door_pressed() -> void:
 		Save.save_game()
 		MusicManager.playSFX("portadestrancada")
 		get_tree().change_scene_to_file("res://Scenes/base/Escadaria.tscn")
+		Global.senha_correta = false

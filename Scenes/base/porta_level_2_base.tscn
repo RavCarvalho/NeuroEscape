@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cd7epysnp16y2"]
+[gd_scene load_steps=21 format=3 uid="uid://cd7epysnp16y2"]
 
 [ext_resource type="Script" path="res://Scripts/base/porta_level_2_base.gd" id="1_1vrm8"]
 [ext_resource type="Texture2D" uid="uid://dtm5q5sod3i3n" path="res://Assets/level2/porta escada.png" id="1_d3pdq"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://c17gotxnwxqkr" path="res://Assets/Fontes/machine/JMH Typewriter-Black.otf" id="10_orphu"]
 [ext_resource type="Texture2D" uid="uid://blbknlybrdqt0" path="res://Assets/level2/experimento.png" id="11_a37xw"]
 [ext_resource type="FontFile" uid="uid://c1x7eaoa1y45e" path="res://Assets/Fontes/DS-DIGIB.TTF" id="12_sednm"]
+[ext_resource type="Texture2D" uid="uid://mcv38l21ue6c" path="res://Assets/level1/seta_shadow.png" id="13_4iu1v"]
 [ext_resource type="Script" path="res://Scripts/base/butto_pw_behavior.gd" id="13_o6p6e"]
 [ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="13_qpbem"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="15_58473"]
@@ -207,6 +208,7 @@ offset_right = 41.0
 offset_bottom = 678.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("7_o6j1o")
+texture_pressed = ExtResource("13_4iu1v")
 ignore_texture_size = true
 stretch_mode = 0
 flip_h = true

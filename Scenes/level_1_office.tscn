@@ -145,7 +145,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_tr7xa")
 bbcode_enabled = true
 
-
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/door" to="." method="_on_door_input_event"]

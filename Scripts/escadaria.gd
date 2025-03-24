@@ -19,3 +19,7 @@ func _on_paracima_button_up() -> void:
 
 func _on_parabaixo_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/exit.tscn")
+
+
+func _on_back_2_button_up() -> void:
+	get_tree().change_scene_to_file("res://Scenes/level_2_escada.tscn")
