@@ -64,6 +64,7 @@ offset_top = 608.0
 offset_right = 1275.0
 offset_bottom = 729.0
 texture_normal = ExtResource("5_jv0xp")
+texture_pressed = ExtResource("5_jv0xp")
 ignore_texture_size = true
 stretch_mode = 0
 

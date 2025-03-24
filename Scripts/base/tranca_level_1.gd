@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 		if senha_tranca == text_node.text:
 			Global.senha_correta = true # é teste -> barulho de tranca abrindo colocar
 			if Global.unlocked == false:
-				estado_tranca(estado.correto, 3, "beep")
-			else: estado_tranca(estado.again, 3, "beep")
+				estado_tranca(estado.correto, 2.5, "beep")
+			else: estado_tranca(estado.again, 2.5, "beep")
 			
 		else: estado_tranca(estado.errado, 2, "error")
 	
