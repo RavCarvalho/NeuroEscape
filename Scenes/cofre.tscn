@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1eixe18u4php"]
+[gd_scene load_steps=24 format=3 uid="uid://c1eixe18u4php"]
 
 [ext_resource type="Texture2D" uid="uid://k8pjwu7h5yqy" path="res://Assets/Cofre/cofre.png" id="1_80t6b"]
 [ext_resource type="Script" path="res://Scripts/cofre.gd" id="1_so3em"]
@@ -9,9 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://1ih5ynvyvpxf" path="res://Assets/Cofre/caveira.png" id="5_u2hsv"]
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
 [ext_resource type="Texture2D" uid="uid://8sang6xjywal" path="res://Assets/level2/chave.png" id="7_rjp5e"]
+[ext_resource type="Texture2D" uid="uid://6ocwj6pcpsy6" path="res://Assets/Cofre/caixaaberta.png" id="8_k6jpr"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
-[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="11_r5x5c"]
+[ext_resource type="Texture2D" uid="uid://ccdhrvopgs0uv" path="res://Assets/Cofre/caixafechada.png" id="10_l11te"]
+[ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="11_p6p04"]
+[ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="11_r5x5c"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="12_n4m5q"]
+[ext_resource type="Texture2D" uid="uid://c8mk56kgwd1wa" path="res://Assets/level2/setacinza.png" id="12_qsdrv"]
+[ext_resource type="PackedScene" uid="uid://3xvc5xfp5wsm" path="res://Scenes/puzzle.tscn" id="14_sg6w1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2rn8"]
 atlas = ExtResource("2_mqgfm")
@@ -35,53 +40,12 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="Animation" id="Animation_g46ya"]
-resource_name = "key_move"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Chave:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(662, 446), Vector2(662, 406)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SombraChave:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.491406, 0.354688), Vector2(0.42, 0.304)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PointLight2D:energy")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.25]
-}
-
 [sub_resource type="Animation" id="Animation_5c76q"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Chave:position")
+tracks/0/path = NodePath("caixaaberta/Chave:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -93,26 +57,43 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SombraChave:scale")
+tracks/1/path = NodePath("caixaaberta/PointLight2D:energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.42, 0.304)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PointLight2D:energy")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
 "values": [1.25]
+}
+
+[sub_resource type="Animation" id="Animation_g46ya"]
+resource_name = "key_move"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caixaaberta/Chave:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(662, 446), Vector2(662, 406)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("caixaaberta/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.25]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5aoon"]
@@ -153,6 +134,7 @@ theme = ExtResource("3_ephs3")
 theme_override_font_sizes/font_size = 120
 
 [node name="cofre aberto" type="Node2D" parent="."]
+visible = false
 
 [node name="CofreAberto" type="Sprite2D" parent="cofre aberto"]
 position = Vector2(640, 356)
@@ -173,27 +155,49 @@ position = Vector2(949, 474)
 scale = Vector2(0.195313, 0.171875)
 texture = ExtResource("5_u2hsv")
 
-[node name="PointLight2D" type="PointLight2D" parent="cofre aberto"]
-position = Vector2(682, 432)
-scale = Vector2(1.59, 1.40167)
-energy = 1.25
-texture = ExtResource("6_eb8h5")
-
-[node name="Chave" type="Sprite2D" parent="cofre aberto"]
-position = Vector2(662, 406)
-scale = Vector2(0.255859, 0.258984)
-texture = ExtResource("7_rjp5e")
-
-[node name="SombraChave" type="Sprite2D" parent="cofre aberto"]
-position = Vector2(651, 660)
-scale = Vector2(0.42, 0.304)
-texture = ExtResource("4_iks7a")
-
 [node name="anim" type="AnimationPlayer" parent="cofre aberto"]
 libraries = {
 "": SubResource("AnimationLibrary_5aoon")
 }
 autoplay = "key_move"
+
+[node name="caixaaberta" type="Node2D" parent="cofre aberto"]
+visible = false
+
+[node name="Caixaaberta" type="Sprite2D" parent="cofre aberto/caixaaberta"]
+position = Vector2(659, 511)
+scale = Vector2(0.335547, 0.308984)
+texture = ExtResource("8_k6jpr")
+
+[node name="PointLight2D" type="PointLight2D" parent="cofre aberto/caixaaberta"]
+position = Vector2(675, 275)
+scale = Vector2(1.59, 1.40167)
+energy = 1.25
+texture = ExtResource("6_eb8h5")
+
+[node name="Chave" type="Sprite2D" parent="cofre aberto/caixaaberta"]
+position = Vector2(662, 406)
+scale = Vector2(0.255859, 0.258984)
+texture = ExtResource("7_rjp5e")
+
+[node name="irescadaria" type="TextureButton" parent="cofre aberto/caixaaberta"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("11_p6p04")
+texture_hover = ExtResource("12_qsdrv")
+
+[node name="caixafechada" type="Node2D" parent="cofre aberto"]
+
+[node name="Caixafechada" type="Sprite2D" parent="cofre aberto/caixafechada"]
+position = Vector2(662, 522)
+scale = Vector2(0.331641, 0.279687)
+texture = ExtResource("10_l11te")
+
+[node name="TextureButton" type="TextureButton" parent="cofre aberto/caixafechada"]
+offset_left = 540.0
+offset_top = 402.0
+offset_right = 795.0
+offset_bottom = 611.0
 
 [node name="Control" parent="." instance=ExtResource("8_nh4bn")]
 
@@ -208,5 +212,11 @@ offset_bottom = 498.0
 
 [node name="UI" parent="." instance=ExtResource("12_n4m5q")]
 
+[node name="Puzzle" parent="." instance=ExtResource("14_sg6w1")]
+visible = false
+
 [connection signal="lines_edited_from" from="Cofre/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
+[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
+[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="cofre aberto/caixafechada/TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="pressed" from="safe-area" to="." method="_on_safearea_pressed"]
