@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_button_up() -> void:
+	pass
 
 func _on_back_button_up() -> void:
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://88am4ss0feni"
+path="res://.godot/imported/Maldita_empresa_1.mp3-e64650bf99574398ca4d3668f50989f8.mp3str"
+
+[deps]
+
+source_file="res://Musica/falas oficiais/Maldita_empresa_1.mp3"
+dest_files=["res://.godot/imported/Maldita_empresa_1.mp3-e64650bf99574398ca4d3668f50989f8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

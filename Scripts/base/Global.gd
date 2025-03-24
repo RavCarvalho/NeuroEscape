@@ -31,6 +31,6 @@ func comapare_password():
 	
 func puzzlecompare():
 	if puzzleterminado == true:
-		print("puzzle terminado")
+		#print("puzzle terminado")
 		finishpuzzle.emit()
 	pass

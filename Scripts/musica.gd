@@ -20,7 +20,8 @@ var musicDict : Dictionary = {
 	"trouxedecasa":preload("res://Musica/falas oficiais/touxe de casa.mp3"),
 	"estante": preload("res://Musica/falas oficiais/Trofus_1.mp3"),
 	"elevador": preload("res://Musica/falas oficiais/Preso_1_1.mp3"),
-	"digito": preload("res://Musica/digitp.mp3")
+	"digito": preload("res://Musica/digitp.mp3"),
+	"chefealien": preload("res://Musica/falas oficiais/Chefe_aliengena_1.mp3"),
 	
 }
 
