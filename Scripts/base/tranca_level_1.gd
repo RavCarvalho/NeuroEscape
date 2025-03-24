@@ -4,7 +4,7 @@ var senha_tranca = "1972"
 #@TODO: quando pegar o commit colocar var senha correta = true/false pra saber se passa pra proxima cena
 @onready var text_node : TextEdit = get_node("TextEdit")
 @onready var player_text : RichTextLabel = get_node("PlayerText/text")
-var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era  isso?!", "[center]Agora tá fácil!"]
+var frases : Array = ["[center]Senha incorreta.", "[center]Abriu!! Era isso?!", "[center]Agora tá fácil!"]
 enum estado{errado, correto, again}
 var txt_filtrado = ""
 

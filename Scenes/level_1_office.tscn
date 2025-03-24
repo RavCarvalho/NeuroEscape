@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/level_1_office.gd" id="1_ekuqs"]
 [ext_resource type="Texture2D" uid="uid://csrewajvh3ni7" path="res://Assets/level1/office_level1.png" id="1_msbmh"]
 [ext_resource type="Shader" path="res://Themes/hit_flash.gdshader" id="1_uunvn"]
-[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="4_wclek"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="5_0cwk1"]
 [ext_resource type="Texture2D" uid="uid://cqj06dpnyl3pv" path="res://Assets/palavracript/N.png" id="6_jm7w2"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_wpt7m"]
+[ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="8_pg5lp"]
 [ext_resource type="FontFile" uid="uid://c17gotxnwxqkr" path="res://Assets/Fontes/machine/JMH Typewriter-Black.otf" id="8_tr7xa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynurn"]
@@ -101,8 +101,6 @@ polygon = PackedVector2Array(942, 453, 940, 506, 951, 510, 971, 510, 988, 507, 9
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractiveAreas/book"]
 polygon = PackedVector2Array(1, 172, 0, 292, 231, 294, 234, 203)
 
-[node name="PlayerText" parent="." instance=ExtResource("4_wclek")]
-
 [node name="ItensBook" type="Node2D" parent="."]
 visible = false
 
@@ -144,6 +142,8 @@ offset_bottom = 405.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_tr7xa")
 bbcode_enabled = true
+
+[node name="PlayerText" parent="." instance=ExtResource("8_pg5lp")]
 
 [connection signal="input_event" from="InteractiveAreas/right_drawer" to="." method="_on_right_drawer_input_event"]
 [connection signal="input_event" from="InteractiveAreas/left_drawer" to="." method="_on_left_drawer_input_event"]
