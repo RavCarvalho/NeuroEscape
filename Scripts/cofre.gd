@@ -131,3 +131,12 @@ func zeratime() -> void:
 		_timer_to_finish.emit_signal("timeout");
 
 		
+
+
+func _on_alfabeto_button_up() -> void:
+	click += 1
+	if click == 1:
+		$Alfabeto.visible = true
+	if click >= 2:
+		$Alfabeto.visible = false
+		click = 0
