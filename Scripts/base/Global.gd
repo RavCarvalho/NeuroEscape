@@ -4,7 +4,7 @@ var senha_correta : = false #varificação pra todas as cenas
 var right_box_pw = [2, 5, 3] #senha do bau
 var numb_pw : Array = [] 
 var unlocked = false
-var puzzleterminado = false
+var puzzleterminado = false #var para teste de puzzle
 var pass_scene = false #var para teste com chave
 
 var skip_cutscene = false# var verificação p pular  cutscene

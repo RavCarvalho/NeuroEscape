@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://p4qsrcsc6153" path="res://Assets/Fontes/machine/JMH Typewriter-Bold.otf" id="4_gcoe8"]
 [ext_resource type="Texture2D" uid="uid://bnr46fb643ilq" path="res://Assets/level1/file_open.png" id="5_cvisx"]
 [ext_resource type="FontFile" uid="uid://s168630nkooq" path="res://Assets/Fontes/machine_macabro_bold/Mom«t___.ttf" id="5_i2nvq"]
-[ext_resource type="PackedScene" uid="uid://byhms3jksxqvm" path="res://Scenes/base/player_text.tscn" id="6_j5tqb"]
+[ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="6_j5tqb"]
 
 [node name="DrawerLevel1" type="Node2D"]
 script = ExtResource("1_mjk54")

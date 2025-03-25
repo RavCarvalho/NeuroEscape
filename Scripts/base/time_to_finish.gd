@@ -18,3 +18,4 @@ func update_time_label():
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/cut_scene_5.tscn")
+	

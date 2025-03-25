@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvk0q733e3jpw"]
+[gd_scene load_steps=8 format=3 uid="uid://bvk0q733e3jpw"]
 
 [ext_resource type="Texture2D" uid="uid://cc8naocrxoeog" path="res://Assets/level1/out_door.png" id="1_hwqje"]
 [ext_resource type="Script" path="res://Scripts/exit.gd" id="1_rivgq"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="2_pspwo"]
 [ext_resource type="Texture2D" uid="uid://mcv38l21ue6c" path="res://Assets/level1/seta_shadow.png" id="3_a6pex"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="6_kqoqs"]
 [ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="6_uc2fn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_753v3"]
@@ -34,6 +35,12 @@ stretch_mode = 0
 flip_h = true
 
 [node name="PlayerText" parent="." instance=ExtResource("6_uc2fn")]
+
+[node name="UI" parent="." instance=ExtResource("6_kqoqs")]
+offset_left = 640.0
+offset_top = 720.0
+offset_right = 640.0
+offset_bottom = 723.0
 
 [connection signal="input_event" from="door" to="." method="_on_door_input_event"]
 [connection signal="button_up" from="Back" to="." method="_on_back_button_up"]
