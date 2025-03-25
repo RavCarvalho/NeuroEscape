@@ -1,13 +1,15 @@
 [gd_scene load_steps=25 format=3 uid="uid://c1eixe18u4php"]
-
+[gd_scene load_steps=26 format=3 uid="uid://c1eixe18u4php"]
 [ext_resource type="Texture2D" uid="uid://k8pjwu7h5yqy" path="res://Assets/Cofre/cofre.png" id="1_80t6b"]
 [ext_resource type="Script" path="res://Scripts/cofre.gd" id="1_so3em"]
 [ext_resource type="Texture2D" uid="uid://pkrf1oldxbql" path="res://Assets/Cofre/digito.png" id="2_mqgfm"]
 [ext_resource type="Theme" uid="uid://bkukbt3r70wyy" path="res://Themes/padrao_digital.tres" id="3_ephs3"]
 [ext_resource type="Texture2D" uid="uid://chnojjxoap03i" path="res://Assets/Cofre/cofre aberto.png" id="3_v5j4o"]
 [ext_resource type="Texture2D" uid="uid://cadd74i7n1ej4" path="res://Assets/Cofre/sombra chave.png" id="4_iks7a"]
+[ext_resource type="Texture2D" uid="uid://306uh1w8gw6i" path="res://Assets/level1/papers.png" id="5_sk45g"]
 [ext_resource type="Texture2D" uid="uid://1ih5ynvyvpxf" path="res://Assets/Cofre/caveira.png" id="5_u2hsv"]
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
+[ext_resource type="Texture2D" uid="uid://b0qdyau7nfq2h" path="res://Assets/inventário/alfabeto.png" id="6_h7xfa"]
 [ext_resource type="Texture2D" uid="uid://6ocwj6pcpsy6" path="res://Assets/Cofre/caixaaberta.png" id="8_k6jpr"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
 [ext_resource type="Texture2D" uid="uid://cibg2qlyadv40" path="res://Assets/Cofre/chave cofre.png" id="10_xefaq"]
@@ -112,6 +114,46 @@ script = ExtResource("1_so3em")
 [node name="CofreSprite" type="Sprite2D" parent="."]
 position = Vector2(642, 359)
 texture = ExtResource("1_80t6b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cofre"]
+position = Vector2(117, -30)
+scale = Vector2(0.816, 0.754)
+sprite_frames = SubResource("SpriteFrames_ip136")
+animation = &"new_animation"
+frame_progress = 0.649496
+
+[node name="LineEdit" type="LineEdit" parent="Cofre"]
+visible = false
+offset_left = -92.0
+offset_top = -118.0
+offset_right = 285.0
+offset_bottom = 53.0
+theme = ExtResource("3_ephs3")
+flat = true
+
+[node name="TextEdit" type="TextEdit" parent="Cofre"]
+visible = false
+offset_left = -100.0
+offset_top = -85.0
+offset_right = 232.0
+offset_bottom = 41.0
+theme = ExtResource("3_ephs3")
+theme_override_font_sizes/font_size = 120
+
+[node name="alfabeto" type="TextureButton" parent="Cofre"]
+offset_left = 448.0
+offset_top = 213.0
+offset_right = 587.0
+offset_bottom = 333.0
+texture_normal = ExtResource("5_sk45g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Alfabeto" type="Sprite2D" parent="Cofre"]
+visible = false
+position = Vector2(8.00006, -4)
+scale = Vector2(0.716146, 0.642578)
+texture = ExtResource("6_h7xfa")
 
 [node name="cofre aberto" type="Node2D" parent="."]
 visible = false
@@ -241,7 +283,15 @@ visible = false
 
 [node name="PlayerText" parent="." instance=ExtResource("11_r5x5c")]
 
-[connection signal="pressed" from="safe-area" to="." method="_on_safearea_pressed"]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="lines_edited_from" from="Cofre/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
+[connection signal="button_up" from="Cofre/alfabeto" to="." method="_on_alfabeto_button_up"]
+[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
+[connection signal="button_up" from="cofre aberto/caixafechada/TextureButton" to="." method="_on_texture_button_button_up"][connection signal="pressed" from="safe-area" to="." method="_on_safearea_pressed"]
 [connection signal="pressed" from="irescadaria" to="." method="_on_irescadaria_pressed"]
 [connection signal="input_event" from="ItensAdd/CaixaAberta/KeyArea" to="." method="_on_key_area_input_event"]
 [connection signal="lines_edited_from" from="ItensAdd/CofreFechado/TextEdit" to="." method="_on_text_edit_lines_edited_from"]

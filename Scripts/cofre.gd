@@ -2,6 +2,9 @@ extends Node2D
 
 var safe_pw = "alien"
 @onready var text_node = get_node("ItensAdd/CofreFechado/TextEdit")
+
+var click = 0
+@onready var text_node = get_node("Cofre/TextEdit")
 @onready var player_text = get_node("PlayerText/text")
 @onready var _timer = get_node("PlayerText/Timer")
 @onready var _timer_to_finish: Timer = get_node("TimeToFinish/Timer")
@@ -78,3 +81,10 @@ func _on_key_area_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 
 func _on_puzzle_button_pressed() -> void:
 	$Puzzle.visible = true
+func _on_alfabeto_button_up() -> void:
+	click += 1
+	if click == 1:
+		$Cofre/Alfabeto.visible = true
+	if click >= 2:
+		$Cofre/Alfabeto.visible = false
+		click = 0
