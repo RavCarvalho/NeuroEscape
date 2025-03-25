@@ -15,7 +15,10 @@ func _process(delta: float) -> void:
 
 func _on_paracima_button_up() -> void:
 	#troca a cena para a cutscene
-	get_tree().change_scene_to_file("res://Scenes/curscene_3.tscn")
+	if !Global.skip_cutscene:
+		get_tree().change_scene_to_file("res://Scenes/cut_scene_3.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/cofre.tscn")
 
 
 func _on_parabaixo_pressed() -> void:

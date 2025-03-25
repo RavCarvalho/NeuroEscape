@@ -37,7 +37,7 @@ func _on_paper_button_down() -> void:
 
 func _on_box_button_down() -> void:
 	if Global.pass_scene == true:
-		update_palyer_text(iten.back_to_box, 2)
+		update_palyer_text(iten.back_to_box, 3.5)
 		$BackScenario/Bau.play("open")
 		print("estou verdadeira sim: ", Global.pass_scene)
 	if Global.senha_correta == true and Global.pass_scene == false:
@@ -46,7 +46,7 @@ func _on_box_button_down() -> void:
 		$Signals/box.disabled
 	if Global.senha_correta == false and Global.pass_scene == false:
 		hide_signals()
-		update_palyer_text(iten.box,3)
+		update_palyer_text(iten.box,3.5)
 		img_atual.texture = preload("res://Assets/level2/senha bau.png")
 		show_add_iten($AditionalItens/box)
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://em182ebsbgdi"]
+
+[ext_resource type="FontFile" uid="uid://c1x7eaoa1y45e" path="res://Assets/Fontes/DS-DIGIB.TTF" id="1_ckbyy"]
+[ext_resource type="Script" path="res://Scripts/base/time_to_finish.gd" id="1_tak6k"]
+
+[node name="TimeToFinish" type="CanvasLayer"]
+script = ExtResource("1_tak6k")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 550.0
+offset_right = 776.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ckbyy")
+theme_override_font_sizes/font_size = 100
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
