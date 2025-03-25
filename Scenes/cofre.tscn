@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1eixe18u4php"]
+[gd_scene load_steps=25 format=3 uid="uid://c1eixe18u4php"]
 
 [ext_resource type="Texture2D" uid="uid://k8pjwu7h5yqy" path="res://Assets/Cofre/cofre.png" id="1_80t6b"]
 [ext_resource type="Script" path="res://Scripts/cofre.gd" id="1_so3em"]
@@ -10,13 +10,79 @@
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
 [ext_resource type="Texture2D" uid="uid://6ocwj6pcpsy6" path="res://Assets/Cofre/caixaaberta.png" id="8_k6jpr"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
-[ext_resource type="Texture2D" uid="uid://ccdhrvopgs0uv" path="res://Assets/Cofre/caixafechada.png" id="10_l11te"]
 [ext_resource type="Texture2D" uid="uid://cibg2qlyadv40" path="res://Assets/Cofre/chave cofre.png" id="10_xefaq"]
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="11_p6p04"]
 [ext_resource type="PackedScene" uid="uid://1kdr1r6jfej" path="res://Scenes/base/player_text.tscn" id="11_r5x5c"]
 [ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="12_n4m5q"]
 [ext_resource type="Texture2D" uid="uid://c8mk56kgwd1wa" path="res://Assets/level2/setacinza.png" id="12_qsdrv"]
 [ext_resource type="PackedScene" uid="uid://3xvc5xfp5wsm" path="res://Scenes/puzzle.tscn" id="14_sg6w1"]
+[ext_resource type="PackedScene" uid="uid://em182ebsbgdi" path="res://Scenes/base/time_to_finish.tscn" id="18_gpk3i"]
+
+[sub_resource type="Animation" id="Animation_5c76q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ItensAdd/CaixaAberta/Chave:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(662, 406)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ItensAdd/CaixaAberta/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
+
+[sub_resource type="Animation" id="Animation_g46ya"]
+resource_name = "key_move"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ItensAdd/CaixaAberta/Chave:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(662, 446), Vector2(662, 406)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ItensAdd/CaixaAberta/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5aoon"]
+_data = {
+"RESET": SubResource("Animation_5c76q"),
+"key_move": SubResource("Animation_g46ya")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28saa"]
+radius = 37.1884
+height = 169.837
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2rn8"]
 atlas = ExtResource("2_mqgfm")
@@ -40,101 +106,15 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="Animation" id="Animation_5c76q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("caixaaberta/Chave:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(662, 406)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("caixaaberta/PointLight2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.25]
-}
-
-[sub_resource type="Animation" id="Animation_g46ya"]
-resource_name = "key_move"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("caixaaberta/Chave:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(662, 446), Vector2(662, 406)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("caixaaberta/PointLight2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.25]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5aoon"]
-_data = {
-"RESET": SubResource("Animation_5c76q"),
-"key_move": SubResource("Animation_g46ya")
-}
-
 [node name="Cofre" type="Node2D"]
 script = ExtResource("1_so3em")
 
-[node name="Cofre" type="Sprite2D" parent="."]
+[node name="CofreSprite" type="Sprite2D" parent="."]
 position = Vector2(642, 359)
 texture = ExtResource("1_80t6b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cofre"]
-position = Vector2(117, -30)
-scale = Vector2(0.816, 0.754)
-sprite_frames = SubResource("SpriteFrames_ip136")
-animation = &"new_animation"
-frame_progress = 0.649496
-
-[node name="LineEdit" type="LineEdit" parent="Cofre"]
-visible = false
-offset_left = -92.0
-offset_top = -118.0
-offset_right = 285.0
-offset_bottom = 53.0
-theme = ExtResource("3_ephs3")
-flat = true
-
-[node name="TextEdit" type="TextEdit" parent="Cofre"]
-visible = false
-offset_left = -100.0
-offset_top = -85.0
-offset_right = 232.0
-offset_bottom = 41.0
-theme = ExtResource("3_ephs3")
-theme_override_font_sizes/font_size = 120
-
 [node name="cofre aberto" type="Node2D" parent="."]
+visible = false
 
 [node name="CofreAberto" type="Sprite2D" parent="cofre aberto"]
 position = Vector2(640, 356)
@@ -145,70 +125,14 @@ position = Vector2(420, 568)
 scale = Vector2(0.384375, 0.25)
 texture = ExtResource("4_iks7a")
 
-[node name="SombraChave2" type="Sprite2D" parent="cofre aberto"]
-position = Vector2(918, 565)
-scale = Vector2(0.390625, 0.320313)
-texture = ExtResource("4_iks7a")
-
-[node name="Caveira" type="Sprite2D" parent="cofre aberto"]
-position = Vector2(949, 474)
-scale = Vector2(0.195313, 0.171875)
-texture = ExtResource("5_u2hsv")
-
-[node name="anim" type="AnimationPlayer" parent="cofre aberto"]
-libraries = {
-"": SubResource("AnimationLibrary_5aoon")
-}
-autoplay = "key_move"
-
 [node name="caixaaberta" type="Node2D" parent="cofre aberto"]
-visible = false
 
 [node name="Caixaaberta" type="Sprite2D" parent="cofre aberto/caixaaberta"]
 position = Vector2(659, 511)
 scale = Vector2(0.335547, 0.308984)
 texture = ExtResource("8_k6jpr")
 
-[node name="PointLight2D" type="PointLight2D" parent="cofre aberto/caixaaberta"]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(697, 319)
-scale = Vector2(1.59, 1.40167)
-color = Color(1, 1, 1, 0.305882)
-energy = 1.25
-texture = ExtResource("6_eb8h5")
-
-[node name="Chave" type="Sprite2D" parent="cofre aberto/caixaaberta"]
-position = Vector2(662, 406)
-scale = Vector2(0.255859, 0.258984)
-texture = ExtResource("10_xefaq")
-
-[node name="irescadaria" type="TextureButton" parent="cofre aberto/caixaaberta"]
-offset_left = 961.0
-offset_top = 468.0
-offset_right = 1231.0
-offset_bottom = 694.0
-texture_normal = ExtResource("11_p6p04")
-texture_hover = ExtResource("12_qsdrv")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="caixafechada" type="Node2D" parent="cofre aberto"]
-
-[node name="Caixafechada" type="Sprite2D" parent="cofre aberto/caixafechada"]
-position = Vector2(662, 522)
-scale = Vector2(0.331641, 0.279687)
-texture = ExtResource("10_l11te")
-
-[node name="TextureButton" type="TextureButton" parent="cofre aberto/caixafechada"]
-offset_left = 540.0
-offset_top = 402.0
-offset_right = 795.0
-offset_bottom = 611.0
-
 [node name="Control" parent="." instance=ExtResource("8_nh4bn")]
-
-[node name="PlayerText" parent="." instance=ExtResource("11_r5x5c")]
 
 [node name="safe-area" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -219,11 +143,106 @@ offset_bottom = 498.0
 
 [node name="UI" parent="." instance=ExtResource("12_n4m5q")]
 
+[node name="irescadaria" type="TextureButton" parent="."]
+offset_top = 580.0
+offset_right = 50.0
+offset_bottom = 630.0
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("11_p6p04")
+texture_hover = ExtResource("12_qsdrv")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="TimeToFinish" parent="." instance=ExtResource("18_gpk3i")]
+
+[node name="ItensAdd" type="Node2D" parent="."]
+
+[node name="CofreAberto" type="Node2D" parent="ItensAdd"]
+visible = false
+
+[node name="SombraChave2" type="Sprite2D" parent="ItensAdd/CofreAberto"]
+position = Vector2(918, 565)
+scale = Vector2(0.390625, 0.320313)
+texture = ExtResource("4_iks7a")
+
+[node name="Caveira" type="Sprite2D" parent="ItensAdd/CofreAberto"]
+position = Vector2(949, 474)
+scale = Vector2(0.195313, 0.171875)
+texture = ExtResource("5_u2hsv")
+
+[node name="CaixaAberta" type="Node2D" parent="ItensAdd"]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="ItensAdd/CaixaAberta"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(697, 319)
+scale = Vector2(1.59, 1.40167)
+color = Color(1, 1, 1, 0.305882)
+energy = 1.25
+texture = ExtResource("6_eb8h5")
+
+[node name="Chave" type="Sprite2D" parent="ItensAdd/CaixaAberta"]
+position = Vector2(662, 406)
+scale = Vector2(0.255859, 0.258984)
+texture = ExtResource("10_xefaq")
+
+[node name="anim" type="AnimationPlayer" parent="ItensAdd/CaixaAberta"]
+root_node = NodePath("../../../cofre aberto")
+libraries = {
+"": SubResource("AnimationLibrary_5aoon")
+}
+autoplay = "key_move"
+
+[node name="KeyArea" type="Area2D" parent="ItensAdd/CaixaAberta"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ItensAdd/CaixaAberta/KeyArea"]
+position = Vector2(660, 405)
+rotation = -2.37826
+scale = Vector2(0.994935, 2.16)
+shape = SubResource("CapsuleShape2D_28saa")
+
+[node name="CofreFechado" type="Node2D" parent="ItensAdd"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ItensAdd/CofreFechado"]
+position = Vector2(759, 329)
+scale = Vector2(0.816, 0.754)
+sprite_frames = SubResource("SpriteFrames_ip136")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 1
+frame_progress = 0.532101
+
+[node name="TextEdit" type="TextEdit" parent="ItensAdd/CofreFechado"]
+offset_left = 542.0
+offset_top = 274.0
+offset_right = 874.0
+offset_bottom = 400.0
+theme = ExtResource("3_ephs3")
+theme_override_font_sizes/font_size = 120
+
+[node name="CaixaFechada" type="Node2D" parent="ItensAdd"]
+visible = false
+
+[node name="PuzzleButton" type="TextureButton" parent="ItensAdd/CaixaFechada"]
+offset_left = 540.0
+offset_top = 402.0
+offset_right = 795.0
+offset_bottom = 611.0
+
+[node name="CaixaSprite" type="Sprite2D" parent="."]
+position = Vector2(662, 522)
+scale = Vector2(0.331641, 0.279687)
+
 [node name="Puzzle" parent="." instance=ExtResource("14_sg6w1")]
 visible = false
 
-[connection signal="lines_edited_from" from="Cofre/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
-[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_texture_button_button_up"]
-[connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
-[connection signal="button_up" from="cofre aberto/caixafechada/TextureButton" to="." method="_on_texture_button_button_up"]
+[node name="PlayerText" parent="." instance=ExtResource("11_r5x5c")]
+
 [connection signal="pressed" from="safe-area" to="." method="_on_safearea_pressed"]
+[connection signal="pressed" from="irescadaria" to="." method="_on_irescadaria_pressed"]
+[connection signal="input_event" from="ItensAdd/CaixaAberta/KeyArea" to="." method="_on_key_area_input_event"]
+[connection signal="lines_edited_from" from="ItensAdd/CofreFechado/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
+[connection signal="pressed" from="ItensAdd/CaixaFechada/PuzzleButton" to="." method="_on_puzzle_button_pressed"]

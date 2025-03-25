@@ -1,7 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpxecjit452sx"]
+[gd_scene load_steps=7 format=3 uid="uid://dpxecjit452sx"]
 
 [ext_resource type="Texture2D" uid="uid://bo7g2udsw5php" path="res://Assets/cutscene5black.png" id="1_ef38g"]
+[ext_resource type="Script" path="res://Scripts/cut_scene_5.gd" id="1_gyp5n"]
 [ext_resource type="AudioStream" uid="uid://b4vi0lr21avv3" path="res://Musica/falasChefe/pegeuivc.mp3" id="2_2n0rc"]
+
+[sub_resource type="Animation" id="Animation_qtpar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visualização/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visualização/ColorRect2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_8vc20"]
 resource_name = "cutscene5"
@@ -55,45 +95,6 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_qtpar"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("visualização/ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("visualização/ColorRect2:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_02d1s"]
 _data = {
 "RESET": SubResource("Animation_qtpar"),
@@ -101,6 +102,7 @@ _data = {
 }
 
 [node name="CutScene5" type="Node2D"]
+script = ExtResource("1_gyp5n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1309.0
@@ -116,6 +118,7 @@ texture = ExtResource("1_ef38g")
 libraries = {
 "": SubResource("AnimationLibrary_02d1s")
 }
+autoplay = "cutscene5"
 
 [node name="visualização" type="Node2D" parent="."]
 
@@ -136,3 +139,5 @@ color = Color(0, 0, 0, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2n0rc")
 volume_db = 7.518
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
