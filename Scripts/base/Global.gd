@@ -5,7 +5,7 @@ var right_box_pw = [2, 5, 3]
 var numb_pw : Array = []
 var unlocked = false
 var puzzleterminado = false
-
+var pass_scene = false #var para teste com chave
 
 signal send_status_pw
 signal finishpuzzle 

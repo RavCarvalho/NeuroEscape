@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlywxut30u3jo"]
+[gd_scene load_steps=11 format=3 uid="uid://dlywxut30u3jo"]
 
 [ext_resource type="Script" path="res://Scripts/escadaria.gd" id="1_71rtv"]
 [ext_resource type="Texture2D" uid="uid://by4r38dp0g51a" path="res://Assets/level2/escadaria.png" id="1_qf651"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://csk82xffou2hn" path="res://Assets/level2/seta.png" id="8_0fixa"]
 [ext_resource type="Texture2D" uid="uid://bw6m4iqxxeg3a" path="res://Assets/palavracript/A.png" id="8_s2g5d"]
 [ext_resource type="Texture2D" uid="uid://mcv38l21ue6c" path="res://Assets/level1/seta_shadow.png" id="9_5w3lo"]
+[ext_resource type="PackedScene" uid="uid://exh6wv2i5o3o" path="res://Scenes/base/ui.tscn" id="10_t46xc"]
 
 [node name="Escadaria" type="Node2D"]
 script = ExtResource("1_71rtv")
@@ -71,6 +72,12 @@ texture_pressed = ExtResource("9_5w3lo")
 ignore_texture_size = true
 stretch_mode = 0
 flip_h = true
+
+[node name="UI" parent="." instance=ExtResource("10_t46xc")]
+offset_left = 640.0
+offset_top = 720.0
+offset_right = 640.0
+offset_bottom = 723.0
 
 [connection signal="pressed" from="Signals/parabaixo" to="." method="_on_parabaixo_pressed"]
 [connection signal="button_up" from="Signals/paracima" to="." method="_on_paracima_button_up"]
