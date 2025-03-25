@@ -25,7 +25,7 @@ func find_empty_tile():
 
 func shuffle_tiles():
 	var previous = null
-	for _i in range(10):
+	for _i in range(350):
 		var neighbors = get_neighbors(empty_tile)
 		var tile = neighbors[randi() % neighbors.size()]
 		swap_tiles(tile, empty_tile)
