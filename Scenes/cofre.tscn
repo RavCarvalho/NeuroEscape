@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1eixe18u4php"]
+[gd_scene load_steps=26 format=3 uid="uid://c1eixe18u4php"]
 
 [ext_resource type="Texture2D" uid="uid://k8pjwu7h5yqy" path="res://Assets/Cofre/cofre.png" id="1_80t6b"]
 [ext_resource type="Script" path="res://Scripts/cofre.gd" id="1_so3em"]
@@ -6,8 +6,10 @@
 [ext_resource type="Theme" uid="uid://bkukbt3r70wyy" path="res://Themes/padrao_digital.tres" id="3_ephs3"]
 [ext_resource type="Texture2D" uid="uid://chnojjxoap03i" path="res://Assets/Cofre/cofre aberto.png" id="3_v5j4o"]
 [ext_resource type="Texture2D" uid="uid://cadd74i7n1ej4" path="res://Assets/Cofre/sombra chave.png" id="4_iks7a"]
+[ext_resource type="Texture2D" uid="uid://306uh1w8gw6i" path="res://Assets/level1/papers.png" id="5_sk45g"]
 [ext_resource type="Texture2D" uid="uid://1ih5ynvyvpxf" path="res://Assets/Cofre/caveira.png" id="5_u2hsv"]
 [ext_resource type="Texture2D" uid="uid://brm72o3f7lj2l" path="res://Assets/Cofre/brilho.png" id="6_eb8h5"]
+[ext_resource type="Texture2D" uid="uid://b0qdyau7nfq2h" path="res://Assets/inventário/alfabeto.png" id="6_h7xfa"]
 [ext_resource type="Texture2D" uid="uid://6ocwj6pcpsy6" path="res://Assets/Cofre/caixaaberta.png" id="8_k6jpr"]
 [ext_resource type="PackedScene" uid="uid://cvo10y2b6jual" path="res://Scenes/Pause.tscn" id="8_nh4bn"]
 [ext_resource type="Texture2D" uid="uid://ccdhrvopgs0uv" path="res://Assets/Cofre/caixafechada.png" id="10_l11te"]
@@ -134,7 +136,23 @@ offset_bottom = 41.0
 theme = ExtResource("3_ephs3")
 theme_override_font_sizes/font_size = 120
 
+[node name="alfabeto" type="TextureButton" parent="Cofre"]
+offset_left = 448.0
+offset_top = 213.0
+offset_right = 587.0
+offset_bottom = 333.0
+texture_normal = ExtResource("5_sk45g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Alfabeto" type="Sprite2D" parent="Cofre"]
+visible = false
+position = Vector2(8.00006, -4)
+scale = Vector2(0.716146, 0.642578)
+texture = ExtResource("6_h7xfa")
+
 [node name="cofre aberto" type="Node2D" parent="."]
+visible = false
 
 [node name="CofreAberto" type="Sprite2D" parent="cofre aberto"]
 position = Vector2(640, 356)
@@ -222,7 +240,11 @@ offset_bottom = 498.0
 [node name="Puzzle" parent="." instance=ExtResource("14_sg6w1")]
 visible = false
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="lines_edited_from" from="Cofre/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
+[connection signal="button_up" from="Cofre/alfabeto" to="." method="_on_alfabeto_button_up"]
 [connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="cofre aberto/caixaaberta/irescadaria" to="." method="_on_irescadaria_button_up"]
 [connection signal="button_up" from="cofre aberto/caixafechada/TextureButton" to="." method="_on_texture_button_button_up"]
