@@ -32,7 +32,7 @@ func _on_file_button_button_down() -> void:
 		$other_file.texture = preload("res://Assets/level1/file_photo.png")
 	if click_count == 4:
 		$other_file.texture = preload("res://Assets/level1/file_info.png")
-		uptade_text("[center]'26/01/1972 Inauguração NeuroCorp: tudo pronto pra sua chegada.' É uma foto desse dia.", 4)
+		uptade_text("[center]'26/01/1972 Inauguração NeuroCorp: tudo pronto pra sua chegada.' É uma foto desse dia.", 4.5)
 	if click_count >= 5:
 		$other_file.texture = null
 		##Other file foi criado pra sanar os erros de formatação de imagem de quem colocou. Pf, pare de errar o tamnaho da imagem :(

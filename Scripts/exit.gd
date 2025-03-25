@@ -22,5 +22,5 @@ func _on_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 			if Inventory.items.has(load("res://Assets/Cofre/chave cofre.png")):
 				get_tree().change_scene_to_file("res://Scenes/cut_scene_4.tscn")
 			else:
-				get_node("PlayerText/text").text = "´[center] Está trancado. Preciso sair daqui!"
+				get_node("PlayerText/text").text = "[center] Está trancado. Preciso sair daqui!"
 				get_node("PlayerText/Timer").start(2.5)

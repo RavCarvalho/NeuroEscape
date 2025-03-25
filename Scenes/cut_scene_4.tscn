@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://4aoejgpwif8r"]
 
-[ext_resource type="Texture2D" uid="uid://w43jd810nlon" path="res://Assets/cutscene4.jpeg" id="1_hmq8k"]
 [ext_resource type="Script" path="res://Scripts/cut_scene_4.gd" id="1_oy1ps"]
 [ext_resource type="FontFile" uid="uid://cnkwlpkp3e1mt" path="res://Assets/Fontes/hellogoodoldstyle-Regular dafont.ttf" id="2_g5jui"]
 [ext_resource type="AudioStream" uid="uid://bn1075qs0gd4o" path="res://Musica/close-door-sound-247450.mp3" id="2_yfc7e"]
 [ext_resource type="AudioStream" uid="uid://8vkidtfe4sg" path="res://Musica/correndo.mp3" id="3_f1y77"]
+[ext_resource type="Texture2D" uid="uid://cnlcojcox1i0l" path="res://Assets/cutscene4black.jpg" id="4_2sejn"]
 [ext_resource type="AudioStream" uid="uid://88am4ss0feni" path="res://Musica/falas oficiais/Maldita_empresa_1.mp3" id="6_2qiub"]
 
 [sub_resource type="Animation" id="Animation_1gwol"]
@@ -128,10 +128,10 @@ tracks/1/path = NodePath("visibilidade/ColorRect:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.366667, 1.4, 13.8, 15.8667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.366667, 1.4, 13.8, 16.2667, 17.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -140,10 +140,10 @@ tracks/2/path = NodePath("visibilidade/ColorRect2:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.86667, 5.36667, 13.8667, 16.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(2.86667, 5.36667, 13.8667, 16.2667, 17.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -152,10 +152,10 @@ tracks/3/path = NodePath("visibilidade/ColorRect3:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.56667, 8.1, 14.5333, 16.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(4.56667, 8.1, 14.5333, 16.2667, 16.7, 17.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -164,10 +164,10 @@ tracks/4/path = NodePath("visibilidade/ColorRect4:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.8, 7.63333, 15.4333, 17.1667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(5.8, 7.63333, 15.4333, 16.2667, 17.1667, 17.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -239,13 +239,15 @@ volume_db = 8.771
 libraries = {
 "": SubResource("AnimationLibrary_v1jri")
 }
+autoplay = "cutscene4"
 
 [node name="Cutscene4" type="Sprite2D" parent="."]
 position = Vector2(646.5, 349.75)
 scale = Vector2(0.793125, 0.792547)
-texture = ExtResource("1_hmq8k")
+texture = ExtResource("4_2sejn")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 724.0
 offset_top = 393.0
 offset_right = 1310.0
@@ -262,36 +264,38 @@ horizontal_alignment = 1
 [node name="visibilidade" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="visibilidade"]
-offset_right = 430.0
-offset_bottom = 340.0
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 473.0
+offset_bottom = 341.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="visibilidade"]
-offset_left = 428.0
-offset_top = 6.0
-offset_right = 896.0
-offset_bottom = 362.0
+offset_left = 464.0
+offset_top = 16.0
+offset_right = 851.0
+offset_bottom = 330.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="visibilidade"]
-offset_left = 884.0
-offset_top = -6.0
-offset_right = 1298.0
-offset_bottom = 342.0
+offset_left = 830.0
+offset_top = -19.0
+offset_right = 1244.0
+offset_bottom = 341.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="visibilidade"]
 offset_left = -2.0
 offset_top = 332.0
-offset_right = 744.0
+offset_right = 719.0
 offset_bottom = 724.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="visibilidade"]
-offset_left = 760.0
-offset_top = 326.0
-offset_right = 1328.0
-offset_bottom = 714.0
+offset_left = 719.0
+offset_top = 325.0
+offset_right = 1292.0
+offset_bottom = 721.0
 color = Color(0, 0, 0, 1)
 
 [node name="fuga" type="AudioStreamPlayer" parent="."]
