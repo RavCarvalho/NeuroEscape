@@ -13,7 +13,13 @@ func _on_iten_added(data: Texture) -> void:
 		if slot.sprite == null and slot.sprite !=  data: 
 			slot.sprite = data
 			break
- 
+func _on_item_removed(data : Texture):
+	for slot in container.get_children():
+		if slot.sprite == data:
+			slot.sprite = null
+			print("Limpei")
+			break
+			
 ##para aparecer inventário na tela
 func _process(delta: float) -> void:
 #@TODO o inventario some apos um tempo quanso tem um item no slot. Arrumar isso ai
@@ -23,6 +29,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	Inventory.item_added.connect(_on_iten_added)
+	Inventory.item_removed.connect(_on_item_removed)
 	
 func show_inventory_for_while():
 	print("CHAMEI ISSO AQUI MANOUUU")

@@ -12,8 +12,6 @@ var back_sprite : Array = ["res://Assets/level1/office_level1.png", "res://Asset
 func _ready() -> void:
 	Save.save_game()
 	
-	player_text.text = frases[interactve_with.empty]
-
 
 func _process(delta: float) -> void:
 	pass
